@@ -8,19 +8,20 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.ArrayList;
 
 @RestController
+@RequestMapping("/api/yelp")
 public class YelpController {
 
     @Autowired
     YelpService service;
 
-    @RequestMapping("/yelp")
-    public ArrayList<YelpBusiness> getAllBusinesses() {
-        return service.getAllBusinesses();
-    }
-
-    @RequestMapping("/yelp/{city}/{limit}")
+    @RequestMapping("/getBusinessByCity/{city}/{limit}")
     public YelpBusiness[] getBusinesses(@PathVariable String city, @PathVariable int limit) {
         return service.getBusinesses(city, limit);
+    }
+
+    @RequestMapping("/getBusinessByID/{id}")
+    public YelpBusiness getBusinesses(@PathVariable String id) {
+        return null;
     }
 
 }
