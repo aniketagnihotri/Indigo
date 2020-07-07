@@ -4,9 +4,10 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.example</groupId>
+    <groupId>org.crowdsourcecovid19</groupId>
     <artifactId>Crowdsourcing-COVID-19</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <name>Crowdsourcing COVID-19</name>
 
     <properties>
         <java.version>1.8</java.version>
@@ -27,6 +28,15 @@
             <groupId>org.springframework</groupId>
             <artifactId>spring-web</artifactId>
             <version>4.3.4.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <scope>runtime</scope>
         </dependency>
         <dependency>
             <groupId>com.squareup.okhttp3</groupId>
@@ -54,13 +64,12 @@
                         <manifest>
                             <addClasspath>true</addClasspath>
                             <classpathPrefix>src/</classpathPrefix>
-                            <mainClass>org.yelpapiinterface.springbootstarter.AppStarter</mainClass>
+                            <mainClass>org.crowdsourcingcovid.AppStarter</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
             </plugin>
         </plugins>
     </build>
-
 
 </project>
