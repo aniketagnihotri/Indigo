@@ -13,11 +13,17 @@ public class DatabaseController {
     @Autowired
     private BusinessReviewsRepository businessReviewsRepository;
 
+    /*
+     * Returns all BusinessReviews for a particular business ID.
+     */
     @RequestMapping(path="/getBusinessReview/{id}")
     public @ResponseBody Collection<BusinessReview> getReviewsByBusiness(@PathVariable String id) {
         return businessReviewsRepository.getBusinessReviewsByID(id);
     }
 
+    /*
+     * Sends a new BusinessReview to the database with several pieces of information.
+     */
     @RequestMapping(path="/addBusinessReview/{id}/{user}/{rating}/{review}/{dateTime}")
     public @ResponseBody boolean addBusinessReviewByID(@PathVariable String id, @PathVariable String user,
                                                        @PathVariable double rating, @PathVariable String review,
@@ -25,6 +31,9 @@ public class DatabaseController {
         return businessReviewsRepository.addBusinessReviewByID(id, user, rating, review, dateTime);
     }
 
+    /*
+     * Deletes a particlar BusinessReview from the database.
+     */
     @RequestMapping("/removeBusinessReview/{user}/{review}")
     public @ResponseBody boolean removeBusinessReviewByUserAndReview(@PathVariable String user, @PathVariable String review) {
         return businessReviewsRepository.removeBusinessReviewByUserAndReview(user, review);

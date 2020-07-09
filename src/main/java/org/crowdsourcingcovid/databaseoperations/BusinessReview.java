@@ -5,12 +5,15 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+/*
+ * Class for holding the details for a BusinessReview.
+ */
 @Entity
 public class BusinessReview {
 
-    @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     private String id;
+    @Id
     private String user;
     private double rating;
     private String review;

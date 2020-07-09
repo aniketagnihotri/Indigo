@@ -5,24 +5,22 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 /*
- * Class for holding the details for a Business. This class is intended to hold information
- * for a standalone page detailing a singular business.
+ * Class for holding the details for a BusinessListing. This class is intended to hold information
+ * for the listings page returned after a search or query.
  */
-public class YelpBusiness {
+public class YelpBusinessListing {
 
     String id;
-    String alias;
     String name;
     boolean isClosed;
+    String image_url;
     String url;
-    String displayPhone;
     String[] categories;
     double rating;
-    String[] photos;
     String price;
     String[] displayAddress;
 
-    public YelpBusiness() {
+    public YelpBusinessListing() {
     }
 
     public String getId() {
@@ -32,18 +30,6 @@ public class YelpBusiness {
     public void setId(JSONObject yelpResponse) {
         try {
             this.id = yelpResponse.getString("id");
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-    }
-
-    public String getAlias() {
-        return alias;
-    }
-
-    public void setAlias(JSONObject yelpResponse) {
-        try {
-            this.alias = yelpResponse.getString("alias");
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -73,6 +59,14 @@ public class YelpBusiness {
         }
     }
 
+    public String getImage_url() {
+        return image_url;
+    }
+
+    public void setImage_url(JSONObject yelpResponse) {
+        this.image_url = yelpResponse.getString("image_url");
+    }
+
     public String getUrl() {
         return url;
     }
@@ -80,18 +74,6 @@ public class YelpBusiness {
     public void setUrl(JSONObject yelpResponse) {
         try {
             this.url = yelpResponse.getString("url");
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-    }
-
-    public String getDisplayPhone() {
-        return displayPhone;
-    }
-
-    public void setDisplayPhone(JSONObject yelpResponse) {
-        try {
-            this.displayPhone = yelpResponse.getString("display_phone");
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -122,23 +104,6 @@ public class YelpBusiness {
     public void setRating(JSONObject yelpResponse) {
         try {
             this.rating = yelpResponse.getDouble("rating");
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-    }
-
-    public String[] getPhotos() {
-        return photos;
-    }
-
-    public void setPhotos(JSONObject yelpResponse) {
-        try {
-            JSONArray listedPhotos = yelpResponse.getJSONArray("photos");
-            String[] photos = new String[listedPhotos.length()];
-            for (int i = 0; i < listedPhotos.length(); i++) {
-                photos[i] = (String) listedPhotos.get(i);
-            }
-            this.photos = photos;
         } catch (JSONException e) {
             e.printStackTrace();
         }
