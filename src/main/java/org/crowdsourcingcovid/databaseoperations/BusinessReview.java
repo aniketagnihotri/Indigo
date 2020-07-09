@@ -8,16 +8,16 @@ import javax.persistence.Id;
 /*
  * Class for holding the details for a BusinessReview.
  */
-@Entity
 public class BusinessReview {
 
-    @GeneratedValue(strategy=GenerationType.AUTO)
     private String id;
-    @Id
     private String user;
     private double rating;
     private String review;
     private String dateTime;
+
+    public BusinessReview() {
+    }
 
     public String getId() {
         return id;
@@ -50,7 +50,6 @@ public class BusinessReview {
     public void setReview(String review) {
         this.review = review;
     }
-
 
     public String getDateTime() {
         return dateTime;

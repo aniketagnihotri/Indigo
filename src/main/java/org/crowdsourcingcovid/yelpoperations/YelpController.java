@@ -35,7 +35,6 @@ public class YelpController {
     public YelpBusiness searchBusinessByID(@PathVariable String id, @PathVariable int limit) {
         return service.searchBusiness(limit, id);
     }
-
-
+    
 }
 
