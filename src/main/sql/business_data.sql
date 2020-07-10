@@ -1,5 +1,5 @@
 /*
- * business_data table data
+ * business_data table data, configuration, and other code.
  */
 CREATE TABLE business_data
 (

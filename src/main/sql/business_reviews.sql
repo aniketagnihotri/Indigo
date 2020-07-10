@@ -1,5 +1,5 @@
 /*
- * business_reviews table data
+ * business_reviews table data, configuration, and other code.
  */
 CREATE TABLE business_reviews
 (
