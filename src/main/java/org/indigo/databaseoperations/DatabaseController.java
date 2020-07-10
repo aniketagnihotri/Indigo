@@ -4,7 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Collection;
 import java.util.List;
 
 @Controller
@@ -21,7 +20,7 @@ public class DatabaseController {
     /*
      * Returns all BusinessReviews for a particular business ID.
      */
-    @RequestMapping(path="/getBusinessReviews/{id}")
+    @GetMapping(path="/getBusinessReviews/{id}")
     public @ResponseBody List getBusinessReviews(@PathVariable String id) {
         return databaseRepository.getBusinessReviews(id);
     }
@@ -29,29 +28,27 @@ public class DatabaseController {
     /*
      * Sends a new BusinessReview to the database with several pieces of information.
      */
-    @RequestMapping(path="/addBusinessReview/{id}/{user}/{rating}/{review}/{dateTime}")
-    public @ResponseBody boolean addBusinessReview(@PathVariable String id, @PathVariable String user,
-                                                       @PathVariable double rating, @PathVariable String review,
-                                                       @PathVariable String dateTime) {
-        return databaseRepository.addBusinessReview(id, user, rating, review, dateTime);
+    @PostMapping(path="/addBusinessReview")
+    public String addBusinessReview(@RequestBody BusinessReview businessReview) {
+        return databaseRepository.addBusinessReview(businessReview.getId(), businessReview.getUser(),
+                businessReview.getRating(), businessReview.getReview(), businessReview.getDateTime());
     }
 
     /*
      * Updates a BusinessReview stored in the database with several pieces of information.
      */
-    @RequestMapping(path="/updateBusinessReview/{id}/{user}/{rating}/{review}/{dateTime}")
-    public @ResponseBody boolean updateBusinessReview(@PathVariable String id, @PathVariable String user,
-                                                       @PathVariable double rating, @PathVariable String review,
-                                                       @PathVariable String dateTime) {
-        return databaseRepository.updateBusinessReview(id, user, rating, review, dateTime);
+    @PutMapping(path="/updateBusinessReview")
+    public String updateBusinessReview(@RequestBody BusinessReview businessReview) {
+        return databaseRepository.updateBusinessReview(businessReview.getId(), businessReview.getUser(),
+                businessReview.getRating(), businessReview.getReview(), businessReview.getDateTime());
     }
 
     /*
      * Deletes a particular BusinessReview from the database.
      */
-    @RequestMapping("/removeBusinessReview/{id}/{user}/{review}")
-    public @ResponseBody boolean removeBusinessReview(@PathVariable String id, @PathVariable String user, @PathVariable String review) {
-        return databaseRepository.removeBusinessReview(id, user, review);
+    @DeleteMapping("/removeBusinessReview")
+    public String removeBusinessReview(@RequestBody BusinessReview businessReview) {
+        return databaseRepository.removeBusinessReview(businessReview.getId(), businessReview.getUser(), businessReview.getReview());
     }
 
 
@@ -62,7 +59,7 @@ public class DatabaseController {
     /*
      * Returns all BusinessData for a particular business ID.
      */
-    @RequestMapping(path="/getBusinessData/{id}")
+    @GetMapping(path="/getBusinessData/{id}")
     public @ResponseBody List getBusinessData(@PathVariable String id) {
         return databaseRepository.getBusinessData(id);
     }
@@ -70,29 +67,27 @@ public class DatabaseController {
     /*
      * Sends a new BusinessData to the database with several pieces of information.
      */
-    @RequestMapping(path="/addBusinessData/{id}/{claimed}/{user}/{businessResponse}/{dateTime}")
-    public @ResponseBody boolean addBusinessData(@PathVariable String id, @PathVariable boolean claimed,
-                                                   @PathVariable String user, @PathVariable String businessResponse,
-                                                   @PathVariable String dateTime) {
-        return databaseRepository.addBusinessData(id, claimed, user, businessResponse, dateTime);
+    @PostMapping(path="/addBusinessData")
+    public String addBusinessData(@RequestBody BusinessData businessData) {
+        return databaseRepository.addBusinessData(businessData.getId(), businessData.isClaimed(),
+                businessData.getUser(), businessData.getBusinessResponse(), businessData.getDateTime());
     }
 
     /*
      * Updates a BusinessData stored in the database with several pieces of information.
      */
-    @RequestMapping(path="/updateBusinessData/{id}/{claimed}/{user}/{businessResponse}/{dateTime}")
-    public @ResponseBody boolean updateBusinessData(@PathVariable String id, @PathVariable boolean claimed,
-                                                    @PathVariable String user, @PathVariable String businessResponse,
-                                                    @PathVariable String dateTime) {
-        return databaseRepository.updateBusinessData(id, claimed, user, businessResponse, dateTime);
+    @PutMapping(path="/updateBusinessData")
+    public String updateBusinessData(@RequestBody BusinessData businessData) {
+        return databaseRepository.updateBusinessData(businessData.getId(), businessData.isClaimed(),
+                businessData.getUser(), businessData.getBusinessResponse(), businessData.getDateTime());
     }
 
     /*
      * Deletes a particular BusinessData from the database.
      */
-    @RequestMapping("/removeBusinessData/{id}")
-    public @ResponseBody boolean removeBusinessData(@PathVariable String id) {
-        return databaseRepository.removeBusinessData(id);
+    @DeleteMapping("/removeBusinessData")
+    public String removeBusinessData(@RequestBody BusinessData businessData) {
+        return databaseRepository.removeBusinessData(businessData.getId());
     }
 
 }

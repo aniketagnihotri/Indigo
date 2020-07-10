@@ -1,8 +1,0 @@
-spring:
-  jackson:
-    serialization:
-      INDENT_OUTPUT: true
-  datasource:
-    url: jdbc:mysql://aws-mysql-crowdsourcecovid19db.ckcvpvp5ilcr.us-east-2.rds.amazonaws.com:3306/crowdsourceCOVID?useSSL=false
-    username: root
-    password: password

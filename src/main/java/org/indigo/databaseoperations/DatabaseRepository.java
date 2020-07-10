@@ -50,39 +50,39 @@ public class DatabaseRepository {
     /*
      * Sends a POST request to the database to add a BusinessReview for a particular Business and returns true if successful.
      */
-    public boolean addBusinessReview(String id, String user, double rating, String review, String dateTime) {
+    public String addBusinessReview(String id, String user, double rating, String review, String dateTime) {
         final String sql = "INSERT INTO business_reviews (id, user, rating, review, dateTime) VALUES (?, ?, ?, ?, ?)";
         int dbReturn = jdbcTemplate.update(sql, new Object[] {id, user, rating, review, dateTime});
         if (dbReturn >= 1) {
-            return true;
+            return Boolean.TRUE.toString();
         } else {
-            return false;
+            return Boolean.FALSE.toString();
         }
     }
 
     /*
-     * Sends a POST request to the database to update a BusinessReview for a particular Business and returns true if successful.
+     * Sends a PUT request to the database to update a BusinessReview for a particular Business and returns true if successful.
      */
-    public boolean updateBusinessReview(String id, String user, double rating, String review, String dateTime) {
+    public String updateBusinessReview(String id, String user, double rating, String review, String dateTime) {
         final String sql = "UPDATE business_reviews SET rating = ?, review = ?, dateTime = ? WHERE id = ? && user = ?";
         int dbReturn = jdbcTemplate.update(sql, new Object[] {rating, review, dateTime, id, user});
         if (dbReturn >= 1) {
-            return true;
+            return Boolean.TRUE.toString();
         } else {
-            return false;
+            return Boolean.FALSE.toString();
         }
     }
 
     /*
-     * Sends a POST request to the database to delete a BusinessReview for a particular Business and returns true if successful.
+     * Sends a DELETE request to the database to delete a BusinessReview for a particular Business and returns true if successful.
      */
-    public boolean removeBusinessReview(String id, String user, String review) {
+    public String removeBusinessReview(String id, String user, String review) {
         final String sql = "DELETE FROM business_reviews WHERE (id = ? AND user = ? AND review = ?)";
         int dbReturn = jdbcTemplate.update(sql, id, user, review);
         if (dbReturn >= 1) {
-            return true;
+            return Boolean.TRUE.toString();
         } else {
-            return false;
+            return Boolean.FALSE.toString();
         }
     }
 
@@ -121,39 +121,39 @@ public class DatabaseRepository {
     /*
      * Sends a POST request to the database to add BusinessData for a particular Business and returns true if successful.
      */
-    public boolean addBusinessData(String id, boolean claimed, String user, String businessResponse, String dateTime) {
+    public String addBusinessData(String id, boolean claimed, String user, String businessResponse, String dateTime) {
         final String sql = "INSERT INTO business_data (id, claimed, user, businessResponse, dateTime) VALUES (?, ?, ?, ?, ?)";
         int dbReturn = jdbcTemplate.update(sql, new Object[] {id, claimed, user, businessResponse, dateTime});
         if (dbReturn >= 1) {
-            return true;
+            return Boolean.TRUE.toString();
         } else {
-            return false;
+            return Boolean.FALSE.toString();
         }
     }
 
     /*
-     * Sends a POST request to the database to update the BusinessData for a particular Business and returns true if successful.
+     * Sends a PUT request to the database to update the BusinessData for a particular Business and returns true if successful.
      */
-    public boolean updateBusinessData(String id, boolean claimed, String user, String businessResponse, String dateTime) {
+    public String updateBusinessData(String id, boolean claimed, String user, String businessResponse, String dateTime) {
         final String sql = "UPDATE business_data SET claimed = ?, user = ?, businessResponse = ?, dateTime = ? WHERE id = ?";
         int dbReturn = jdbcTemplate.update(sql, new Object[] {claimed, user, businessResponse, dateTime, id});
         if (dbReturn >= 1) {
-            return true;
+            return Boolean.TRUE.toString();
         } else {
-            return false;
+            return Boolean.FALSE.toString();
         }
     }
 
     /*
-     * Sends a POST request to the database to delete a BusinessData for a particular Business and returns true if successful.
+     * Sends a DELETE request to the database to delete a BusinessData for a particular Business and returns true if successful.
      */
-    public boolean removeBusinessData(String id) {
+    public String removeBusinessData(String id) {
         final String sql = "DELETE FROM business_data WHERE (id = ?)";
         int dbReturn = jdbcTemplate.update(sql, id);
         if (dbReturn >= 1) {
-            return true;
+            return Boolean.TRUE.toString();
         } else {
-            return false;
+            return Boolean.FALSE.toString();
         }
     }
 
