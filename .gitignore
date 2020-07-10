@@ -1,3 +1,6 @@
-# Don't track content of these folders
+# Don't track content of these folders and files
+.idea/
+target/
+IndiGo.iml
 src/main/frontend
 src/main/js/frontend/node
