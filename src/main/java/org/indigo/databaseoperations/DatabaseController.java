@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Collection;
+import java.util.List;
 
 @Controller
 @RequestMapping("/api/db")
@@ -21,7 +22,7 @@ public class DatabaseController {
      * Returns all BusinessReviews for a particular business ID.
      */
     @RequestMapping(path="/getBusinessReviews/{id}")
-    public @ResponseBody Collection<BusinessReview> getBusinessReviews(@PathVariable String id) {
+    public @ResponseBody List getBusinessReviews(@PathVariable String id) {
         return databaseRepository.getBusinessReviews(id);
     }
 
@@ -62,7 +63,7 @@ public class DatabaseController {
      * Returns all BusinessData for a particular business ID.
      */
     @RequestMapping(path="/getBusinessData/{id}")
-    public @ResponseBody Collection<BusinessData> getBusinessData(@PathVariable String id) {
+    public @ResponseBody List getBusinessData(@PathVariable String id) {
         return databaseRepository.getBusinessData(id);
     }
 
