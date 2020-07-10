@@ -1,1 +1,3 @@
 # Don't track content of these folders
+src/main/frontend
+src/main/js/frontend/node
