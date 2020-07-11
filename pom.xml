@@ -67,9 +67,9 @@
 
 <!--        bootstrap-->
         <dependency>
-            <groupId>org.webjars.npm</groupId>
-            <artifactId>react-bootstrap</artifactId>
-            <version>1.0.1</version>
+            <groupId>org.webjars</groupId>
+            <artifactId>bootstrap</artifactId>
+            <version>4.5.0</version>
         </dependency>
     </dependencies>
 
