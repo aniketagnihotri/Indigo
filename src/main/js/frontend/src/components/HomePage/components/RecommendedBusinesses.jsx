@@ -34,13 +34,16 @@ class RecommendedBusinesses extends Component {
         console.log(this.state.businesses[0])
         return (
             <ul>
-                {this.state.businesses.map(function (business, index) {
+                {this.state.businesses.length === 0 ? (
+                        <h1 className={"flexbox-container-img"}>Businesses are fetching...</h1>
+                    ) : (
+                    this.state.businesses.map(function (business, index) {
                     return (
                         <div>
                             <h1 className={"flexbox-container-img"}>{business.name}</h1>
                         </div>
                     )
-                })}
+                }))}
             </ul>
         );
     }
