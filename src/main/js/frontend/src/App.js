@@ -13,7 +13,9 @@ const App = () => {
         <div className={"App"}>
             <Router>
                 <Switch>
-                    <Route path="/AboutUs" component={AboutUs} />
+                    <Route path="/AboutUs">
+                        <AboutUs />
+                    </Route>
                     <Route path="/GetBusinesses/:searchTerm"
                            render={ props => <BusinessListingsPage { ...props } />}
                     />
