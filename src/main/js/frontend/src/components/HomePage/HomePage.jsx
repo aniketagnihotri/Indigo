@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
-import * as ReactBootStrap from "react-bootstrap"
+import { Jumbotron }from "react-bootstrap";
+import "./HomePage.css"
 import PageHeader from "../PageAttributes/PageHeader";
+import PageFooter from "../PageAttributes/PageFooter";
+import Searchbar from "../PageAttributes/Searchbar";
+import SearchFilter from "../PageAttributes/SearchFilter";
+import RecommendedBusinesses from "./components/RecommendedBusinesses";
 
 class HomePage extends Component {
 
@@ -8,7 +13,20 @@ class HomePage extends Component {
         return (
             <div>
                 <PageHeader />
-                <h1>home [age]!</h1>
+                <Jumbotron className={"jumbotron"}>
+                    <br /><br /><br /><br />
+                    <Searchbar />
+                    <br />
+                    <SearchFilter />
+                    <br /><br /><br /><br/>
+                    <RecommendedBusinesses />
+                    <br /><br /><br /><br /><br />
+                    <br /><br /><br /><br /><br />
+
+                    <br /><br /><br /><br /><br />
+                    <br /><br /><br /><br /><br />
+                </Jumbotron>
+                <PageFooter />
             </div>
         );
     }

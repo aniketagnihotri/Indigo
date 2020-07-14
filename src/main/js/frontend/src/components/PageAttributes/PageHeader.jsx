@@ -1,10 +1,6 @@
 import React, { Component } from 'react';
 import * as ReactBootStrap from "react-bootstrap"
 import "./Navbar.css"
-import {
-    BrowserRouter as Router,
-    Link
-} from "react-router-dom";
 
 class PageHeader extends Component {
     state = {
@@ -24,23 +20,21 @@ class PageHeader extends Component {
 
     render() {
         return (
-            <ReactBootStrap.Navbar className={"color-nav"} variant={"dark"}>
-                <Link to={"/home"}>
-                    <ReactBootStrap.Navbar.Brand href="#home" style={this.styleIcon}>indigo</ReactBootStrap.Navbar.Brand>
-                </Link>
+            <ReactBootStrap.Navbar className={"color-nav sticky-top"} variant={"dark"}>
+                <ReactBootStrap.Navbar.Brand href="/" style={this.styleIcon}>indigo</ReactBootStrap.Navbar.Brand>
                 <ReactBootStrap.Navbar.Collapse>
                     <ReactBootStrap.Navbar className={"ml-auto"}/>
                 </ReactBootStrap.Navbar.Collapse>
                 <ReactBootStrap.Nav className="mr-auto" style={this.styleTabs}>
-                    <Link to={"/aboutus"}>
-                        <ReactBootStrap.Nav.Link href="#aboutus">About us</ReactBootStrap.Nav.Link>
-                    </Link>
-                    <Link to={"/contactus"}>
-                        <ReactBootStrap.Nav.Link href="#contactus">Contact us</ReactBootStrap.Nav.Link>
-                    </Link>
-                    <Link to={"/login"}>
-                        <ReactBootStrap.Nav.Link href="#login">Login</ReactBootStrap.Nav.Link>
-                    </Link>
+                        <ReactBootStrap.Nav.Link href="/">  Home  </ReactBootStrap.Nav.Link>
+                        <ReactBootStrap.Nav.Link href="/AboutUs">  About us  </ReactBootStrap.Nav.Link>
+                        <ReactBootStrap.Nav.Link href="/ContactUs">  Contact us  </ReactBootStrap.Nav.Link>
+                        <ReactBootStrap.NavDropdown title="User  " >
+                            <ReactBootStrap.NavDropdown.Item href="#action/3.3">Your Info</ReactBootStrap.NavDropdown.Item>
+                            <ReactBootStrap.NavDropdown.Divider />
+                            <ReactBootStrap.NavDropdown.Item href="/Login">Login or Sign Out</ReactBootStrap.NavDropdown.Item>
+                        </ReactBootStrap.NavDropdown>
+                        <ReactBootStrap.Nav.Link href="/AboutUs">  GitHub  </ReactBootStrap.Nav.Link>
                 </ReactBootStrap.Nav>
             </ReactBootStrap.Navbar>
         );

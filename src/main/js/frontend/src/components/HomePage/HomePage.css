@@ -1,0 +1,11 @@
+.jumbotron {
+    background-image: url("./hunter-james-fAOqScBvMSc-unsplash.jpg");
+    background-size: cover;
+    background-repeat: no-repeat, repeat;
+    margin-bottom: 0px !important;
+}
+
+.restaurant-header {
+    background-color: indigo;
+    text-decoration-color: white;
+}

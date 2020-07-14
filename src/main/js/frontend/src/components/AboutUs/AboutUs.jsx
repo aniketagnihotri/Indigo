@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PageHeader from "../PageAttributes/PageHeader";
+import PageFooter from "../PageAttributes/PageFooter";
 
 class AboutUs extends Component {
 
@@ -8,6 +9,7 @@ class AboutUs extends Component {
             <div>
                 <PageHeader />
                 <h1>about us!</h1>
+                <PageFooter />
             </div>
         );
     }

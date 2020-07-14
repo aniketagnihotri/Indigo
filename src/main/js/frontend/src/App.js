@@ -5,29 +5,27 @@ import HomePage from "./components/HomePage/HomePage";
 import AboutUs from "./components/AboutUs/AboutUs";
 import ContactUs from "./components/ContactUs/ContactUs";
 import Login from "./components/Login/Login";
+import BusinessListingsPage from "./components/BusinessListingsPage/BusinessListingsPage";
+import BusinessPage from "./components/BusinessPage/BusinessPage"
 
-const PageHeaderRender = () => {
+const App = () => {
     return (
         <div className={"App"}>
             <Router>
                 <Switch>
-                    <Route path="/aboutus" component={AboutUs}>
-                        <AboutUs />
-                    </Route>
-                    <Route path="/contactus" component={ContactUs}>
-                        <ContactUs />
-                    </Route>
-                    <Route path="/login" component={Login}>
-                        <Login />
-                    </Route>
-                    <Route path="/" component={HomePage}>
-                        <HomePage />
-                    </Route>
+                    <Route path="/AboutUs" component={AboutUs} />
+                    <Route path="/GetBusinesses/:searchTerm"
+                           render={ props => <BusinessListingsPage { ...props } />}
+                    />
+                    <Route path="/GetBusiness" component={BusinessPage} />
+                    <Route path="/ContactUs" component={ContactUs} />
+                    <Route path="/Login" component={Login} />
+                    <Route path="/" component={HomePage} />
                 </Switch>
             </Router>
         </div>
     )
 }
 
-export default PageHeaderRender;
+export default App;
 
