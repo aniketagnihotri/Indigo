@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import  { Button } from "react-bootstrap";
-import './PageAttributes.css'
 import {Link} from "react-router-dom";
+import './PageAttributes.css'
 
 class Searchbar extends Component {
 
