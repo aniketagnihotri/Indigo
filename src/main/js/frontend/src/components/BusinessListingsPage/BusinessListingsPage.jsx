@@ -15,9 +15,10 @@ class BusinessListingsPage extends Component {
                 <PageHeader />
                 <br />
                 <Searchbar />
-                <SearchFilter />
-                <h6>Search term: {this.props.match.params.searchTerm}</h6>
                 <br />
+                <SearchFilter />
+                <br />
+                <h6>Showing results for "{this.props.match.params.searchTerm}"</h6>
                 <PageFooter />
             </div>
         );

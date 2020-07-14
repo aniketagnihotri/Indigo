@@ -48,10 +48,12 @@ class RecommendedBusinesses extends Component {
                                 }>
                                     <Image src={business.image_url} style={ { border: "2px solid black" }}alt={"Image preview here"} width={365} height={250} mode='fit' />
                                     <h6>{business.name}</h6>
-                                    <p class="lead" style={ { marginLeft: 10, fontSize: 14, textAlign: "left", lineHeight: -1 } }> Yelp Rating: {business.rating}
-                                        <br/> Yelp Category: {business.categories[0]}
-                                        <br/> Price: {business.price}
-                                        <br/> Address: {business.displayAddress}
+                                    <p class="lead" style={ { marginLeft: 10, fontSize: 14, textAlign: "left", lineHeight: -1 } }>
+                                        Our Rating: Not Available
+                                        <br />Yelp Rating: {business.rating}
+                                        <br/>Yelp Category: {business.categories[0]}
+                                        <br/>Price: {business.price}
+                                        <br/>Address: {business.displayAddress}
                                     </p>
                                 </Box>
                             </Link>
