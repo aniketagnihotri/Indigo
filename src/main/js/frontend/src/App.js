@@ -18,8 +18,9 @@ const App = () => {
                     </Route>
                     <Route path="/GetBusinesses/:searchTerm"
                            render={ props => <BusinessListingsPage { ...props } />}
-                    />
-                    <Route path="/GetBusiness" component={BusinessPage} />
+                        />
+                    <Route path="/GetBusiness/:id" render={ props => <BusinessPage { ...props } />}
+                        />
                     <Route path="/ContactUs" component={ContactUs} />
                     <Route path="/Login" component={Login} />
                     <Route path="/" component={HomePage} />

@@ -16,18 +16,14 @@ class HomePage extends Component {
                     <PageHeaderHome/>
                     <br /><br /><br /><br />
                     <br /><br /><br /><br/>
-                    <br /><br />
                     <Searchbar />
                     <br />
                     <SearchFilter />
                     <br /><br /><br /><br/>
-                    <RecommendedBusinesses />
-                    <br /><br /><br /><br /><br />
-                    <br /><br /><br /><br /><br />
-
-                    <br /><br /><br /><br /><br />
-                    <br /><br /><br /><br /><br />
                 </Jumbotron>
+                <br/>
+                <RecommendedBusinesses />
+                <br /><br />
                 <PageFooter />
             </div>
         );

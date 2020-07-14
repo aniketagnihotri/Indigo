@@ -1,14 +1,12 @@
 import React, { Component } from 'react';
 import PageHeader from "../PageAttributes/PageHeader";
 import Searchbar from "../PageAttributes/Searchbar";
+import SearchFilter from "../PageAttributes/SearchFilter";
 import PageFooter from "../PageAttributes/PageFooter";
 
 class BusinessListingsPage extends Component {
 
     componentDidMount () {
-        console.log(this.props)
-        console.log(this.props.match.params.searchTerm)
-        // const { searchTerm } = this.props.match.params.searchTerm
     }
 
         render() {
@@ -17,6 +15,7 @@ class BusinessListingsPage extends Component {
                 <PageHeader />
                 <br />
                 <Searchbar />
+                <SearchFilter />
                 <h6>Search term: {this.props.match.params.searchTerm}</h6>
                 <br />
                 <PageFooter />

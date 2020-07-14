@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import "./RecommendedBusinesses.css"
+import {Box} from "@material-ui/core";
+import Image from "react-bootstrap/Image";
+import {Link} from "react-router-dom";
 
 class RecommendedBusinesses extends Component {
 
@@ -12,7 +15,7 @@ class RecommendedBusinesses extends Component {
     }
 
     componentDidMount() {
-        fetch(`api/yelp/searchBusinessListingRandom/3`, {
+        fetch(`api/yelp/searchBusinessListingRandom/12`, {
             method: 'GET',
             headers : {
                 'Content-Type': 'application/json',
@@ -23,28 +26,39 @@ class RecommendedBusinesses extends Component {
             .then(results => this.setState({ "businesses" : results }))
     }
 
-    style = {
-        height: 100,
-        width: 100,
-        border: 2
-    }
-
-
     render() {
         console.log(this.state.businesses[0])
         return (
-            <ul>
-                {this.state.businesses.length === 0 ? (
-                        <h6 className={"flexbox-container-img"}>Businesses are fetching...</h6>
-                    ) : (
-                    this.state.businesses.map(function (business, index) {
-                    return (
-                        <div>
-                            <h6 className={"flexbox-container-img"}>{business.name}</h6>
-                        </div>
-                    )
-                }))}
-            </ul>
+            <Box style={ { display: "inline-block"} }>
+                <ul>
+                    <h4>Check out these businesses!</h4>
+                    {this.state.businesses.length === 0 ? (
+                            <h6 className={"flexbox-container-img"}>Businesses are fetching...</h6>
+                        ) : (
+                        this.state.businesses.map(function (business, index) {
+                        return (
+                            <Link to={{
+                                pathname: "/GetBusiness/" + business.id,
+                            }} className={"link"}>
+                                <Box style={
+                                    { backgroundColor: "#D3D3D3", boxShadow: 2,
+                                        marginTop: 10, marginLeft: 40,
+                                        marginRight: 40, marginBottom: 40,
+                                        display: "inline-block" }
+                                }>
+                                    <Image src={business.image_url} style={ { border: "2px solid black" }}alt={"Image preview here"} width={365} height={250} mode='fit' />
+                                    <h6>{business.name}</h6>
+                                    <p class="lead" style={ { marginLeft: 10, fontSize: 14, textAlign: "left", lineHeight: -1 } }> Yelp Rating: {business.rating}
+                                        <br/> Yelp Category: {business.categories[0]}
+                                        <br/> Price: {business.price}
+                                        <br/> Address: {business.displayAddress}
+                                    </p>
+                                </Box>
+                            </Link>
+                        )
+                    }))}
+                </ul>
+            </Box>
         );
     }
 
