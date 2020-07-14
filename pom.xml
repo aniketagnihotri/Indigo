@@ -78,6 +78,13 @@
             <artifactId>react-router</artifactId>
             <version>2.4.0</version>
         </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.webjars.npm/react-scripts -->
+        <dependency>
+            <groupId>org.webjars.npm</groupId>
+            <artifactId>react-scripts</artifactId>
+            <version>1.0.14</version>
+        </dependency>
     </dependencies>
 
     <build>
