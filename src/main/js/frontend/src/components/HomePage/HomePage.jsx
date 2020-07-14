@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Jumbotron }from "react-bootstrap";
 import "./HomePage.css"
-import PageHeader from "../PageAttributes/PageHeader";
+import PageHeaderHome from "../PageAttributes/PageHeaderHome";
 import PageFooter from "../PageAttributes/PageFooter";
 import Searchbar from "../PageAttributes/Searchbar";
 import SearchFilter from "../PageAttributes/SearchFilter";
@@ -12,9 +12,11 @@ class HomePage extends Component {
     render() {
         return (
             <div>
-                <PageHeader />
                 <Jumbotron className={"jumbotron"}>
+                    <PageHeaderHome/>
                     <br /><br /><br /><br />
+                    <br /><br /><br /><br/>
+                    <br /><br />
                     <Searchbar />
                     <br />
                     <SearchFilter />

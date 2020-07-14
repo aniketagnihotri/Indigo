@@ -1,7 +1,8 @@
 .jumbotron {
-    background-image: url("./hunter-james-fAOqScBvMSc-unsplash.jpg");
+    background-image: url("./josh-hild-PaahVcW9WAs-unsplash.jpg");
     background-size: cover;
     background-repeat: no-repeat, repeat;
+    margin-top: 0px !important;
     margin-bottom: 0px !important;
 }
 

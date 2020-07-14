@@ -35,12 +35,12 @@ class RecommendedBusinesses extends Component {
         return (
             <ul>
                 {this.state.businesses.length === 0 ? (
-                        <h1 className={"flexbox-container-img"}>Businesses are fetching...</h1>
+                        <h6 className={"flexbox-container-img"}>Businesses are fetching...</h6>
                     ) : (
                     this.state.businesses.map(function (business, index) {
                     return (
                         <div>
-                            <h1 className={"flexbox-container-img"}>{business.name}</h1>
+                            <h6 className={"flexbox-container-img"}>{business.name}</h6>
                         </div>
                     )
                 }))}
