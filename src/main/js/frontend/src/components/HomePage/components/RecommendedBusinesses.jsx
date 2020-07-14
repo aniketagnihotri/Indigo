@@ -12,7 +12,6 @@ class RecommendedBusinesses extends Component {
     }
 
     async componentDidMount() {
-        // fetch("https://indigo04.herokuapp.com/api/yelp/searchBusinessListingRandom/3")
         fetch(`api/yelp/searchBusinessListingRandom/3`, {
             method: 'GET',
             headers : {
