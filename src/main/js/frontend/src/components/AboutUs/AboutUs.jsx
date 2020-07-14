@@ -3,6 +3,7 @@ import { List, ListItem, Divider, ListItemText } from "@material-ui/core/";
 import PageHeader from "../PageAttributes/PageHeader";
 import PageFooter from "../PageAttributes/PageFooter";
 import Searchbar from "../PageAttributes/Searchbar";
+import SearchFilter from "../PageAttributes/SearchFilter";
 
 class AboutUs extends Component {
 
@@ -11,6 +12,8 @@ class AboutUs extends Component {
             <div>
                 <PageHeader />
                 <Searchbar />
+                <br />
+                <SearchFilter />
                 <br />
                 <h1>about us!</h1>
                 <List component="nav" aria-label="mailbox folders">
