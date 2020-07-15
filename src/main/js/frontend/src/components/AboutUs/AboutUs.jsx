@@ -4,6 +4,7 @@ import PageHeader from "../PageAttributes/PageHeader";
 import PageFooter from "../PageAttributes/PageFooter";
 import Searchbar from "../PageAttributes/Searchbar";
 import SearchFilter from "../PageAttributes/SearchFilter";
+import {Link} from "react-router-dom";
 
 class AboutUs extends Component {
 
@@ -15,11 +16,22 @@ class AboutUs extends Component {
                 <br />
                 <SearchFilter />
                 <br />
-                <h1>about us!</h1>
+                <h1 style={ { marginLeft: 20, textAlign: "left"} }>About us!</h1>
+                <p style={ { marginLeft: 40, marginRight: 40, textAlign: "left"} }>
+                    sample text about ussample text about ussample text about us
+                    sample text about ussample text about ussample text about ussample text about us
+                    sample text about ussample text about ussample text about ussample text about us
+                    sample text about ussample text about ussample text about ussample text about us
+                    sample text about ussample text about ussample text about ussample text about us
+                </p>
                 <List component="nav" aria-label="mailbox folders">
-                    <ListItem button>
-                        <ListItemText primary="Inbox" />
-                    </ListItem>
+                    <Link to={{
+                        pathname: "/Home"
+                    }}>
+                        <ListItem button>
+                            <ListItemText>hello</ListItemText>
+                        </ListItem>
+                    </Link>
                     <Divider />
                     <ListItem button divider>
                         <ListItemText primary="Drafts" />
