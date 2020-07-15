@@ -33,7 +33,7 @@ public class YelpBusiness {
         try {
             this.id = yelpResponse.getString("id");
         } catch (JSONException e) {
-            e.printStackTrace();
+            this.id = "ID not available";
         }
     }
 
@@ -45,7 +45,7 @@ public class YelpBusiness {
         try {
             this.alias = yelpResponse.getString("alias");
         } catch (JSONException e) {
-            e.printStackTrace();
+            this.alias = "Alias not available";
         }
     }
 
@@ -57,7 +57,7 @@ public class YelpBusiness {
         try {
             this.name = yelpResponse.getString("name");
         } catch (JSONException e) {
-            e.printStackTrace();
+            this.name = "Name not available";
         }
     }
 
@@ -69,7 +69,7 @@ public class YelpBusiness {
         try {
             isClosed = yelpResponse.getBoolean("is_closed");
         } catch (JSONException e) {
-            e.printStackTrace();
+            this.isClosed = true;
         }
     }
 
@@ -81,7 +81,7 @@ public class YelpBusiness {
         try {
             this.url = yelpResponse.getString("url");
         } catch (JSONException e) {
-            e.printStackTrace();
+            this.url = "URL not provided";
         }
     }
 
@@ -93,7 +93,7 @@ public class YelpBusiness {
         try {
             this.displayPhone = yelpResponse.getString("display_phone");
         } catch (JSONException e) {
-            e.printStackTrace();
+            this.displayPhone = "Phone not provided";
         }
     }
 
@@ -111,7 +111,7 @@ public class YelpBusiness {
             }
             this.categories = categories;
         } catch (JSONException e) {
-            e.printStackTrace();
+            this.categories = null;
         }
     }
 
@@ -123,7 +123,7 @@ public class YelpBusiness {
         try {
             this.rating = yelpResponse.getDouble("rating");
         } catch (JSONException e) {
-            e.printStackTrace();
+            this.rating = 0.0;
         }
     }
 
@@ -140,7 +140,7 @@ public class YelpBusiness {
             }
             this.photos = photos;
         } catch (JSONException e) {
-            e.printStackTrace();
+            this.photos = null;
         }
     }
 
@@ -152,7 +152,7 @@ public class YelpBusiness {
         try {
             this.price = yelpResponse.getString("price");
         } catch (JSONException e) {
-            e.printStackTrace();
+            this.price = "Price not available";
         }
     }
 
@@ -168,7 +168,7 @@ public class YelpBusiness {
             locationArray[1] = location.getString(1);
             this.displayAddress = locationArray;
         } catch (JSONException e) {
-            e.printStackTrace();
+            this.displayAddress = new String[]{"Address not available", ""};
         }
     }
 

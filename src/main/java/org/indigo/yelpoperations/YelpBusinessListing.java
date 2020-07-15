@@ -115,7 +115,8 @@ public class YelpBusinessListing {
 
     public void setPrice(JSONObject yelpResponse) {
         try {
-            this.price = yelpResponse.getString("price");
+            this.price = yelpResponse.
+                    getString("price");
         } catch (JSONException e) {
             e.printStackTrace();
         }

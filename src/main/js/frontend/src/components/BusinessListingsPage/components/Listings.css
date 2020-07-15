@@ -1,0 +1,13 @@
+.flex {
+    background-color: white;
+    margin: 4px;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    color: black;
+}
+
+.logo {
+    float: left;
+    padding-right: 20px;
+}

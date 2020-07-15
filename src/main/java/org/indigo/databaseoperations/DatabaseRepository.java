@@ -132,6 +132,10 @@ public class DatabaseRepository {
                 return resultSet.getDouble("rating");
             }
         }, id);
+        if (businessRating.size() == 0) {
+            double rating = (Math.random() * (2)) + 3;
+            addBusinessData(id, rating, false, null, null, null);
+        }
         return businessRating;
     }
 
