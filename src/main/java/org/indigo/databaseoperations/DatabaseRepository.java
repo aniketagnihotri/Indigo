@@ -98,6 +98,7 @@ public class DatabaseRepository {
         public BusinessData mapRow(ResultSet resultSet, int i) throws SQLException {
             BusinessData businessData = new BusinessData();
             businessData.setId(resultSet.getString("id"));
+            businessData.setRating(resultSet.getDouble("rating"));
             businessData.setClaimed(resultSet.getBoolean("claimed"));
             businessData.setUser(resultSet.getString("user"));
             businessData.setBusinessResponse(resultSet.getString("businessResponse"));
@@ -110,10 +111,11 @@ public class DatabaseRepository {
      * Sends a GET request to the database for the BusinessData for a particular Business and organizes them in a List.
      */
     public List getBusinessData(String id) {
-        final String sql = "SELECT id, claimed, user, businessResponse, dateTime FROM business_data WHERE id = ?";
+        final String sql = "SELECT id, rating, claimed, user, businessResponse, dateTime FROM business_data WHERE id = ?";
         List<BusinessData> businessDataList = jdbcTemplate.query(sql, new DatabaseRepository.BusinessDataRowMapper(), id);
         if (businessDataList.size() == 0) {
-            addBusinessData(id, false, null, null, null);
+            double rating = (Math.random() * (2)) + 3;
+            addBusinessData(id, rating, false, null, null, null);
         }
         return businessDataList;
     }
@@ -121,9 +123,9 @@ public class DatabaseRepository {
     /*
      * Sends a POST request to the database to add BusinessData for a particular Business and returns true if successful.
      */
-    public String addBusinessData(String id, boolean claimed, String user, String businessResponse, String dateTime) {
-        final String sql = "INSERT INTO business_data (id, claimed, user, businessResponse, dateTime) VALUES (?, ?, ?, ?, ?)";
-        int dbReturn = jdbcTemplate.update(sql, new Object[] {id, claimed, user, businessResponse, dateTime});
+    public String addBusinessData(String id, double rating, boolean claimed, String user, String businessResponse, String dateTime) {
+        final String sql = "INSERT INTO business_data (id, rating, claimed, user, businessResponse, dateTime) VALUES (?, ?, ?, ?, ?, ?)";
+        int dbReturn = jdbcTemplate.update(sql, new Object[] {id, rating, claimed, user, businessResponse, dateTime});
         if (dbReturn >= 1) {
             return Boolean.TRUE.toString();
         } else {
@@ -134,9 +136,9 @@ public class DatabaseRepository {
     /*
      * Sends a PUT request to the database to update the BusinessData for a particular Business and returns true if successful.
      */
-    public String updateBusinessData(String id, boolean claimed, String user, String businessResponse, String dateTime) {
-        final String sql = "UPDATE business_data SET claimed = ?, user = ?, businessResponse = ?, dateTime = ? WHERE id = ?";
-        int dbReturn = jdbcTemplate.update(sql, new Object[] {claimed, user, businessResponse, dateTime, id});
+    public String updateBusinessData(String id, double rating, boolean claimed, String user, String businessResponse, String dateTime) {
+        final String sql = "UPDATE business_data SET rating = ? claimed = ?, user = ?, businessResponse = ?, dateTime = ? WHERE id = ?";
+        int dbReturn = jdbcTemplate.update(sql, new Object[] {rating, claimed, user, businessResponse, dateTime, id});
         if (dbReturn >= 1) {
             return Boolean.TRUE.toString();
         } else {

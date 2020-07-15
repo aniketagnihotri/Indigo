@@ -23,6 +23,7 @@ class PageHeader extends Component {
                 <Link to={"/"}>
                     <p href="#home" style={this.styleIcon}>indigo</p>
                 </Link>
+                <h6 style={{color:'gray'}}>Contact us at help.indigo04@gmail.com!</h6>
             </div>
         );
     }

@@ -3,6 +3,7 @@ import "./RecommendedBusinesses.css"
 import {Box} from "@material-ui/core";
 import Image from "react-bootstrap/Image";
 import {Link} from "react-router-dom";
+import IndigoRating from "./IndigoRating";
 
 class RecommendedBusinesses extends Component {
 
@@ -27,7 +28,7 @@ class RecommendedBusinesses extends Component {
     }
 
     render() {
-        console.log(this.state.businesses[0])
+
         return (
             <Box style={ { display: "inline-block"} }>
                 <ul>
@@ -36,7 +37,8 @@ class RecommendedBusinesses extends Component {
                             <h6 className={"flexbox-container-img"}>Businesses are being fetched...</h6>
                         ) : (
                         this.state.businesses.map(function (business, index) {
-                        return (
+
+                            return (
                             <Link to={{
                                 pathname: "/GetBusiness/" + business.id,
                             }} className={"link"}>
@@ -44,13 +46,13 @@ class RecommendedBusinesses extends Component {
                                     { backgroundColor: "#D3D3D3", boxShadow: 2,
                                         marginTop: 10, marginLeft: 40,
                                         marginRight: 40, marginBottom: 40,
-                                        display: "inline-block" }
+                                        display: "inline-block", border: "1px solid black", borderRadius: 5 }
                                 }>
                                     <Image src={business.image_url} style={ { border: "2px solid black" }}
                                            alt={"Image preview here"} width={375} height={250} mode='fit' />
                                     <h6>{business.name}</h6>
-                                    <p class="lead" style={ { marginLeft: 10, fontSize: 14, textAlign: "left", lineHeight: -1 } }>
-                                        Our Rating: Not Available
+                                    <IndigoRating id={business.id}/>
+                                    <p className="lead" style={ { marginLeft: 10, fontSize: 14, textAlign: "left", lineHeight: -1 } }>
                                         <br />Yelp Rating: {business.rating}
                                         <br/>Yelp Category: {business.categories[0]}
                                         <br/>Price: {business.price}

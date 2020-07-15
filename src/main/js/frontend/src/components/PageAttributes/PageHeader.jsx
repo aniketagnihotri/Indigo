@@ -18,7 +18,6 @@ class PageHeader extends Component {
     };
 
     styleIcon = {
-
         padding: 10,
         fontSize: 50,
     };

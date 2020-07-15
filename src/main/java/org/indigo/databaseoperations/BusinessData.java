@@ -1,8 +1,12 @@
 package org.indigo.databaseoperations;
 
+/*
+ * Class for holding the details for BusinessData.
+ */
 public class BusinessData {
 
     private String id;
+    private double rating;
     private boolean claimed;
     private String user;
     private String businessResponse;
@@ -17,6 +21,14 @@ public class BusinessData {
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    public double getRating() {
+        return rating;
+    }
+
+    public void setRating(double rating) {
+        this.rating = rating;
     }
 
     public boolean isClaimed() {
