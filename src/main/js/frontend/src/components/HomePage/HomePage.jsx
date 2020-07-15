@@ -12,7 +12,7 @@ class HomePage extends Component {
     render() {
         return (
             <div>
-                <Jumbotron className={"jumbotron"}>
+                <Jumbotron className={"jumbotron-home"}>
                     <PageHeaderHome/>
                     <br /><br /><br /><br />
                     <br /><br /><br /><br/>
@@ -20,8 +20,9 @@ class HomePage extends Component {
                     <br />
                     <SearchFilter />
                     <br /><br /><br /><br/>
+                    <br />
                 </Jumbotron>
-                <br/>
+                <br />
                 <RecommendedBusinesses />
                 <br /><br />
                 <PageFooter />

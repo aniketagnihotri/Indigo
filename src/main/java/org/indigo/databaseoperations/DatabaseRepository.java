@@ -121,6 +121,21 @@ public class DatabaseRepository {
     }
 
     /*
+     * Sends a GET request to the database for the rating in the BusinessData for a particular Business and organizes it in a
+     * singular-element List.
+     */
+    public List<Double> getIndigoBusinessRating(String id) {
+        final String sql = "SELECT rating FROM business_data WHERE id = ?";
+        List<Double> businessRating = jdbcTemplate.query(sql, new RowMapper<Double>() {
+            @Override
+            public Double mapRow(ResultSet resultSet, int i) throws SQLException {
+                return resultSet.getDouble("rating");
+            }
+        }, id);
+        return businessRating;
+    }
+
+    /*
      * Sends a POST request to the database to add BusinessData for a particular Business and returns true if successful.
      */
     public String addBusinessData(String id, double rating, boolean claimed, String user, String businessResponse, String dateTime) {

@@ -24,7 +24,7 @@ class PageHeader extends Component {
 
     render() {
         return (
-            <ReactBootStrap.Navbar className={"color-nav sticky-top"} variant={"light"}>
+            <ReactBootStrap.Navbar className={"color-nav fixed-top"} variant={"light"}>
                 <ReactBootStrap.Navbar.Brand href="/" style={this.styleIcon}>indigo</ReactBootStrap.Navbar.Brand>
                 <ReactBootStrap.Navbar.Collapse>
                     <ReactBootStrap.Navbar className={"ml-auto"}/>

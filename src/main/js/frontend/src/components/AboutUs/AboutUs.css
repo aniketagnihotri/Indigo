@@ -1,0 +1,8 @@
+.jumbotron-about {
+    background-image: url("./ryan-de-hamer-yilpftAIsSA-unsplash.jpg");
+    background-size: cover;
+    background-repeat: no-repeat, repeat;
+    margin-top: 0px !important;
+    margin-bottom: 20px !important;
+    background-position-y: -500px;
+}

@@ -65,6 +65,14 @@ public class DatabaseController {
     }
 
     /*
+     * Returns solely the rating in the BusinessData for a particular business ID.
+     */
+    @GetMapping(path="/getIndigoBusinessRating/{id}")
+    public @ResponseBody List getIndigoBusinessRating(@PathVariable String id) {
+        return databaseRepository.getIndigoBusinessRating(id);
+    }
+
+    /*
      * Sends a new BusinessData to the database with several pieces of information.
      */
     @PostMapping(path="/addBusinessData")
