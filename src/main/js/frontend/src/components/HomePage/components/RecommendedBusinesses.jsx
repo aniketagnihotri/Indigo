@@ -33,7 +33,7 @@ class RecommendedBusinesses extends Component {
                 <ul>
                     <h4>Check out these businesses!</h4>
                     {this.state.businesses.length === 0 ? (
-                            <h6 className={"flexbox-container-img"}>Businesses are fetching...</h6>
+                            <h6 className={"flexbox-container-img"}>Businesses are being fetched...</h6>
                         ) : (
                         this.state.businesses.map(function (business, index) {
                         return (
@@ -46,7 +46,8 @@ class RecommendedBusinesses extends Component {
                                         marginRight: 40, marginBottom: 40,
                                         display: "inline-block" }
                                 }>
-                                    <Image src={business.image_url} style={ { border: "2px solid black" }}alt={"Image preview here"} width={365} height={250} mode='fit' />
+                                    <Image src={business.image_url} style={ { border: "2px solid black" }}
+                                           alt={"Image preview here"} width={375} height={250} mode='fit' />
                                     <h6>{business.name}</h6>
                                     <p class="lead" style={ { marginLeft: 10, fontSize: 14, textAlign: "left", lineHeight: -1 } }>
                                         Our Rating: Not Available
