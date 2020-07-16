@@ -53,6 +53,7 @@
     "react-dom": "^16.13.1",
     "react-native": "^0.63.0",
     "react-router-dom": "^5.2.0",
+    "react-simple-image-slider": "^1.0.4",
     "resolve": "1.15.0",
     "resolve-url-loader": "3.1.1",
     "sass-loader": "8.0.2",
