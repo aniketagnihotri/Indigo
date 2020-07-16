@@ -58,7 +58,7 @@ class RecommendedBusinesses extends Component {
                                             <br />Yelp Rating: {business.rating}
                                             <br/>Yelp Category: {business.categories[0]}
                                             <br/>Price: {business.price}
-                                            <br/>Street Address: {business.displayAddress[0]}}
+                                            <br/>Street Address: {business.displayAddress[0]}
                                         </p>
                                     </Box>
                                 </Link>
