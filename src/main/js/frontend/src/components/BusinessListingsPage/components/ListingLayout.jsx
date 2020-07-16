@@ -51,9 +51,8 @@ class ListingLayout extends Component {
                                     }>
                                         <br />Yelp Rating: {business.rating}
                                         <br/>Price: {business.price}
-                                        <br/>Address: {business.displayAddress[0]}, {business.displayAddress[1]}
+                                        <br/>Street Address: {business.displayAddress[0]}
                                     </p>
-
                                 </div>
                             </div>
                         </Link>
