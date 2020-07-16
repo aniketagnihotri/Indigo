@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import {Button, Image} from "react-bootstrap";
 import SimpleImageSlider from "react-simple-image-slider";
 import { ListItem } from "@material-ui/core";
+import "./BusinessData.css"
 import IndigoRating from "../../PageAttributes/IndigoRating";
 import BusinessResponse from "./BusinessResponse";
 
@@ -37,6 +38,7 @@ class BusinessDataLayout extends Component {
         return (
             <ListItem button>
                 <div className='flex'>
+
                     <div style={ { border: "2px solid black" } }>
                         <SimpleImageSlider
                             width={800}
@@ -74,7 +76,7 @@ class BusinessDataLayout extends Component {
                     <div style={
                         { position: "absolute", right: 0,
                             bottom: 0, paddingRight: 60,
-                            paddingBottom: 60, textAlign: "right" }
+                            paddingBottom: 60, textAlign: "right", display: "column" }
                     }>
                         <a href={business.url}>
                             <Button type="submit">

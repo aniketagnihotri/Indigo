@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {Box, List} from "@material-ui/core";
 import ListingLayout from "../../BusinessListingsPage/components/ListingLayout";
+import {Button} from "react-bootstrap";
 
 class BusinessData extends Component {
 
@@ -38,9 +39,9 @@ class BusinessData extends Component {
 
                             function getClaimed(claimed) {
                                 if (claimed === true) {
-                                    return "was claimed on " + response.dateTime + " by " + response.user
+                                    return "Business was claimed on " + response.dateTime + " by " + response.user
                                 }
-                                return "is not claimed"
+                                return <Button type="submit">Claim this business</Button>
                             }
 
                             return (
@@ -51,7 +52,7 @@ class BusinessData extends Component {
                                     }>
                                         COVID-19 Business Response:
                                         <br /><h6>{response.businessResponse}</h6>
-                                        <br /><br/>Business {getClaimed(response.claimed)}
+                                        <br /><br/>{getClaimed(response.claimed)}
                                     </p>
                                 </div>
                             );
