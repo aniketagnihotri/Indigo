@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import {Jumbotron} from "react-bootstrap";
-import  { Box, List } from "@material-ui/core";
 import PageHeader from "../PageAttributes/PageHeader";
 import Searchbar from "../PageAttributes/Searchbar";
 import SearchFilter from "../PageAttributes/SearchFilter";
@@ -13,7 +12,7 @@ class BusinessListingsPage extends Component {
         super(props);
 
         this.state = {
-                searchTerm: this.props.match.params.searchTerm
+            searchTerm: this.props.match.params.searchTerm
         }
     }
 

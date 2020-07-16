@@ -18,6 +18,8 @@ public class DatabaseRepository {
     @Autowired
     private JdbcTemplate jdbcTemplate;
 
+    final String stockResponse = "This business has pledged to keep its customers safe amid COVID-19.";
+
     /*
      * Beginning of BusinessReview repository.
      */
@@ -113,10 +115,6 @@ public class DatabaseRepository {
     public List getBusinessData(String id) {
         final String sql = "SELECT id, rating, claimed, user, businessResponse, dateTime FROM business_data WHERE id = ?";
         List<BusinessData> businessDataList = jdbcTemplate.query(sql, new DatabaseRepository.BusinessDataRowMapper(), id);
-        if (businessDataList.size() == 0) {
-            double rating = (Math.random() * (2)) + 3;
-            addBusinessData(id, rating, false, null, null, null);
-        }
         return businessDataList;
     }
 
@@ -134,7 +132,7 @@ public class DatabaseRepository {
         }, id);
         if (businessRating.size() == 0) {
             double rating = (Math.random() * (2)) + 3;
-            addBusinessData(id, rating, false, null, null, null);
+            addBusinessData(id, rating, false, null, stockResponse, null);
         }
         return businessRating;
     }

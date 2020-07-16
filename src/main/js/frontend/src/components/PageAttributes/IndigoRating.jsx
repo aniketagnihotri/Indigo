@@ -26,18 +26,18 @@ class RecommendedBusinesses extends Component {
 
         return (
             <div>
-                    {this.state.business_rating.length === 0 ? (
-                        <p className="lead" style={ { marginBottom: 0, fontSize: 16, textAlign: "left", lineHeight: -1 } }>
-                            Our Rating: No ratings yet!
-                        </p>
-                    ) : (
-                        this.state.business_rating.map(function (business, index) {
-                            return (
-                                <p className="lead" style={ { marginBottom: 0, fontSize: 16, textAlign: "left", lineHeight: -1 } }>
-                                    Our Rating: {business}
-                                </p>
-                            );
-                        }))}
+                {this.state.business_rating.length === 0 ? (
+                    <p className="lead" style={ { marginBottom: 0, fontSize: 16, textAlign: "left", lineHeight: -1 } }>
+                        Our Rating: No ratings yet!
+                    </p>
+                ) : (
+                    this.state.business_rating.map(function (business, index) {
+                        return (
+                            <p className="lead" style={ { marginBottom: 0, fontSize: 16, textAlign: "left", lineHeight: -1 } }>
+                                Our Rating: {business}
+                            </p>
+                        );
+                    }))}
             </div>
         );
     }

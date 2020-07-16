@@ -39,10 +39,8 @@ class ListingData extends Component {
                     {
                         position: "absolute", left: 0, marginLeft: 30
                     } }>
-                    <h3>erolerolerolerolerolerolerolerol</h3>
-                    <h3>erol</h3>
-                    <h3>erol</h3>
-                    <h3>erol</h3>
+                    <h3>Filters</h3>
+
                 </Box>
                 {this.state.businesses.length === 0 ? (
                     <h2>
@@ -53,14 +51,13 @@ class ListingData extends Component {
                         return (
                             <Box style={
                                 {
-                                    boxShadow: 2,
-                                    marginLeft: 400,
+                                    boxShadow: 2, marginLeft: 400,
                                     marginRight: 50, marginBottom: 40,
                                     borderRadius: 5
                                 }
                             }>
                                 <List component="nav" aria-label="mailbox folders">
-                                    <ListingLayout business={business}/>
+                                    <ListingLayout business={business} />
                                 </List>
                             </Box>
                         );

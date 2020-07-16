@@ -50,8 +50,8 @@ class ListingLayout extends Component {
                                             textAlign: "left", lineHeight: -1 }
                                     }>
                                         <br />Yelp Rating: {business.rating}
-                                        <br/>Price: {business.price}
-                                        <br/>Street Address: {business.displayAddress[0]}
+                                        <br />Price: {business.price}
+                                        <br />Street Address: {business.displayAddress[0]}
                                     </p>
                                 </div>
                             </div>
