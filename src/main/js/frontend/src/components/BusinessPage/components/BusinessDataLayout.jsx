@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import {Button, Image} from "react-bootstrap";
+import { Button } from "react-bootstrap";
 import SimpleImageSlider from "react-simple-image-slider";
 import { ListItem } from "@material-ui/core";
 import "./BusinessData.css"

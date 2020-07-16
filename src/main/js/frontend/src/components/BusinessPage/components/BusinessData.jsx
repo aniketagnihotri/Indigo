@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Box, List} from "@material-ui/core";
+import { Box } from "@material-ui/core";
 import BusinessDataLayout from "./BusinessDataLayout";
 
 class BusinessData extends Component {

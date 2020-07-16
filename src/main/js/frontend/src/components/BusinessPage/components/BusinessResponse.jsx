@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import {Box, List} from "@material-ui/core";
-import ListingLayout from "../../BusinessListingsPage/components/ListingLayout";
 import {Button} from "react-bootstrap";
 
 class BusinessData extends Component {
