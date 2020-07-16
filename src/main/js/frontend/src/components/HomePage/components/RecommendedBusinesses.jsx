@@ -3,7 +3,7 @@ import "./RecommendedBusinesses.css"
 import {Box} from "@material-ui/core";
 import Image from "react-bootstrap/Image";
 import {Link} from "react-router-dom";
-import IndigoRating from "./IndigoRating";
+import IndigoRating from "../../PageAttributes/IndigoRating";
 
 class RecommendedBusinesses extends Component {
 
@@ -50,8 +50,10 @@ class RecommendedBusinesses extends Component {
                                     }>
                                         <Image src={business.image_url} style={ { border: "2px solid black" }}
                                                alt={"Image preview here"} width={375} height={250} mode='fit' />
-                                        <h6>{business.name}</h6>
-                                        <IndigoRating id={business.id}/>
+                                        <h6 style={ { fontSize: 20, paddingTop: 5 } }>{business.name}</h6>
+                                        <div style={ { paddingLeft: 10 } }>
+                                            <IndigoRating id={business.id}/>
+                                        </div>
                                         <p className="lead" style={ { marginLeft: 10, fontSize: 14, textAlign: "left", lineHeight: -1 } }>
                                             <br />Yelp Rating: {business.rating}
                                             <br/>Yelp Category: {business.categories[0]}

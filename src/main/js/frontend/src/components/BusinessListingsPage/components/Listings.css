@@ -1,10 +1,9 @@
 .flex {
-    background-color: white;
-    margin: 4px;
+    background-color: transparent;
     padding: 30px;
-    display: flex;
-    justify-content: center;
+    display: inherit;
     color: black;
+    overflow: auto;
 }
 
 .logo {

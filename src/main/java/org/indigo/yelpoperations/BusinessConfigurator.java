@@ -13,7 +13,7 @@ public class BusinessConfigurator {
     }
 
     /*
-     * Configures Business Listings and returns them in an array.
+     * Configures Business ListingData and returns them in an array.
      */
     public YelpBusinessListing[] configureBusinessListing(Response response, int limit) throws IOException {
         String jsonData = response.body().string();

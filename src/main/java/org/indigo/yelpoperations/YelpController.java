@@ -14,7 +14,7 @@ public class YelpController {
     YelpService service;
 
     /*
-     * Searches for a random list of Businesses Listings in Indianapolis.
+     * Searches for a random list of Businesses ListingData in Indianapolis.
      */
     @GetMapping("/searchBusinessListingRandom/{limit}")
     public YelpBusinessListing[] searchBusinessListingByRandom(@PathVariable int limit) {
@@ -22,7 +22,7 @@ public class YelpController {
     }
 
     /*
-     * Matches Business Listings in Indianapolis given an entered name or category.
+     * Matches Business ListingData in Indianapolis given an entered name or category.
      */
     @GetMapping("/searchBusinessListingByTerm/{term}/{limit}")
     public YelpBusinessListing[] searchBusinessListingByTerm(@PathVariable String term, @PathVariable int limit) {
