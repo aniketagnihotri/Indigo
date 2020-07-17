@@ -40,7 +40,7 @@ class ListingData extends Component {
                         position: "absolute", left: 0, marginLeft: 30
                     } }>
                     <h3>Filters</h3>
-                    <h6>Coming soon</h6>
+                    <h6 style={ { paddingLeft: 20 } }>Coming soon</h6>
                 </Box>
                 {this.state.businesses.length === 0 ? (
                     <h2>

@@ -66,14 +66,18 @@ class ReviewData extends Component {
                 </p>
                 <List style={ { marginLeft: 45 } }
                       component="nav" aria-label="mailbox folders">
-                    <ListItem button>
+                    <ListItem button style={
+                        {
+                            width: 580
+                        }
+                    }>
                         <div>
                             <h6>Username (email): </h6>
                             <input onChange={this.changeUser.bind(this)}
                                 className="custom-control-inline form-control"
                                    style={
                                        {
-                                           width: 400,
+                                           width: 550,
                                            marginBottom: 30
                                        }
                                    } type="email" name="user"
@@ -114,7 +118,7 @@ class ReviewData extends Component {
                                 style={
                                 {
                                     height: 500,
-                                    width: 400,
+                                    width: 550,
                                     marginBottom: 10
                                 }
                             } className="custom-control-inline form-control"
