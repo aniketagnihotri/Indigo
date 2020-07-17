@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Image } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { Box } from "@material-ui/core";
+import { Box, ListItem } from "@material-ui/core";
 import "./RecommendedBusinesses.css"
 import IndigoRating from "../../PageAttributes/IndigoRating";
 
@@ -32,7 +32,7 @@ class RecommendedBusinesses extends Component {
         return (
             <Box style={ { display: "inline-block"} }>
                 <ul>
-                    <h4 style={ { textAlign: "left", paddingLeft: 50 } }>Businesses of the week...</h4>
+                    <h4 style={ { textAlign: "left", paddingLeft: 40 } }>Businesses of the week...</h4>
                     {this.state.businesses.length === 0 ? (
                             <h6 className={"flexbox-container-img"}>Businesses are being fetched...</h6>
                         ) : (
@@ -43,23 +43,30 @@ class RecommendedBusinesses extends Component {
                                     pathname: "/GetBusiness/" + business.id,
                                 }} className={"link"}>
                                     <Box style={
-                                        { backgroundColor: "#D3D3D3", boxShadow: 2,
-                                            marginTop: 10, marginLeft: 30,
-                                            marginRight: 50, marginBottom: 40,
-                                            display: "inline-block", border: "1px solid black", borderRadius: 5 }
+                                        {
+                                            marginLeft: 20, marginRight: 40,
+                                            marginBottom: 30, display: "inline-block"
+                                        }
                                     }>
-                                        <Image src={business.image_url} style={ { border: "2px solid black" }}
-                                               alt={"Image preview here"} width={375} height={250} mode='fit' />
-                                        <h6 style={ { fontSize: 20, paddingTop: 5 } }>{business.name}</h6>
-                                        <div style={ { paddingLeft: 10 } }>
-                                            <IndigoRating id={business.id}/>
-                                        </div>
-                                        <p className="lead" style={ { marginLeft: 10, fontSize: 14, textAlign: "left", lineHeight: -1 } }>
-                                            <br />Yelp Rating: {business.rating}
-                                            <br/>Yelp Category: {business.categories[0]}
-                                            <br/>Price: {business.price}
-                                            <br/>Street Address: {business.displayAddress[0]}
-                                        </p>
+                                        <ListItem button style={
+                                            {
+                                                marginTop: 10,
+                                                display: "inline-block"
+                                            }
+                                        }>
+                                            <Image src={business.image_url} style={ { border: "2px solid black", borderRadius: 10 }}
+                                                   alt={"Image preview here"} width={375} height={275} mode='fit' />
+                                            <h6 style={ { fontSize: 20, paddingTop: 5 } }>{business.name}</h6>
+                                            <div>
+                                                <IndigoRating id={business.id}/>
+                                            </div>
+                                            <p className="lead" style={ { fontSize: 14 } }>
+                                                <br />Yelp Rating: {business.rating}
+                                                <br/>Yelp Category: {business.categories[0]}
+                                                <br/>Price: {business.price}
+                                                <br/>Street Address: {business.displayAddress[0]}
+                                            </p>
+                                        </ListItem>
                                     </Box>
                                 </Link>
                             )
