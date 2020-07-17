@@ -45,7 +45,7 @@ class ReviewData extends Component {
                                           button>
                                     <div style={
                                         {
-                                            width: 200,
+                                            width: 350,
                                             float: "left",
                                             height: 200
                                         }
