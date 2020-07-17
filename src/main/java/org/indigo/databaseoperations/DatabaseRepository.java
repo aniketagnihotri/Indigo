@@ -18,7 +18,7 @@ public class DatabaseRepository {
     @Autowired
     private JdbcTemplate jdbcTemplate;
 
-    final String stockResponse = "This business has pledged to keep its customers safe amid COVID-19.";
+    final String stockResponse = "This business has pledged to make its customers its top priority during and after COVID-19.";
 
     /*
      * Beginning of BusinessReview repository.

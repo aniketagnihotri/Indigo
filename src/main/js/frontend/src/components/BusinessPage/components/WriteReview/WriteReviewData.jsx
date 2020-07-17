@@ -59,7 +59,7 @@ class ReviewData extends Component {
         return (
             <div  style={ { textAlign: "left", marginTop: 20, marginLeft: 60 } }>
                 <h5 >
-                    Write a review using our review editor!
+                    Write a review using our editor!
                 </h5>
                 <p style={ { marginTop: 10, marginLeft: 60 } }>
                     Please note that we only allow one review per business to ensure transparency.
