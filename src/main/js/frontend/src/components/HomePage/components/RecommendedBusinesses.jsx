@@ -32,7 +32,7 @@ class RecommendedBusinesses extends Component {
         return (
             <Box style={ { display: "inline-block"} }>
                 <ul>
-                    <h4>Check out these businesses!</h4>
+                    <h4 style={ { textAlign: "left", paddingLeft: 50 } }>Businesses of the week...</h4>
                     {this.state.businesses.length === 0 ? (
                             <h6 className={"flexbox-container-img"}>Businesses are being fetched...</h6>
                         ) : (
