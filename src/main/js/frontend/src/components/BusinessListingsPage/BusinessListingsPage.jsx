@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Jumbotron} from "react-bootstrap";
+import { Jumbotron } from "react-bootstrap";
 import PageHeader from "../PageAttributes/PageHeader";
 import Searchbar from "../PageAttributes/Searchbar";
 import SearchFilter from "../PageAttributes/SearchFilter";

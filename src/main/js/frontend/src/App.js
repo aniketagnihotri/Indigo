@@ -1,5 +1,5 @@
 import React from "react";
-import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import './App.css';
 import HomePage from "./components/HomePage/HomePage";
 import AboutUs from "./components/AboutAndContactUs/AboutUs";
@@ -11,7 +11,7 @@ import BusinessPage from "./components/BusinessPage/BusinessPage"
 const App = () => {
     return (
         <div className={"App"}>
-            <Router>
+            <Router onUpdate={() => window.scrollTo(0, 0)}>
                 <Switch>
                     <Route path="/AboutUs">
                         <AboutUs />

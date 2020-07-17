@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
+import { Box, List } from "@material-ui/core";
 import './Listings.css';
 import ListingLayout from "./ListingLayout"
-import {Box, List} from "@material-ui/core";
 
 class ListingData extends Component {
 

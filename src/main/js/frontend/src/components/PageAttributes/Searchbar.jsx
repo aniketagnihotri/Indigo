@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import Button from "react-bootstrap/Button";
 import SearchIcon from "@material-ui/icons/Search";
-import {
-    Link
-} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 class Searchbar extends Component {
 

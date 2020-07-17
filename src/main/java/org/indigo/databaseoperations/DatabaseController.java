@@ -29,8 +29,8 @@ public class DatabaseController {
      * Sends a new BusinessReview to the database with several pieces of information.
      */
     @PostMapping(path="/addBusinessReview")
-    public String addBusinessReview(@RequestBody BusinessReview businessReview) {
-        return databaseRepository.addBusinessReview(businessReview.getId(), businessReview.getUser(),
+    public void addBusinessReview(@RequestBody BusinessReview businessReview) {
+        databaseRepository.addBusinessReview(businessReview.getId(), businessReview.getUser(),
                 businessReview.getRating(), businessReview.getReview(), businessReview.getDateTime());
     }
 

@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
+import { Jumbotron } from "react-bootstrap";
 import "./AboutUs.css"
 import PageHeader from "../PageAttributes/PageHeader";
 import PageFooter from "../PageAttributes/PageFooter";
 import Searchbar from "../PageAttributes/Searchbar";
 import SearchFilter from "../PageAttributes/SearchFilter";
-import {Jumbotron} from "react-bootstrap";
 
 class ContactUs extends Component {
 

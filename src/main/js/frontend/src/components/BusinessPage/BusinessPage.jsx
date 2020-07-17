@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
+import { Jumbotron } from "react-bootstrap";
 import "./BusinessPage.css"
 import PageHeader from "../PageAttributes/PageHeader";
 import Searchbar from "../PageAttributes/Searchbar";
 import SearchFilter from "../PageAttributes/SearchFilter";
 import PageFooter from "../PageAttributes/PageFooter";
-import {Jumbotron} from "react-bootstrap";
-import BusinessData from "./components/BusinessData";
+import BusinessData from "./components/BusinessData/BusinessData";
+import ReviewsData from "./components/Reviews/ReviewsData";
 
 class BusinessPage extends Component {
 
@@ -15,11 +16,6 @@ class BusinessPage extends Component {
         this.state = {
             id: this.props.match.params.id
         }
-    }
-
-
-
-    componentDidMount() {
     }
 
     render() {
@@ -38,6 +34,7 @@ class BusinessPage extends Component {
                     </div>
                 </Jumbotron>
                 <BusinessData id={this.state.id} />
+                <ReviewsData id={this.state.id} />
                 <PageFooter />
             </div>
         );

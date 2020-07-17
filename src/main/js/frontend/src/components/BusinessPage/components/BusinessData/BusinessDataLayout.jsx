@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import { Button } from "react-bootstrap";
-import SimpleImageSlider from "react-simple-image-slider";
 import { ListItem } from "@material-ui/core";
+import SimpleImageSlider from "react-simple-image-slider";
 import "./BusinessData.css"
-import IndigoRating from "../../PageAttributes/IndigoRating";
-import BusinessResponse from "./BusinessResponse";
+import IndigoRating from "../../../PageAttributes/IndigoRating";
+import BusinessResponse from "../BusinessResponse/BusinessResponse";
 
 class BusinessDataLayout extends Component {
 

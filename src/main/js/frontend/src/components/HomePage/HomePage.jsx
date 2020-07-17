@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Jumbotron }from "react-bootstrap";
+import { Jumbotron } from "react-bootstrap";
 import "./HomePage.css"
 import PageHeaderHome from "../PageAttributes/PageHeaderHome";
 import PageFooter from "../PageAttributes/PageFooter";

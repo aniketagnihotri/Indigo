@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
+import { Image } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import { Box } from "@material-ui/core";
 import "./RecommendedBusinesses.css"
-import {Box} from "@material-ui/core";
-import Image from "react-bootstrap/Image";
-import {Link} from "react-router-dom";
 import IndigoRating from "../../PageAttributes/IndigoRating";
 
 class RecommendedBusinesses extends Component {

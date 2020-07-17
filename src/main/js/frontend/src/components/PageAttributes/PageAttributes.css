@@ -22,3 +22,8 @@
     bottom:0;
     right:0;
 }
+
+.default {
+    padding-top: 0px !important;
+    margin-top: 0px !important;
+}

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import * as ReactBootStrap from "react-bootstrap"
 import "./Navbar.css"
+import "./PageAttributes.css"
 
 class PageHeader extends Component {
     constructor(props) {
@@ -24,7 +25,7 @@ class PageHeader extends Component {
 
     render() {
         return (
-            <ReactBootStrap.Navbar className={"color-nav fixed-top"} variant={"light"}>
+            <ReactBootStrap.Navbar className={"color-nav "} variant={"light"}>
                 <ReactBootStrap.Navbar.Brand href="/" style={this.styleIcon}>indigo</ReactBootStrap.Navbar.Brand>
                 <ReactBootStrap.Navbar.Collapse>
                     <ReactBootStrap.Navbar className={"ml-auto"}/>

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import {Button, Image} from "react-bootstrap";
-import {Link} from "react-router-dom";
-import {Box, Divider, ListItem} from "@material-ui/core";
+import { Button, Image } from "react-bootstrap";
+import { Link}  from "react-router-dom";
+import { Box, Divider, ListItem } from "@material-ui/core";
 import IndigoRating from "../../PageAttributes/IndigoRating";
 
 class ListingLayout extends Component {

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import  { Button } from "react-bootstrap";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import './PageAttributes.css'
 
 class Searchbar extends Component {
@@ -12,7 +12,6 @@ class Searchbar extends Component {
             currentText: " "
         }
     }
-
 
     render() {
         return (
