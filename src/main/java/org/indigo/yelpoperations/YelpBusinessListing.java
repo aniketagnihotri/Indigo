@@ -10,15 +10,15 @@ import org.json.JSONObject;
  */
 public class YelpBusinessListing {
 
-    String id;
-    String name;
-    boolean isClosed;
-    String image_url;
-    String url;
-    String[] categories;
-    double rating;
-    String price;
-    String[] displayAddress;
+    private String id;
+    private String name;
+    private boolean isClosed;
+    private String image_url;
+    private String url;
+    private String[] categories;
+    private double rating;
+    private String price;
+    private String[] displayAddress;
 
     public YelpBusinessListing() {
     }

@@ -67,9 +67,9 @@ public class DatabaseController {
     /*
      * Returns solely the rating in the BusinessData for a particular business ID.
      */
-    @GetMapping(path="/getIndigoBusinessRating/{id}")
+    @GetMapping(path="/getIndigoBusinessStats/{id}")
     public @ResponseBody List getIndigoBusinessRating(@PathVariable String id) {
-        return databaseRepository.getIndigoBusinessRating(id);
+        return databaseRepository.getIndigoBusinessStats(id);
     }
 
     /*
@@ -77,7 +77,8 @@ public class DatabaseController {
      */
     @PostMapping(path="/addBusinessData")
     public String addBusinessData(@RequestBody BusinessData businessData) {
-        return databaseRepository.addBusinessData(businessData.getId(), businessData.getRating(), businessData.isClaimed(),
+        return databaseRepository.addBusinessData(businessData.getId(), businessData.isSponsored(),
+                businessData.getNumReviews(), businessData.getRating(), businessData.isClaimed(),
                 businessData.getUser(), businessData.getBusinessResponse(), businessData.getDateTime());
     }
 
@@ -86,7 +87,8 @@ public class DatabaseController {
      */
     @PutMapping(path="/updateBusinessData")
     public String updateBusinessData(@RequestBody BusinessData businessData) {
-        return databaseRepository.updateBusinessData(businessData.getId(), businessData.getRating(), businessData.isClaimed(),
+        return databaseRepository.updateBusinessData(businessData.getId(), businessData.isSponsored(),
+                businessData.getNumReviews(), businessData.getRating(), businessData.isClaimed(),
                 businessData.getUser(), businessData.getBusinessResponse(), businessData.getDateTime());
     }
 

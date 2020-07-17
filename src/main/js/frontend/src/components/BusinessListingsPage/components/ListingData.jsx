@@ -32,15 +32,43 @@ class ListingData extends Component {
             .then(response => this.setState({ "businesses" : response }))
     }
 
+    sortBusinessesByRating() {
+        this.state.businesses.sort((a, b) => a.rating < b.rating ? 1:-1).map(
+            (business, i) => <div key={i}> {business.rating} </div>
+        )
+    }
+
     render() {
         return (
             <div>
-                <Box style={
+                {this.sortBusinessesByRating()}
+                <Box button style={
                     {
-                        position: "absolute", left: 0, marginLeft: 30
+                        position: "absolute", left: 0, width: 350,
+                        marginLeft: 40, backgroundColor: "#D3D3D3",
+                        paddingBottom: 10, paddingTop: 20, borderRadius: 10
                     } }>
-                    <h3>Filters</h3>
-                    <h6 style={ { paddingLeft: 20 } }>Coming soon</h6>
+                    <h3>Term Clarification</h3>
+                    <p style={
+                        {
+                            paddingLeft: 20, paddingRight: 30,
+                            paddingTop: 5, paddingBottom: 60
+                        }
+                    }>
+                        Please note that the 'Open' or 'Closed' text for each business dictates whether
+                        a business is open to customers at this time, especially during COVID-19.
+                    </p>
+                    <h3>Notice</h3>
+                    <p style={
+                        {
+                            paddingLeft: 20, paddingRight: 30,
+                        }
+                    }>
+                        Data provided by Yelp's Fusion API.
+                        <br />
+                        <br />
+                        Yelp helps provide the data before you to display the most up-to-date information for each business.
+                    </p>
                 </Box>
                 {this.state.businesses.length === 0 ? (
                     <h2>

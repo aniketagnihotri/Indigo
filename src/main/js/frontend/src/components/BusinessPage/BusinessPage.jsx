@@ -35,7 +35,14 @@ class BusinessPage extends Component {
                 </Jumbotron>
                 <BusinessData id={this.state.id} />
                 <ReviewsData id={this.state.id} />
-                <PageFooter />
+
+                <div style={
+                    {
+                        clear: "both"
+                    }
+                }>
+                    <PageFooter />
+                </div>
             </div>
         );
     }

@@ -33,15 +33,20 @@ class ReviewData extends Component {
                     Other reviews for this business
                 </h5>
                 {this.state.reviews.length === 0 ? (
-                    <h6 style={ { marginTop: 30 } }>
+                    <h6 style={ { marginTop: 30, marginLeft: 100, width: 700 } }>
                         No reviews yet. Be the first to comment!
                     </h6>
 
                 ) : (
                     this.state.reviews.map(function (review, index) {
                         return (
-                            <div>
-                                <ListItem style={ { marginTop: 30, marginLeft: 100 } }
+                            <div style={
+                                {
+                                    width: 800,
+                                    marginTop: 30, marginLeft: 100
+                                }
+                            }>
+                                <ListItem style={ { } }
                                           button>
                                     <div style={
                                         {
@@ -55,7 +60,7 @@ class ReviewData extends Component {
                                     </div>
                                     <div style={
                                         {
-                                            width: 1000,
+                                            width: 700,
                                             float: "left",
                                             height: 200
                                         }

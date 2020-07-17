@@ -16,15 +16,37 @@ class ReviewsData extends Component {
         return (
             <Box style={
                 {
-                    boxShadow: 2,
-                    marginLeft: 65,
+                    boxShadow: 2, marginLeft: 65,
                     marginRight: 80, marginBottom: 20,
-                    borderRadius: 5
+                    width: 500, borderRadius: 5
                 }
             }>
                 <h3 style={ { textAlign: "left" } }>COVID-19 Business Reviews</h3>
-                <WriteReviewData  id={this.state.id} />
-                <ReviewLayout id={this.state.id} />
+
+                <Box style={
+                    {
+                        display: "flex"
+                    }
+                }>
+                    <div style={
+                        {
+                            flex: 1,
+                            marginRight: 200
+                        }
+                    }>
+                        <WriteReviewData  id={this.state.id} />
+                    </div>
+
+                    <div style={
+                        {
+                            flex: 1
+                        }
+                    }>
+                        <ReviewLayout id={this.state.id} />
+                    </div>
+                </Box>
+
+
             </Box>
         );
     }

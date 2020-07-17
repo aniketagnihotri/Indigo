@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
+import java.util.Objects;
 
 /*
  * Repository for BusinessReviews and BusinessData, ordered respectively.
@@ -53,6 +54,16 @@ public class DatabaseRepository {
      * Sends a POST request to the database to add a BusinessReview for a particular Business and returns true if successful.
      */
     public String addBusinessReview(String id, String user, double rating, String review, String dateTime) {
+
+        List<BusinessData> businessData = getBusinessData(id);
+        List<Object[]> businessRating = getIndigoBusinessStats(id);
+        double totalRating = (double) businessRating.get(0)[2];
+        double totalReviews = businessData.get(0).getNumReviews() + 1;
+        totalRating *= businessData.get(0).getNumReviews();
+        totalRating += rating;
+        totalRating /= (totalReviews);
+        updateBusinessRatingAndNumReviews(id, (int) totalReviews, totalRating);
+
         final String sql = "INSERT INTO business_reviews (id, user, rating, review, dateTime) VALUES (?, ?, ?, ?, ?)";
         int dbReturn = jdbcTemplate.update(sql, new Object[] {id, user, rating, review, dateTime});
         if (dbReturn >= 1) {
@@ -60,6 +71,7 @@ public class DatabaseRepository {
         } else {
             return Boolean.FALSE.toString();
         }
+
     }
 
     /*
@@ -100,6 +112,8 @@ public class DatabaseRepository {
         public BusinessData mapRow(ResultSet resultSet, int i) throws SQLException {
             BusinessData businessData = new BusinessData();
             businessData.setId(resultSet.getString("id"));
+            businessData.setSponsored(resultSet.getBoolean("sponsored"));
+            businessData.setNumReviews(resultSet.getInt("numReviews"));
             businessData.setRating(resultSet.getDouble("rating"));
             businessData.setClaimed(resultSet.getBoolean("claimed"));
             businessData.setUser(resultSet.getString("user"));
@@ -113,7 +127,7 @@ public class DatabaseRepository {
      * Sends a GET request to the database for the BusinessData for a particular Business and organizes them in a List.
      */
     public List getBusinessData(String id) {
-        final String sql = "SELECT id, rating, claimed, user, businessResponse, dateTime FROM business_data WHERE id = ?";
+        final String sql = "SELECT id, sponsored, numReviews, rating, claimed, user, businessResponse, dateTime FROM business_data WHERE id = ?";
         List<BusinessData> businessDataList = jdbcTemplate.query(sql, new DatabaseRepository.BusinessDataRowMapper(), id);
         return businessDataList;
     }
@@ -122,17 +136,21 @@ public class DatabaseRepository {
      * Sends a GET request to the database for the rating in the BusinessData for a particular Business and organizes it in a
      * singular-element List.
      */
-    public List<Double> getIndigoBusinessRating(String id) {
-        final String sql = "SELECT rating FROM business_data WHERE id = ?";
-        List<Double> businessRating = jdbcTemplate.query(sql, new RowMapper<Double>() {
+    public List<Object[]> getIndigoBusinessStats(String id) {
+        final String sql = "SELECT sponsored, numReviews, rating FROM business_data WHERE id = ?";
+        List<Object[]> businessRating = jdbcTemplate.query(sql, new RowMapper<Object[]>() {
             @Override
-            public Double mapRow(ResultSet resultSet, int i) throws SQLException {
-                return resultSet.getDouble("rating");
+            public Object[] mapRow(ResultSet resultSet, int i) throws SQLException {
+                Object[] values = new Object[3];
+                values[0] = resultSet.getBoolean("sponsored");
+                values[1] = resultSet.getInt("numReviews");
+                values[2] = resultSet.getDouble("rating");
+                return values;
             }
         }, id);
         if (businessRating.size() == 0) {
             double rating = (Math.random() * (2)) + 3;
-            addBusinessData(id, rating, false, null, stockResponse, null);
+            addBusinessData(id, true, 0, rating, false, null, stockResponse, null);
         }
         return businessRating;
     }
@@ -140,9 +158,14 @@ public class DatabaseRepository {
     /*
      * Sends a POST request to the database to add BusinessData for a particular Business and returns true if successful.
      */
-    public String addBusinessData(String id, double rating, boolean claimed, String user, String businessResponse, String dateTime) {
-        final String sql = "INSERT INTO business_data (id, rating, claimed, user, businessResponse, dateTime) VALUES (?, ?, ?, ?, ?, ?)";
-        int dbReturn = jdbcTemplate.update(sql, new Object[] {id, rating, claimed, user, businessResponse, dateTime});
+    public String addBusinessData(String id, boolean sponsored, int numReviews, double rating,
+                                  boolean claimed, String user,
+                                  String businessResponse, String dateTime) {
+        final String sql = "INSERT INTO business_data (id, sponsored, numReviews, rating, claimed," +
+                " user, businessResponse, dateTime) " +
+                "VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+        int dbReturn = jdbcTemplate.update(sql, new Object[] {id, sponsored, numReviews,
+                rating, claimed, user, businessResponse, dateTime});
         if (dbReturn >= 1) {
             return Boolean.TRUE.toString();
         } else {
@@ -153,9 +176,27 @@ public class DatabaseRepository {
     /*
      * Sends a PUT request to the database to update the BusinessData for a particular Business and returns true if successful.
      */
-    public String updateBusinessData(String id, double rating, boolean claimed, String user, String businessResponse, String dateTime) {
-        final String sql = "UPDATE business_data SET rating = ? claimed = ?, user = ?, businessResponse = ?, dateTime = ? WHERE id = ?";
-        int dbReturn = jdbcTemplate.update(sql, new Object[] {rating, claimed, user, businessResponse, dateTime, id});
+    public String updateBusinessData(String id, boolean sponsored, int numReviews, double rating,
+                                     boolean claimed, String user, String businessResponse, String dateTime) {
+        final String sql = "UPDATE business_data SET sponsored = ?, numReviews = ?, rating = ?, " +
+                "claimed = ?, user = ?, " +
+                "businessResponse = ?, dateTime = ? WHERE id = ?";
+        int dbReturn = jdbcTemplate.update(sql, new Object[] {sponsored, numReviews, rating,
+                claimed, user, businessResponse, dateTime, id});
+        if (dbReturn >= 1) {
+            return Boolean.TRUE.toString();
+        } else {
+            return Boolean.FALSE.toString();
+        }
+    }
+
+    /*
+     * Sends a PUT request to the database to update the numReviews in the
+     * BusinessData for a particular Business and returns true if successful.
+     */
+    public String updateBusinessRatingAndNumReviews(String id, int numReviews, double rating) {
+        final String sql = "UPDATE business_data SET numReviews = ?, rating = ? WHERE id = ?";
+        int dbReturn = jdbcTemplate.update(sql, new Object[] {numReviews, rating, id});
         if (dbReturn >= 1) {
             return Boolean.TRUE.toString();
         } else {

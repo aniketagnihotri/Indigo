@@ -15,8 +15,4 @@ DESC business_reviews;
 INSERT INTO business_reviews (id, user, rating, review, dateTime) VALUES ("test id", "test user", 3.5, "test review", "7/8/20");
 SELECT * FROM business_reviews;
 
-UPDATE business_reviews SET rating = 5.0, review = "hello", dateTime = "July 7, 2020" WHERE id = "test id" && user = "test user";
-
-DELETE FROM business_reviews WHERE user = "test user" AND review = "test review";
-
 DROP TABLE business_reviews;

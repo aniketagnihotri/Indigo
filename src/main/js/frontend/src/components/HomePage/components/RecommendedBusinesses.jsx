@@ -56,7 +56,7 @@ class RecommendedBusinesses extends Component {
                                         }>
                                             <Image src={business.image_url} style={ { border: "2px solid black", borderRadius: 10 }}
                                                    alt={"Image preview here"} width={375} height={275} mode='fit' />
-                                            <h6 style={ { fontSize: 20, paddingTop: 5 } }>{business.name}</h6>
+                                            <h1 style={ { fontSize: 28, paddingTop: 5, paddingBottom: 10 } }>{business.name}</h1>
                                             <div>
                                                 <IndigoRating id={business.id}/>
                                             </div>

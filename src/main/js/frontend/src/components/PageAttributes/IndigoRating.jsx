@@ -11,7 +11,7 @@ class RecommendedBusinesses extends Component {
     }
 
     componentDidMount() {
-        fetch(`/api/db/getIndigoBusinessRating/` + this.props.id, {
+        fetch(`/api/db/getIndigoBusinessStats/` + this.props.id, {
             method: 'GET',
             headers : {
                 'Content-Type': 'application/json',
@@ -27,14 +27,15 @@ class RecommendedBusinesses extends Component {
         return (
             <div>
                 {this.state.business_rating.length === 0 ? (
-                    <p className="lead" style={ { marginBottom: 0, fontSize: 16, textAlign: "left", lineHeight: -1 } }>
+                    <p className="lead" style={ { marginBottom: 0, fontSize: 18, textAlign: "left", lineHeight: -1 } }>
                         Our Rating: No ratings yet!
                     </p>
                 ) : (
                     this.state.business_rating.map(function (business, index) {
+
                         return (
-                            <p className="lead" style={ { marginBottom: 0, fontSize: 16, textAlign: "left", lineHeight: -1 } }>
-                                Our Rating: {business}
+                            <p className="lead" style={ { marginBottom: 0, fontSize: 18, textAlign: "left", lineHeight: -1 } }>
+                                Our Rating: {business[2]} ({business[1]} reviews)
                             </p>
                         );
                     }))}

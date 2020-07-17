@@ -19,7 +19,13 @@ class PageHeader extends Component {
 
     render() {
         return (
-            <div className={"flexbox-container-footer footer-container"} >
+            <div className={"flexbox-container-footer footer-container"}
+                style={
+                    {
+                        float: "bottom"
+                    }
+                }
+            >
                 <Link to={"/"}>
                     <p href="#home" style={this.styleIcon}>indigo</p>
                 </Link>

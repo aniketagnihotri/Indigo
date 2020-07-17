@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api/yelp")
 public class YelpController {
@@ -17,7 +19,7 @@ public class YelpController {
      * Searches for a random list of Businesses ListingData in Indianapolis.
      */
     @GetMapping("/searchBusinessListingRandom/{limit}")
-    public YelpBusinessListing[] searchBusinessListingByRandom(@PathVariable int limit) {
+    public List searchBusinessListingByRandom(@PathVariable int limit) {
         return service.searchBusinessListing(limit,null);
     }
 
@@ -25,7 +27,7 @@ public class YelpController {
      * Matches Business ListingData in Indianapolis given an entered name or category.
      */
     @GetMapping("/searchBusinessListingByTerm/{term}/{limit}")
-    public YelpBusinessListing[] searchBusinessListingByTerm(@PathVariable String term, @PathVariable int limit) {
+    public List searchBusinessListingByTerm(@PathVariable String term, @PathVariable int limit) {
         return service.searchBusinessListing(limit, term);
     }
 

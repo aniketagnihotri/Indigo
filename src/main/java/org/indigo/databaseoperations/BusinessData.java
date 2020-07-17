@@ -6,6 +6,8 @@ package org.indigo.databaseoperations;
 public class BusinessData {
 
     private String id;
+    private boolean sponsored;
+    private int numReviews;
     private double rating;
     private boolean claimed;
     private String user;
@@ -21,6 +23,22 @@ public class BusinessData {
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    public boolean isSponsored() {
+        return sponsored;
+    }
+
+    public void setSponsored(boolean sponsored) {
+        this.sponsored = sponsored;
+    }
+
+    public int getNumReviews() {
+        return numReviews;
+    }
+
+    public void setNumReviews(int numReviews) {
+        this.numReviews = numReviews;
     }
 
     public double getRating() {

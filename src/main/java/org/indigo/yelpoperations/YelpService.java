@@ -3,8 +3,9 @@ package org.indigo.yelpoperations;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
-
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 
 @Service
@@ -33,7 +34,7 @@ public class YelpService {
     /*
      * Sends a request to the Yelp Fusion API and returns an array of BusinessListings.
      */
-    public YelpBusinessListing[] searchBusinessListing(int limit, String term) {
+    public List searchBusinessListing(int limit, String term) {
         OkHttpClient client = new OkHttpClient().newBuilder()
                 .build();
         Request request = new Request.Builder()

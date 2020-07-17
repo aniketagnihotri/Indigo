@@ -29,7 +29,9 @@ class ListingLayout extends Component {
     render() {
         const business = this.state.business;
         return (
-            <Box>
+            <Box style={
+                { paddingBottom: "0px !important" }
+            }>
                 <ListItem button>
                     <div className='flex'>
                         <div className='logo'>
@@ -41,7 +43,7 @@ class ListingLayout extends Component {
                         }}>
                             <div style={ { textAlign: "left", color: "black" } }>
                                 <h2>{business.name}</h2>
-                                <div style={ { paddingTop: 50 } }>
+                                <div style={ { paddingTop: 10, paddingBottom: 30 } }>
                                     <p>
                                         <IndigoRating id={business.id}/>
                                     </p>
@@ -65,7 +67,7 @@ class ListingLayout extends Component {
                         <div style={
                             { position: "absolute", right: 0,
                                 bottom: 0, paddingRight: 60,
-                                paddingBottom: 60, textAlign: "right" }
+                                paddingBottom: 30, textAlign: "right" }
                         }>
                             {this.getOpen()}
                             <a href={business.url}>

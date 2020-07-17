@@ -5,6 +5,8 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class BusinessConfigurator {
 
@@ -15,12 +17,12 @@ public class BusinessConfigurator {
     /*
      * Configures Business ListingData and returns them in an array.
      */
-    public YelpBusinessListing[] configureBusinessListing(Response response, int limit) throws IOException {
+    public List configureBusinessListing(Response response, int limit) throws IOException {
         String jsonData = response.body().string();
         JSONObject yelpResponse = new JSONObject(jsonData);
         JSONArray jsonArray = yelpResponse.getJSONArray("businesses");
 
-        YelpBusinessListing[] businesses = new YelpBusinessListing[jsonArray.length()];
+        List<YelpBusinessListing> businesses = new ArrayList<YelpBusinessListing>(jsonArray.length());
         for (int i = 0; i < jsonArray.length(); i++) {
             JSONObject jsonObject = jsonArray.getJSONObject(i);
             //new yelp business listing
@@ -46,7 +48,7 @@ public class BusinessConfigurator {
             //initialization of business yelp price
             business.setPrice(jsonObject);
 
-            businesses[i] = business;
+            businesses.add(business);
 
         }
 

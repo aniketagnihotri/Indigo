@@ -61,10 +61,10 @@ class ReviewData extends Component {
                 <h5 >
                     Write a review using our editor!
                 </h5>
-                <p style={ { marginTop: 10, marginLeft: 60 } }>
+                <p style={ { marginTop: 10, marginLeft: 30 } }>
                     Please note that we only allow one review per business to ensure transparency.
                 </p>
-                <List style={ { marginLeft: 45 } }
+                <List style={ { marginLeft: 10 } }
                       component="nav" aria-label="mailbox folders">
                     <ListItem button style={
                         {
@@ -130,12 +130,13 @@ class ReviewData extends Component {
                             <Button onClick={this.pushReview.bind(this)}>
                                 Submit review
                             </Button>
-                            <h6 style={
+                            <p style={
                                 {
-                                    marginTop: 10
+                                    marginTop: 10,
+                                    fontSize: 18
                                 }
                             }
-                            > Refresh the page to view your review after clicking submit! </h6>
+                            > Note: Refresh the page to view your review after clicking submit! </p>
                         </div>
                     </ListItem>
                 </List>
