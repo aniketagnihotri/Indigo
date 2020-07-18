@@ -1,12 +1,6 @@
-.flex {
-    background-color: transparent;
-    padding: 30px;
-    display: inherit;
-    color: black;
-    overflow: auto;
-}
 
-.logo {
-    float: left;
-    padding-right: 20px;
+
+.link {
+    color: #000000;
+    text-decoration: none !important;
 }

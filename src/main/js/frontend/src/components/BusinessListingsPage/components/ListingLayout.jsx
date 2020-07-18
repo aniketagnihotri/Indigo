@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import { Button, Image } from "react-bootstrap";
-import { Link}  from "react-router-dom";
+import { Link }  from "react-router-dom";
 import { Box, Divider, ListItem } from "@material-ui/core";
 import CheckCircleIcon from "@material-ui/icons/CheckCircle";
+import "./Listings.css"
 
 class ListingLayout extends Component {
 
@@ -12,20 +13,6 @@ class ListingLayout extends Component {
         this.state = {
             business: this.props.business,
             businessInfo: []
-        }
-    }
-
-    componentDidMount() {
-        function fetchData() {
-            fetch(`/api/db/getIndigoBusinessStats/` + this.props.business.id, {
-                method: 'GET',
-                headers : {
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/json'
-                }
-            })
-                .then(response => response.json())
-                .then(response => this.setState( { "businessInfo": response} ))
         }
     }
 
@@ -54,15 +41,15 @@ class ListingLayout extends Component {
                 { paddingBottom: "0px !important" }
             }>
                 <ListItem button>
-                    <div className='flex'>
+                    <div className={"flex"}>
                         <div className='logo'>
                             <Image src={business.image_url} style={ { borderRadius: 15, border: "2px solid black" }}
                                    alt={"Image preview here"} width={300} height={250} mode='fit' />
                         </div>
                         <Link to={{
                             pathname: "/GetBusiness/" + business.id
-                        }}>
-                            <div style={ { textAlign: "left", color: "black" } }>
+                        }} className={"link"}>
+                            <div style={ { textAlign: "left" } }>
                                 <h2>{business.name}</h2>
                                 <div style={ { paddingTop: 10, paddingBottom: 30 } }>
                                     <p>
@@ -99,8 +86,8 @@ class ListingLayout extends Component {
                                 </Button>
                             </a>
                         </div>
-
                     </div>
+
                 </ListItem>
                 <Divider />
             </Box>

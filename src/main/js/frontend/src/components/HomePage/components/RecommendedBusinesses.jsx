@@ -3,7 +3,6 @@ import { Image } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { Box, ListItem } from "@material-ui/core";
 import "./RecommendedBusinesses.css"
-import IndigoRating from "../../BusinessPage/components/BusinessData/IndigoRating";
 import CheckCircleIcon from "@material-ui/icons/CheckCircle";
 
 class RecommendedBusinesses extends Component {

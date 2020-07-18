@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import SearchIcon from "@material-ui/icons/Search";
 
 class BusinessData extends Component {
 
