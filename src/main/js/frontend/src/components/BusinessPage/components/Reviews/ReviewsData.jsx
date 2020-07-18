@@ -31,7 +31,7 @@ class ReviewsData extends Component {
                     <div style={
                         {
                             flex: 1,
-                            marginRight: 200
+                            marginRight: 100
                         }
                     }>
                         <WriteReviewData  id={this.state.id} />

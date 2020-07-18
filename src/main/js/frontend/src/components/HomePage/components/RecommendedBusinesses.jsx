@@ -3,7 +3,8 @@ import { Image } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { Box, ListItem } from "@material-ui/core";
 import "./RecommendedBusinesses.css"
-import IndigoRating from "../../PageAttributes/IndigoRating";
+import IndigoRating from "../../BusinessPage/components/BusinessData/IndigoRating";
+import CheckCircleIcon from "@material-ui/icons/CheckCircle";
 
 class RecommendedBusinesses extends Component {
 
@@ -16,7 +17,7 @@ class RecommendedBusinesses extends Component {
     }
 
     componentDidMount() {
-        fetch(`api/yelp/searchBusinessListingRandom/12`, {
+        fetch(`api/general/searchBusinessListingRandom/12`, {
             method: 'GET',
             headers : {
                 'Content-Type': 'application/json',
@@ -27,16 +28,30 @@ class RecommendedBusinesses extends Component {
             .then(results => this.setState({ "businesses" : results }))
     }
 
+    sortBusinessesByNumReviews() {
+        this.state.businesses.sort((a, b) => a.indigoRating < b.indigoRating ? 1:-1).map(
+            (business, i) => <div key={i}> {business.rating} </div>
+        )
+    }
+
     render() {
 
         return (
             <Box style={ { display: "inline-block"} }>
+                {this.sortBusinessesByNumReviews()}
                 <ul>
                     <h4 style={ { textAlign: "left", paddingLeft: 40 } }>Featured businesses of the week...</h4>
+                    <h6 style={ { textAlign: "left", paddingLeft: 40 } }> <CheckCircleIcon /> dictates a sponsored business.</h6>
                     {this.state.businesses.length === 0 ? (
                             <h6 className={"flexbox-container-img"}>Businesses are being fetched...</h6>
                         ) : (
                         this.state.businesses.map(function (business, index) {
+
+                            function getSponsored(sponsored) {
+                                if (sponsored === true) {
+                                    return <CheckCircleIcon />
+                                }
+                            }
 
                             return (
                                 <Link to={{
@@ -58,7 +73,9 @@ class RecommendedBusinesses extends Component {
                                                    alt={"Image preview here"} width={375} height={275} mode='fit' />
                                             <h1 style={ { fontSize: 28, paddingTop: 5, paddingBottom: 10 } }>{business.name}</h1>
                                             <div>
-                                                <IndigoRating id={business.id}/>
+                                                <p className="lead" style={ { marginBottom: 0, fontSize: 18, textAlign: "left", lineHeight: -1 } }>
+                                                    Our Rating: {business.indigoRating} ({business.numReviews} reviews) {getSponsored(business.sponsored)}
+                                                </p>
                                             </div>
                                             <p className="lead" style={ { fontSize: 14 } }>
                                                 <br />Yelp Rating: {business.rating}

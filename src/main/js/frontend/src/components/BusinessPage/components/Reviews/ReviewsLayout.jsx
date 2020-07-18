@@ -28,12 +28,19 @@ class ReviewData extends Component {
 
     render() {
         return (
-            <List component="nav" aria-label="mailbox folders">
-                <h5 style={ { textAlign: "left", marginTop: 10, marginLeft: 50 } }>
+            <List component="nav" aria-label="mailbox folders"
+                style={
+                    {
+                    backgroundColor: "lightgray", marginTop: 20,
+                        padding: 10, borderRadius: 10
+                    }
+                }
+            >
+                <h5 style={ { textAlign: "left" } }>
                     Other reviews for this business
                 </h5>
                 {this.state.reviews.length === 0 ? (
-                    <h6 style={ { marginTop: 30, marginLeft: 100, width: 700 } }>
+                    <h6 style={ { marginTop: 30, marginLeft: 30, width: 700 } }>
                         No reviews yet. Be the first to comment!
                     </h6>
 
@@ -42,30 +49,29 @@ class ReviewData extends Component {
                         return (
                             <div style={
                                 {
-                                    width: 800,
-                                    marginTop: 30, marginLeft: 100
+                                    width: 830, height: 270,
+                                    marginTop: 15, marginLeft: 50,
                                 }
                             }>
-                                <ListItem style={ { } }
-                                          button>
+                                <ListItem button>
                                     <div style={
                                         {
-                                            width: 350,
-                                            float: "left",
-                                            height: 200
+                                            paddingRight: 50,
+                                            height: 250,
+
                                         }
                                     }>
-                                        <h6 style={ { textAlign: "left" } }>Written by {review.user}</h6>
+                                        <h6 style={ { textAlign: "left",  wordWrap: "break-word", width: 260 } }>Written by {review.user}</h6>
                                         <p>on {review.dateTime}</p>
                                     </div>
                                     <div style={
                                         {
-                                            width: 700,
-                                            float: "left",
-                                            height: 200
+                                            width: 500,
+                                            height: 250,
+                                            overflow: "auto",
                                         }
                                     }>
-                                        <h6>Rating: {review.rating}</h6>
+                                        <h5>Rating: {review.rating}</h5>
                                         <p style={ { textAlign: "left", wordWrap: "break-word", height: 170} }>{review.review}</p>
                                     </div>
                                 </ListItem>

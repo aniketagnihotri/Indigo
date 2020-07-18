@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Button, Image } from "react-bootstrap";
 import { Link}  from "react-router-dom";
 import { Box, Divider, ListItem } from "@material-ui/core";
-import IndigoRating from "../../PageAttributes/IndigoRating";
+import CheckCircleIcon from "@material-ui/icons/CheckCircle";
 
 class ListingLayout extends Component {
 
@@ -10,7 +10,22 @@ class ListingLayout extends Component {
         super(props);
 
         this.state = {
-            business: this.props.business
+            business: this.props.business,
+            businessInfo: []
+        }
+    }
+
+    componentDidMount() {
+        function fetchData() {
+            fetch(`/api/db/getIndigoBusinessStats/` + this.props.business.id, {
+                method: 'GET',
+                headers : {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                }
+            })
+                .then(response => response.json())
+                .then(response => this.setState( { "businessInfo": response} ))
         }
     }
 
@@ -24,6 +39,12 @@ class ListingLayout extends Component {
             return <h3 style={ { color: "red" } }>Closed</h3>;
         }
         return <h3 style={ { color: "green" } }>Open</h3>
+    }
+
+    getSponsored(sponsored) {
+        if (sponsored === true) {
+            return <CheckCircleIcon />
+        }
     }
 
     render() {
@@ -45,7 +66,9 @@ class ListingLayout extends Component {
                                 <h2>{business.name}</h2>
                                 <div style={ { paddingTop: 10, paddingBottom: 30 } }>
                                     <p>
-                                        <IndigoRating id={business.id}/>
+                                        <p className="lead" style={ { marginBottom: 0, fontSize: 18, textAlign: "left", lineHeight: -1 } }>
+                                            Our Rating: {business.indigoRating} ({business.numReviews} reviews) {this.getSponsored(business.sponsored)}
+                                        </p>
                                     </p>
                                     <p className="lead" style={
                                         { paddingTop: 10, fontSize: 14,

@@ -3,7 +3,7 @@ import { Button } from "react-bootstrap";
 import { ListItem } from "@material-ui/core";
 import SimpleImageSlider from "react-simple-image-slider";
 import "./BusinessData.css"
-import IndigoRating from "../../../PageAttributes/IndigoRating";
+import IndigoRating from "./IndigoRating";
 import BusinessResponse from "../BusinessResponse/BusinessResponse";
 
 class BusinessDataLayout extends Component {
@@ -52,7 +52,7 @@ class BusinessDataLayout extends Component {
                         {this.getOpen()}
                         <div style={ { paddingTop: 40 } }>
                             <p>
-                                <IndigoRating id={business.id}/>
+                                <IndigoRating id={business.id} />
                             </p>
                             <p className="lead" style={
                                 { fontSize: 16,

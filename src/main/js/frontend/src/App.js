@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import './App.css';
 import HomePage from "./components/HomePage/HomePage";
 import AboutUs from "./components/AboutAndContactUs/AboutUs";
+import ClaimBusiness from "./components/BusinessPage/components/BusinessResponse/ClaimBusiness"
 import ContactUs from "./components/AboutAndContactUs/ContactUs";
 import Login from "./components/Login/Login";
 import BusinessListingsPage from "./components/BusinessListingsPage/BusinessListingsPage";
@@ -18,9 +19,10 @@ const App = () => {
                     </Route>
                     <Route path="/GetBusinesses/:searchTerm"
                            render={ props => <BusinessListingsPage { ...props } />}
-                        />
+                    />
                     <Route path="/GetBusiness/:id" render={ props => <BusinessPage { ...props } />}
-                        />
+                    />
+                    <Route path="/ClaimBusiness" component={ClaimBusiness} />
                     <Route path="/ContactUs" component={ContactUs} />
                     <Route path="/Login" component={Login} />
                     <Route path="/" component={HomePage} />

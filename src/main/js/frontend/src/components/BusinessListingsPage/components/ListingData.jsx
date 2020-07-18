@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Box, List } from "@material-ui/core";
 import './Listings.css';
 import ListingLayout from "./ListingLayout"
+import CheckCircleIcon from "@material-ui/icons/CheckCircle";
 
 class ListingData extends Component {
 
@@ -21,19 +22,19 @@ class ListingData extends Component {
 
     componentDidMount() {
         const params = this.props.searchTerm + "/10";
-        fetch(`/api/yelp/searchBusinessListingByTerm/` + params, {
+        fetch(`/api/general/searchBusinessListingByTerm/` + params, {
             method: 'GET',
-                headers : {
-            'Content-Type': 'application/json',
+            headers : {
+                'Content-Type': 'application/json',
                 'Accept': 'application/json'
             }
         })
             .then(response => response.json())
-            .then(response => this.setState({ "businesses" : response }))
+            .then(response => this.setState( { "businesses": response } ))
     }
 
-    sortBusinessesByRating() {
-        this.state.businesses.sort((a, b) => a.rating < b.rating ? 1:-1).map(
+    sortBusinessesByNumReviews() {
+        this.state.businesses.sort((a, b) => a.indigoRating < b.indigoRating ? 1:-1).map(
             (business, i) => <div key={i}> {business.rating} </div>
         )
     }
@@ -41,7 +42,7 @@ class ListingData extends Component {
     render() {
         return (
             <div>
-                {this.sortBusinessesByRating()}
+                {this.sortBusinessesByNumReviews()}
                 <Box button style={
                     {
                         position: "absolute", left: 0, width: 350,
@@ -57,6 +58,9 @@ class ListingData extends Component {
                     }>
                         Please note that the 'Open' or 'Closed' text for each business dictates whether
                         a business is open to customers at this time, especially during COVID-19.
+                        <br />
+                        <br />
+                        <CheckCircleIcon /> dictates a sponsored business.
                     </p>
                     <h3>Notice</h3>
                     <p style={
@@ -68,6 +72,7 @@ class ListingData extends Component {
                         <br />
                         <br />
                         Yelp helps provide the data before you to display the most up-to-date information for each business.
+                        <br />
                     </p>
                 </Box>
                 {this.state.businesses.length === 0 ? (
@@ -77,6 +82,7 @@ class ListingData extends Component {
 
                 ) : (
                     this.state.businesses.map(function (business, index) {
+                        console.log(business)
                         return (
                             <Box style={
                                 {
@@ -85,11 +91,13 @@ class ListingData extends Component {
                                     borderRadius: 5
                                 }
                             }>
+                                <h1>{business.sponsored}</h1>
                                 <List component="nav" aria-label="mailbox folders">
                                     <ListingLayout business={business} />
                                 </List>
                             </Box>
                         );
+
                     }))}
             </div>
         );

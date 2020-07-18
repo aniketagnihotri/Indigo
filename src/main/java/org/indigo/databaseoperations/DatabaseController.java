@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@Controller
+@RestController
 @RequestMapping("/api/db")
 public class DatabaseController {
 
@@ -78,7 +78,7 @@ public class DatabaseController {
     @PostMapping(path="/addBusinessData")
     public String addBusinessData(@RequestBody BusinessData businessData) {
         return databaseRepository.addBusinessData(businessData.getId(), businessData.isSponsored(),
-                businessData.getNumReviews(), businessData.getRating(), businessData.isClaimed(),
+                businessData.getNumReviews(), businessData.getIndigoRating(), businessData.isClaimed(),
                 businessData.getUser(), businessData.getBusinessResponse(), businessData.getDateTime());
     }
 
@@ -88,7 +88,7 @@ public class DatabaseController {
     @PutMapping(path="/updateBusinessData")
     public String updateBusinessData(@RequestBody BusinessData businessData) {
         return databaseRepository.updateBusinessData(businessData.getId(), businessData.isSponsored(),
-                businessData.getNumReviews(), businessData.getRating(), businessData.isClaimed(),
+                businessData.getNumReviews(), businessData.getIndigoRating(), businessData.isClaimed(),
                 businessData.getUser(), businessData.getBusinessResponse(), businessData.getDateTime());
     }
 

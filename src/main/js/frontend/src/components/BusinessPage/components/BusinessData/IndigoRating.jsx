@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import CheckCircleIcon from '@material-ui/icons/CheckCircle';
 
 class RecommendedBusinesses extends Component {
 
@@ -31,11 +32,17 @@ class RecommendedBusinesses extends Component {
                         Our Rating: No ratings yet!
                     </p>
                 ) : (
-                    this.state.business_rating.map(function (business, index) {
+                    this.state.business_rating.map(function (rating, index) {
+
+                        function getSponsored(sponsored) {
+                            if (sponsored === true) {
+                                return <CheckCircleIcon />
+                            }
+                        }
 
                         return (
                             <p className="lead" style={ { marginBottom: 0, fontSize: 18, textAlign: "left", lineHeight: -1 } }>
-                                Our Rating: {business[2]} ({business[1]} reviews)
+                                Our Rating: {rating[2]} ({rating[1]} reviews) {getSponsored(rating[0])}
                             </p>
                         );
                     }))}

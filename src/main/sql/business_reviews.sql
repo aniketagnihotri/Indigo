@@ -15,4 +15,6 @@ DESC business_reviews;
 INSERT INTO business_reviews (id, user, rating, review, dateTime) VALUES ("test id", "test user", 3.5, "test review", "7/8/20");
 SELECT * FROM business_reviews;
 
+DELETE FROM business_reviews WHERE (id = "ReV4Q3rEJ8neicQPc6pC0w" AND rating = 0.0);
+
 DROP TABLE business_reviews;

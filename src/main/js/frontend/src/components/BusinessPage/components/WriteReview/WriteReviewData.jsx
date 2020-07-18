@@ -57,7 +57,7 @@ class ReviewData extends Component {
 
     render() {
         return (
-            <div  style={ { textAlign: "left", marginTop: 20, marginLeft: 60 } }>
+            <div  style={ { textAlign: "left", marginTop: 20, marginLeft: 40, padding: 10, paddingRight: 20, backgroundColor: "lightgray", borderRadius: 10 } }>
                 <h5 >
                     Write a review using our editor!
                 </h5>
@@ -68,7 +68,7 @@ class ReviewData extends Component {
                       component="nav" aria-label="mailbox folders">
                     <ListItem button style={
                         {
-                            width: 580
+                            width: 685
                         }
                     }>
                         <div>
@@ -118,7 +118,7 @@ class ReviewData extends Component {
                                 style={
                                 {
                                     height: 500,
-                                    width: 550,
+                                    width: 650,
                                     marginBottom: 10
                                 }
                             } className="custom-control-inline form-control"

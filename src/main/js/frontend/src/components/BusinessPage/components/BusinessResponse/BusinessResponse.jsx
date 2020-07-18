@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import SearchIcon from "@material-ui/icons/Search";
 
 class BusinessData extends Component {
 
@@ -39,7 +41,13 @@ class BusinessData extends Component {
                                 if (claimed === true) {
                                     return "Business was claimed on " + response.dateTime + " by " + response.user
                                 }
-                                return <Button type="submit">Claim this business</Button>
+                                return (
+                                    <Link to={{
+                                        pathname: "/ClaimBusiness/",
+                                    }}>
+                                        <Button type="submit">Claim this business</Button>
+                                    </Link>
+                                )
                             }
 
                             return (

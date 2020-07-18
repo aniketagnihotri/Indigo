@@ -8,7 +8,7 @@ public class BusinessData {
     private String id;
     private boolean sponsored;
     private int numReviews;
-    private double rating;
+    private double indigoRating;
     private boolean claimed;
     private String user;
     private String businessResponse;
@@ -41,12 +41,12 @@ public class BusinessData {
         this.numReviews = numReviews;
     }
 
-    public double getRating() {
-        return rating;
+    public double getIndigoRating() {
+        return indigoRating;
     }
 
-    public void setRating(double rating) {
-        this.rating = rating;
+    public void setIndigoRating(double indigoRating) {
+        this.indigoRating = indigoRating;
     }
 
     public boolean isClaimed() {
