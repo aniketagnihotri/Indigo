@@ -34,7 +34,7 @@ class BusinessListingsPage extends Component {
                     Showing results for "{this.props.match.params.searchTerm}"
                 </h4>
                 <p style={ {  marginLeft: 445, textAlign: "left", lineHeight: -1 } }>
-                    Results are ordered from highest to lowest rated.
+                    Results are ordered by highest Indigo rating and number of reviews.
                 </p>
                 <ListingData searchTerm={this.props.match.params.searchTerm} />
                 <PageFooter />
