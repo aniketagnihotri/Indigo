@@ -40,10 +40,23 @@ class RecommendedBusinesses extends Component {
                             }
                         }
 
+                        function getRatingAndReviews(rating) {
+                            if (rating[1] === 0) {
+                                return (<p className="lead" style={ { marginBottom: 0, fontSize: 18, textAlign: "left", lineHeight: -1 } }>
+                                    No rating yet ({rating[1]} reviews) {getSponsored(rating[0])}
+                                </p>)
+                            }
+                            return (
+                                <p className="lead" style={ { marginBottom: 0, fontSize: 18, textAlign: "left", lineHeight: -1 } }>
+                                    Indigo Rating: {rating[2]} ({rating[1]} reviews) {getSponsored(rating[0])}
+                                </p>
+                            )
+                        }
+
                         return (
-                            <p className="lead" style={ { marginBottom: 0, fontSize: 18, textAlign: "left", lineHeight: -1 } }>
-                                Our Rating: {rating[2]} ({rating[1]} reviews) {getSponsored(rating[0])}
-                            </p>
+                            <div>
+                                {getRatingAndReviews(rating)}
+                            </div>
                         );
                     }))}
             </div>

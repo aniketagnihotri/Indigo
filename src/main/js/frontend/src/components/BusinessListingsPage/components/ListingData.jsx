@@ -34,7 +34,7 @@ class ListingData extends Component {
     }
 
     sortBusinessesByNumReviews() {
-        this.state.businesses.sort((a, b) => a.indigoRating < b.indigoRating ? 1:-1).map(
+        this.state.businesses.sort((a, b) => a.numReviews < b.numReviews ? 1:-1).map(
             (business, i) => <div key={i}> {business.rating} </div>
         )
     }

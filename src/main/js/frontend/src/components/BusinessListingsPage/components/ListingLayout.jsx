@@ -34,6 +34,19 @@ class ListingLayout extends Component {
         }
     }
 
+    getRatingAndReviews(business) {
+        if (business.numReviews === 0) {
+            return (<p className="lead" style={ { marginBottom: 0, fontSize: 18, textAlign: "left", lineHeight: -1 } }>
+                No rating yet ({business.numReviews} reviews) {this.getSponsored(business.sponsored)}
+            </p>)
+        }
+        return (
+            <p className="lead" style={ { marginBottom: 0, fontSize: 18, textAlign: "left", lineHeight: -1 } }>
+                Indigo Rating: {business.indigoRating} ({business.numReviews} reviews) {this.getSponsored(business.sponsored)}
+            </p>
+        )
+    }
+
     render() {
         const business = this.state.business;
         return (
@@ -53,9 +66,7 @@ class ListingLayout extends Component {
                                 <h2>{business.name}</h2>
                                 <div style={ { paddingTop: 10, paddingBottom: 30 } }>
                                     <p>
-                                        <p className="lead" style={ { marginBottom: 0, fontSize: 18, textAlign: "left", lineHeight: -1 } }>
-                                            Our Rating: {business.indigoRating} ({business.numReviews} reviews) {this.getSponsored(business.sponsored)}
-                                        </p>
+                                        {this.getRatingAndReviews(business)}
                                     </p>
                                     <p className="lead" style={
                                         { paddingTop: 10, fontSize: 14,

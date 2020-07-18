@@ -153,8 +153,7 @@ public class DatabaseRepository {
             }
         }, id);
         if (businessRating.size() == 0) {
-            double rating = (Math.random() * (2)) + 3;
-            addBusinessData(id, false, 0, rating, false, null, stockResponse, null);
+            addBusinessData(id, false, 0, 0.0, false, null, stockResponse, null);
         }
         return businessRating;
     }

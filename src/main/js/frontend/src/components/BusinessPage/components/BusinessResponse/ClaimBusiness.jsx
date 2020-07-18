@@ -23,7 +23,7 @@ class AboutUs extends Component {
                     <SearchFilter />
                 </Jumbotron>
                 <h1 style={ { marginLeft: 20, textAlign: "left"} }>Claim a business</h1>
-                <p style={ { marginLeft: 40, marginRight: 40, paddingBottom: 365, textAlign: "left"} }>
+                <p style={ { textSize: 18, marginLeft: 40, marginRight: 40, paddingBottom: 365, textAlign: "left"} }>
                     Thank you you for your interest in claiming this business! We are currently
                     implementing this feature. Please check back soon!
                 </p>

@@ -28,7 +28,7 @@ class RecommendedBusinesses extends Component {
     }
 
     sortBusinessesByNumReviews() {
-        this.state.businesses.sort((a, b) => a.indigoRating < b.indigoRating ? 1:-1).map(
+        this.state.businesses.sort((a, b) => a.numReviews < b.numReviews ? 1:-1).map(
             (business, i) => <div key={i}> {business.rating} </div>
         )
     }
@@ -52,6 +52,19 @@ class RecommendedBusinesses extends Component {
                                 }
                             }
 
+                            function getRatingAndReviews(business) {
+                                if (business.numReviews === 0) {
+                                    return (<p className="lead" style={ { marginBottom: 0, fontSize: 18, textAlign: "left", lineHeight: -1 } }>
+                                                No rating yet ({business.numReviews} reviews) {getSponsored(business.sponsored)}
+                                            </p>)
+                                }
+                                return (
+                                    <p className="lead" style={ { marginBottom: 0, fontSize: 18, textAlign: "left", lineHeight: -1 } }>
+                                        Indigo Rating: {business.indigoRating} ({business.numReviews} reviews) {getSponsored(business.sponsored)}
+                                    </p>
+                                )
+                            }
+
                             return (
                                 <Link to={{
                                     pathname: "/GetBusiness/" + business.id,
@@ -72,9 +85,7 @@ class RecommendedBusinesses extends Component {
                                                    alt={"Image preview here"} width={375} height={275} mode='fit' />
                                             <h1 style={ { fontSize: 28, paddingTop: 5, paddingBottom: 10 } }>{business.name}</h1>
                                             <div>
-                                                <p className="lead" style={ { marginBottom: 0, fontSize: 18, textAlign: "left", lineHeight: -1 } }>
-                                                    Our Rating: {business.indigoRating} ({business.numReviews} reviews) {getSponsored(business.sponsored)}
-                                                </p>
+                                                {getRatingAndReviews(business)}
                                             </div>
                                             <p className="lead" style={ { fontSize: 14 } }>
                                                 <br />Yelp Rating: {business.rating}
