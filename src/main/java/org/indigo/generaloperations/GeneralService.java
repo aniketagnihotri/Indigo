@@ -15,11 +15,11 @@ import java.util.List;
 @Service
 public class GeneralService {
 
-    private final String YELP_CONTROLLER_SEARCHTERM = "http://localhost:8080/api/yelp/searchBusinessListingByTerm/";
+    private final String YELP_CONTROLLER_SEARCHTERM = "https://indigo04.herokuapp.com/api/yelp/searchBusinessListingByTerm/";
 
-    private final String YELP_CONTROLLER_RANDOM = "http://localhost:8080/api/yelp/searchBusinessListingRandom/";
+    private final String YELP_CONTROLLER_RANDOM = "https://indigo04.herokuapp.com/api/yelp/searchBusinessListingRandom/";
 
-    private final String DB_CONTROLLER_SEARCHDATA = "http://localhost:8080/api/db/getBusinessData/";
+    private final String DB_CONTROLLER_SEARCHDATA = "https://indigo04.herokuapp.com/api/db/getBusinessData/";
 
     //class for configuring a business from a response
     GeneralConfigurator configurator = new GeneralConfigurator();
