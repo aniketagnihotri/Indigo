@@ -22,7 +22,7 @@ class ContactUs extends Component {
 
                     <SearchFilter />
                 </Jumbotron>
-                <h1 style={ { marginLeft: 20, textAlign: "left"} }>Contact us!</h1>
+                <h1 style={ { marginLeft: 20, textAlign: "left"} }>Contact Us!</h1>
                 <p style={ { marginLeft: 40, marginRight: 40, textAlign: "left"} }>
                     sample text about ussample text about ussample text about us
                     sample text about ussample text about ussample text about ussample text about us

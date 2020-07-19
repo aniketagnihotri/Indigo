@@ -6,6 +6,7 @@ import PageFooter from "../PageAttributes/PageFooter";
 import Searchbar from "../PageAttributes/Searchbar";
 import SearchFilter from "../PageAttributes/SearchFilter";
 import RecommendedBusinesses from "./components/RecommendedBusinesses";
+import CasesData from "../PageAttributes/CasesData";
 
 class HomePage extends Component {
 
@@ -22,6 +23,7 @@ class HomePage extends Component {
                     <br /><br /><br /><br/>
                     <br />
                 </Jumbotron>
+                <CasesData />
                 <br />
                 <RecommendedBusinesses />
                 <br /><br />

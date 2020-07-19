@@ -5,6 +5,7 @@ import Searchbar from "../PageAttributes/Searchbar";
 import SearchFilter from "../PageAttributes/SearchFilter";
 import PageFooter from "../PageAttributes/PageFooter";
 import ListingData from "./components/ListingData";
+import CasesData from "../PageAttributes/CasesData";
 
 class BusinessListingsPage extends Component {
 
@@ -30,6 +31,7 @@ class BusinessListingsPage extends Component {
 
                     <SearchFilter />
                 </Jumbotron>
+                <CasesData />
                 <h4 style={ {  marginLeft: 445, textAlign: "left", lineHeight: -1 } }>
                     Showing results for "{this.props.match.params.searchTerm}"
                 </h4>

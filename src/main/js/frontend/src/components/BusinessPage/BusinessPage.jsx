@@ -7,6 +7,7 @@ import SearchFilter from "../PageAttributes/SearchFilter";
 import PageFooter from "../PageAttributes/PageFooter";
 import BusinessData from "./components/BusinessData/BusinessData";
 import ReviewsData from "./components/Reviews/ReviewsData";
+import CasesData from "../PageAttributes/CasesData";
 
 class BusinessPage extends Component {
 
@@ -33,6 +34,7 @@ class BusinessPage extends Component {
                         <SearchFilter />
                     </div>
                 </Jumbotron>
+                <CasesData />
                 <BusinessData id={this.state.id} />
                 <ReviewsData id={this.state.id} />
 

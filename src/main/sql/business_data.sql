@@ -17,6 +17,8 @@ DESC business_data;
 
 INSERT INTO business_data (id, sponsored, numReviews, indigoRating, claimed, user, businessResponse, dateTime) VALUES ("test id", false, 0, 2.0, false, null, null, null);
 SELECT * FROM business_data;
+SELECT COUNT(*) FROM business_data;
+
 
 UPDATE business_data SET sponsored = true WHERE id = "ReV4Q3rEJ8neicQPc6pC0w";
 
