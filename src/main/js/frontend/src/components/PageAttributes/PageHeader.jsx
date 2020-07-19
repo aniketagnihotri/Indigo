@@ -32,8 +32,8 @@ class PageHeader extends Component {
                 </ReactBootStrap.Navbar.Collapse>
                 <ReactBootStrap.Nav className="mr-auto" style={this.styleTabs}>
                     <ReactBootStrap.Nav.Link href="/">  Home  </ReactBootStrap.Nav.Link>
-                    <ReactBootStrap.Nav.Link href="/AboutUs">  About Us  </ReactBootStrap.Nav.Link>
-                    <ReactBootStrap.Nav.Link href="/ContactUs">  Contact Us  </ReactBootStrap.Nav.Link>
+                    <ReactBootStrap.Nav.Link href="/AboutUs">  About  </ReactBootStrap.Nav.Link>
+                    <ReactBootStrap.Nav.Link href="/ContactUs">  Contact  </ReactBootStrap.Nav.Link>
                     <ReactBootStrap.NavDropdown title="User  " >
                         <ReactBootStrap.NavDropdown.Item href="#action/3.3">Your Info</ReactBootStrap.NavDropdown.Item>
                         <ReactBootStrap.NavDropdown.Divider />
