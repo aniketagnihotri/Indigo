@@ -14,15 +14,15 @@ class HomePage extends Component {
         return (
             <div>
                 <Jumbotron className={"jumbotron-home"}>
-                    <PageHeaderHome />
-                    <br /><br /><br /><br />
-                    <br /><br /><br /><br/>
-                    <Searchbar />
-                    <br />
-                    <SearchFilter />
-                    <br /><br /><br /><br/>
-                    <br />
-                </Jumbotron>
+                        <PageHeaderHome />
+                        <br /><br /><br /><br />
+                        <br /><br /><br /><br/>
+                        <Searchbar />
+                        <br />
+                        <SearchFilter />
+                        <br /><br /><br /><br/>
+                        <br />
+                        </Jumbotron>
                 <CasesData />
                 <br />
                 <RecommendedBusinesses />

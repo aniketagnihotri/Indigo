@@ -20,7 +20,7 @@ class BusinessListingsPage extends Component {
     render() {
         return (
             <div>
-                <Jumbotron className={"jumbotron-about"}>
+                <Jumbotron className={"jumbotron-business"}>
                     <div style={ { marginBottom: 70 }}>
                         <PageHeader />
                     </div>
