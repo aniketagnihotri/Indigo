@@ -19,7 +19,6 @@ public class BusinessConfigurator {
      */
     public List configureBusinessListing(Response response, int limit) throws IOException {
         String jsonData = response.body().string();
-        System.out.println(jsonData);
         JSONObject yelpResponse = new JSONObject(jsonData);
         JSONArray jsonArray = yelpResponse.getJSONArray("businesses");
 
