@@ -19,40 +19,42 @@ public class BusinessConfigurator {
      */
     public List configureBusinessListing(Response response, int limit) throws IOException {
         String jsonData = response.body().string();
-        JSONObject yelpResponse = new JSONObject(jsonData);
-        JSONArray jsonArray = yelpResponse.getJSONArray("businesses");
-
-        List<YelpBusinessListing> businesses = new ArrayList<YelpBusinessListing>(jsonArray.length());
-        for (int i = 0; i < jsonArray.length(); i++) {
-            JSONObject jsonObject = jsonArray.getJSONObject(i);
-            //new yelp business listing
-            YelpBusinessListing business = new YelpBusinessListing();
-            //try catch in order of what is most likely to be present for any given business
-
-            //initialization of business id
-            business.setId(jsonObject);
-            //initialization of business name
-            business.setName(jsonObject);
-            //initialization of business yelp url
-            business.setUrl(jsonObject);
-            //initialization of business display address
-            business.setDisplayAddress(jsonObject);
-            //initialization of business yelp categories
-            business.setCategories(jsonObject);
-            //initialization of business open/closed state
-            business.setClosed(jsonObject);
-            //initialization of business yelp rating
-            business.setRating(jsonObject);
-            //initialization of business image_url
-            business.setImage_url(jsonObject);
-            //initialization of business yelp price
-            business.setPrice(jsonObject);
-
-            businesses.add(business);
-
-        }
-
-        return businesses;
+        System.out.println(jsonData);
+//        JSONObject yelpResponse = new JSONObject(jsonData);
+//        JSONArray jsonArray = yelpResponse.getJSONArray("businesses");
+//
+//        List<YelpBusinessListing> businesses = new ArrayList<YelpBusinessListing>(jsonArray.length());
+//        for (int i = 0; i < jsonArray.length(); i++) {
+//            JSONObject jsonObject = jsonArray.getJSONObject(i);
+//            //new yelp business listing
+//            YelpBusinessListing business = new YelpBusinessListing();
+//            //try catch in order of what is most likely to be present for any given business
+//
+//            //initialization of business id
+//            business.setId(jsonObject);
+//            //initialization of business name
+//            business.setName(jsonObject);
+//            //initialization of business yelp url
+//            business.setUrl(jsonObject);
+//            //initialization of business display address
+//            business.setDisplayAddress(jsonObject);
+//            //initialization of business yelp categories
+//            business.setCategories(jsonObject);
+//            //initialization of business open/closed state
+//            business.setClosed(jsonObject);
+//            //initialization of business yelp rating
+//            business.setRating(jsonObject);
+//            //initialization of business image_url
+//            business.setImage_url(jsonObject);
+//            //initialization of business yelp price
+//            business.setPrice(jsonObject);
+//
+//            businesses.add(business);
+//
+//        }
+//
+//        return businesses;
+        return null;
 
     }
 

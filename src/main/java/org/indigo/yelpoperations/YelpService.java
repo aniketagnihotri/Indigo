@@ -35,17 +35,30 @@ public class YelpService {
      * Sends a request to the Yelp Fusion API and returns an array of BusinessListings.
      */
     public List searchBusinessListing(int limit, String term) {
+//        OkHttpClient client = new OkHttpClient().newBuilder()
+//                .build();
+//        Request request = new Request.Builder()
+//                .url(getSEARCH_URL(limit, term))
+//                .method("GET", null)
+//                .addHeader("Authorization",
+//                        "Bearer " + BEARER_TOKEN)
+//                .build();
+
         OkHttpClient client = new OkHttpClient().newBuilder()
                 .build();
         Request request = new Request.Builder()
-                .url(getSEARCH_URL(limit, term))
+                .url("http://bot.whatismyipaddress.com/")
                 .method("GET", null)
-                .addHeader("Authorization",
-                        "Bearer " + BEARER_TOKEN)
                 .build();
+
+
         try {
             Response response = client.newCall(request).execute();
-            return businessConfigurator.configureBusinessListing(response, limit);
+            businessConfigurator.configureBusinessListing(response, limit);
+            return null;
+//            Response response = client.newCall(request).execute();
+//            System.out.println(response);
+//            return businessConfigurator.configureBusinessListing(response, limit);
         } catch (Exception e) {
             e.printStackTrace();
             return null;

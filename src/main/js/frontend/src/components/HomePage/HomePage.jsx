@@ -10,6 +10,19 @@ import CasesData from "../PageAttributes/CasesData";
 
 class HomePage extends Component {
 
+    componentDidMount() {
+        fetch(`bot.whatismyipaddress.com`, {
+            method: 'GET',
+            headers : {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            }
+        })
+            .then(results => results.json())
+            .then(results => console.log(results))
+    }
+
+
     render() {
         return (
             <div>
