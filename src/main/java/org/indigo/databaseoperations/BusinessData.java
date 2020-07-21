@@ -3,7 +3,7 @@ package org.indigo.databaseoperations;
 /*
  * Class for holding the details for BusinessData.
  */
-public class BusinessData {
+public class    BusinessData {
 
     private String id;
     private boolean sponsored;

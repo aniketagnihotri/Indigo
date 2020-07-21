@@ -11,7 +11,6 @@ class BusinessListingsPage extends Component {
 
     constructor(props) {
         super(props);
-
         this.state = {
             searchTerm: this.props.match.params.searchTerm
         }
@@ -22,7 +21,7 @@ class BusinessListingsPage extends Component {
             <div>
                 <Jumbotron className={"jumbotron-business"}>
                     <div style={ { marginBottom: 70 }}>
-                        <PageHeader />
+                        <PageHeader user={this.props.user} />
                     </div>
 
                     <div style={ { marginBottom: 20 }}>

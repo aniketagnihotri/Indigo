@@ -24,7 +24,7 @@ class BusinessPage extends Component {
             <div>
                 <Jumbotron className={"jumbotron-business"}>
                     <div style={ { marginBottom: 70 }}>
-                        <PageHeader />
+                        <PageHeader user={this.props.user} />
                     </div>
 
                     <div style={ { marginBottom: 20 }}>

@@ -13,7 +13,6 @@ class ReviewData extends Component {
     }
 
     componentDidMount() {
-        console.log(this.state.id)
         const params = this.state.id;
         fetch(`/api/db/getBusinessReviews/` + params, {
             method: 'GET',

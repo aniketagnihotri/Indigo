@@ -10,19 +10,27 @@ import CasesData from "../PageAttributes/CasesData";
 
 class HomePage extends Component {
 
+    constructor(props) {
+        super(props);
+        this.state = {
+            user: this.props.user
+        }
+    }
+
     render() {
+        console.log(this.props.user)
         return (
             <div>
                 <Jumbotron className={"jumbotron-home"}>
-                        <PageHeaderHome />
-                        <br /><br /><br /><br />
-                        <br /><br /><br /><br/>
-                        <Searchbar />
-                        <br />
-                        <SearchFilter />
-                        <br /><br /><br /><br/>
-                        <br />
-                        </Jumbotron>
+                    <PageHeaderHome user={this.props.user}/>
+                    <br /><br /><br /><br />
+                    <br /><br /><br /><br/>
+                    <Searchbar />
+                    <br />
+                    <SearchFilter />
+                    <br /><br /><br /><br/>
+                    <br />
+                </Jumbotron>
                 <CasesData />
                 <br />
                 <RecommendedBusinesses />

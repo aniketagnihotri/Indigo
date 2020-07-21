@@ -46,7 +46,6 @@ public class YelpService {
 
         try {
             Response response = client.newCall(request).execute();
-            System.out.println(response);
             return businessConfigurator.configureBusinessListing(response, limit);
         } catch (Exception e) {
             e.printStackTrace();

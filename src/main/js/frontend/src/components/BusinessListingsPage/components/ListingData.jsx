@@ -82,7 +82,6 @@ class ListingData extends Component {
 
                 ) : (
                     this.state.businesses.map(function (business, index) {
-                        console.log(business)
                         return (
                             <Box style={
                                 {

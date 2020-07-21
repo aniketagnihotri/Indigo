@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import * as ReactBootStrap from "react-bootstrap"
+import fire from "../../config/Fire";
 import "./Navbar.css"
 import "./PageAttributes.css"
 
@@ -8,7 +9,7 @@ class PageHeader extends Component {
         super(props);
 
         this.state = {
-            page: ""
+            "user": this.props.user,
         }
     }
 
@@ -23,6 +24,10 @@ class PageHeader extends Component {
         fontSize: 50,
     };
 
+    logout(event) {
+        fire.auth().signOut();
+    }
+
     render() {
         return (
             <ReactBootStrap.Navbar className={"color-nav "} variant={"light"}>
@@ -33,13 +38,20 @@ class PageHeader extends Component {
                 <ReactBootStrap.Nav className="mr-auto" style={this.styleTabs}>
                     <ReactBootStrap.Nav.Link href="/">  Home  </ReactBootStrap.Nav.Link>
                     <ReactBootStrap.Nav.Link href="/AboutUs">  About  </ReactBootStrap.Nav.Link>
-                    <ReactBootStrap.Nav.Link href="/ContactUs">  Contact  </ReactBootStrap.Nav.Link>
                     <ReactBootStrap.NavDropdown title="User  " >
-                        <ReactBootStrap.NavDropdown.Item href="#action/3.3">Your Info</ReactBootStrap.NavDropdown.Item>
-                        <ReactBootStrap.NavDropdown.Divider />
-                        <ReactBootStrap.NavDropdown.Item href="/Login">Login or Sign Out</ReactBootStrap.NavDropdown.Item>
+                        {this.props.user ? (
+                                <div>
+                                    <ReactBootStrap.NavDropdown.Item href="#action/3.3">Your Info</ReactBootStrap.NavDropdown.Item>
+                                    <ReactBootStrap.NavDropdown.Divider />
+                                    <ReactBootStrap.NavDropdown.Item onClick={this.logout.bind(this)} href="/Login">Sign Out</ReactBootStrap.NavDropdown.Item>
+                                </div>)
+                            :
+                            (
+                                <ReactBootStrap.NavDropdown.Item href="/Login">Login or Sign Up</ReactBootStrap.NavDropdown.Item>
+
+                            )}
                     </ReactBootStrap.NavDropdown>
-                    <ReactBootStrap.Nav.Link href="/AboutUs">  GitHub  </ReactBootStrap.Nav.Link>
+                    <ReactBootStrap.Nav.Link href="/AboutUs">Resources</ReactBootStrap.Nav.Link>
                 </ReactBootStrap.Nav>
             </ReactBootStrap.Navbar>
         );
