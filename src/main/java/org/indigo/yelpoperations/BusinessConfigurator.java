@@ -16,6 +16,10 @@ public class BusinessConfigurator {
 
     /*
      * Configures Business ListingData and returns them in an array.
+     *
+     * @param response  the given response from a GET request sent by YelpService.
+     * @param limit     the size of the list of BusinessListings to return.
+     * @return List     containing all BusinessListings in the given response.
      */
     public List configureBusinessListing(Response response, int limit) throws IOException {
         String jsonData = response.body().string();
@@ -58,6 +62,10 @@ public class BusinessConfigurator {
 
     /*
      * Configures a single Business object and returns it.
+     *
+     * @param response  the given response from a GET request sent by YelpService.
+     * @param limit     the size of the list of BusinessListings to return.
+     * @return YelpBusiness     containing the BusinessListing in the given response (Yelp guarantees only one).
      */
     public YelpBusiness configureBusiness(Response response, int limit) throws IOException {
         String jsonData = response.body().string();

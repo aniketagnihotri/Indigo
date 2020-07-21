@@ -10,6 +10,9 @@ import org.json.JSONObject;
  */
 public class YelpBusinessListing {
 
+    /*
+     * These fields match some respective entries in the JSON responses from the Yelp Fusion API.
+     */
     private String id;
     private String name;
     private boolean isClosed;

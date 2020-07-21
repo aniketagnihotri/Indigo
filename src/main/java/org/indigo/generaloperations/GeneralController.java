@@ -9,6 +9,9 @@ import java.util.List;
 @RequestMapping("/api/general")
 public class GeneralController {
 
+    /*
+     * Autowired GeneralService object, which gives this Controller access to those methods.
+     */
     @Autowired
     private GeneralService service;
 
@@ -17,7 +20,10 @@ public class GeneralController {
      */
 
     /*
-     * Searches for a random list of Businesses ListingData in Indianapolis.
+     * Searches for a random list of GeneralBusinessListing data in Indianapolis.
+     *
+     * @param limit    the limit of businesses that can be returned from the search.
+     * @return List     the list of businesses with all data filled from Yelp and the database.
      */
     @GetMapping("/searchBusinessListingRandom/{limit}")
     public List searchBusinessListingByRandom(@PathVariable int limit) {
@@ -25,7 +31,11 @@ public class GeneralController {
     }
 
     /*
-     * Matches Business ListingData in Indianapolis given an entered name or category.
+     * Matches GeneralBusinessListing data in Indianapolis given an entered name or category.
+     *
+     * @param term  the search term to return results for.
+     * @param limit    the limit of businesses that can be returned from the search.
+     * @return List     the list of businesses with all data filled from Yelp and the database.
      */
     @GetMapping("/searchBusinessListingByTerm/{term}/{limit}")
     public List searchBusinessListingByTerm(@PathVariable String term, @PathVariable int limit) {

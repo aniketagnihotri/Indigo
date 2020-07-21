@@ -8,7 +8,6 @@ import org.springframework.stereotype.Repository;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
-import java.util.Objects;
 
 /*
  * Repository for BusinessReviews and BusinessData, ordered respectively.
@@ -26,7 +25,7 @@ public class DatabaseRepository {
      */
 
     /*
-     * Class for holding a particular RowMapper<> configuration; it is intended to reduce redundancy.
+     * Class for holding a particular RowMapper<>() configuration; it is intended to reduce redundancy.
      */
     private static class BusinessReviewRowMapper implements RowMapper<BusinessReview> {
         @Override
@@ -43,6 +42,9 @@ public class DatabaseRepository {
 
     /*
      * Sends a GET request to the database for all BusinessReviews for a particular Business and organizes them in a List.
+     *
+     * @param id    received from GET mapping in DatabaseController.
+     * @return List of all business reviews for a particular business organized in a List.
      */
     public List getBusinessReviews(String id) {
         final String sql = "SELECT id, user, rating, review, dateTime FROM business_reviews WHERE id = ?";
@@ -52,6 +54,13 @@ public class DatabaseRepository {
 
     /*
      * Sends a POST request to the database to add a BusinessReview for a particular Business and returns true if successful.
+     *
+     * @param id    id of a business review
+     * @param user  user of a business review
+     * @param rating    rating of a business review
+     * @param review    review text of a business review
+     * @param dateTime  dateTime of a business review
+     * @return String  returns either TRUE or FALSE as a String.
      */
     public String addBusinessReview(String id, String user, double rating, String review, String dateTime) {
 
@@ -76,6 +85,13 @@ public class DatabaseRepository {
 
     /*
      * Sends a PUT request to the database to update a BusinessReview for a particular Business and returns true if successful.
+     *
+     * @param id    id of a business review
+     * @param user  user of a business review
+     * @param rating    rating of a business review
+     * @param review    review text of a business review
+     * @param dateTime  dateTime of a business review
+     * @return String  returns either TRUE or FALSE as a String.
      */
     public String updateBusinessReview(String id, String user, double rating, String review, String dateTime) {
         final String sql = "UPDATE business_reviews SET rating = ?, review = ?, dateTime = ? WHERE id = ? && user = ?";
@@ -89,6 +105,11 @@ public class DatabaseRepository {
 
     /*
      * Sends a DELETE request to the database to delete a BusinessReview for a particular Business and returns true if successful.
+     *
+     * @param id    id of a business review
+     * @param user  user of a business review
+     * @param review    review text of a business review
+     * @return String  returns either TRUE or FALSE as a String.
      */
     public String removeBusinessReview(String id, String user, String review) {
         final String sql = "DELETE FROM business_reviews WHERE (id = ? AND user = ? AND review = ?)";
@@ -105,7 +126,7 @@ public class DatabaseRepository {
      */
 
     /*
-     * Class for holding a particular RowMapper<> configuration; it is intended to reduce redundancy.
+     * Class for holding a particular RowMapper<>() configuration; it is intended to reduce redundancy.
      */
     private static class BusinessDataRowMapper implements RowMapper<BusinessData> {
         @Override
@@ -125,6 +146,9 @@ public class DatabaseRepository {
 
     /*
      * Sends a GET request to the database for the BusinessData for a particular Business and organizes them in a List.
+     *
+     * @param id    received from GET mapping in DatabaseController.
+     * @return List all business data for a particular business organized in a List.
      */
     public List getBusinessData(String id) {
         final String sql = "SELECT id, sponsored, numReviews, indigoRating, claimed, user, businessResponse, dateTime FROM business_data WHERE id = ?";
@@ -138,7 +162,10 @@ public class DatabaseRepository {
 
     /*
      * Sends a GET request to the database for the rating in the BusinessData for a particular Business and organizes it in a
-     * singular-element List.
+     * List of Object arrays.
+     *
+     * @param id    received from GET mapping in DatabaseController.
+     * @return List rating, numReview, and isSponsored fields for a particular business organized in a List.
      */
     public List<Object[]> getIndigoBusinessStats(String id) {
         final String sql = "SELECT sponsored, numReviews, indigoRating FROM business_data WHERE id = ?";
@@ -160,6 +187,16 @@ public class DatabaseRepository {
 
     /*
      * Sends a POST request to the database to add BusinessData for a particular Business and returns true if successful.
+     *
+     * @param id    id of business data
+     * @param sponsored     sponsored value of business data
+     * @param numReviews    number of reviews value of business data
+     * @param indigoRating  indigo-specific rating value of business data
+     * @param claimed   claimed value of business data
+     * @param user  user of a business data
+     * @param businessResponse    response text of business data
+     * @param dateTime  dateTime of business data
+     * @return String  returns either TRUE or FALSE as a String.
      */
     public String addBusinessData(String id, boolean sponsored, int numReviews, double indigoRating,
                                   boolean claimed, String user,
@@ -178,6 +215,16 @@ public class DatabaseRepository {
 
     /*
      * Sends a PUT request to the database to update the BusinessData for a particular Business and returns true if successful.
+     *
+     * @param id    id of business data
+     * @param sponsored     sponsored value of business data
+     * @param numReviews    number of reviews value of business data
+     * @param indigoRating  indigo-specific rating value of business data
+     * @param claimed   claimed value of business data
+     * @param user  user of a business data
+     * @param businessResponse    response text of business data
+     * @param dateTime  dateTime of business data
+     * @return String  returns either TRUE or FALSE as a String.
      */
     public String updateBusinessData(String id, boolean sponsored, int numReviews, double indigoRating,
                                      boolean claimed, String user, String businessResponse, String dateTime) {
@@ -196,6 +243,11 @@ public class DatabaseRepository {
     /*
      * Sends a PUT request to the database to update the numReviews in the
      * BusinessData for a particular Business and returns true if successful.
+     *
+     * @param id    id of business data
+     * @param numReviews    number of reviews value of business data
+     * @param indigoRating  indigo-specific rating value of business data
+     * @return String  returns either TRUE or FALSE as a String.
      */
     public String updateBusinessRatingAndNumReviews(String id, int numReviews, double indigoRating) {
         final String sql = "UPDATE business_data SET numReviews = ?, indigoRating = ? WHERE id = ?";
@@ -209,6 +261,9 @@ public class DatabaseRepository {
 
     /*
      * Sends a DELETE request to the database to delete a BusinessData for a particular Business and returns true if successful.
+     *
+     * @param id    id of business data
+     * @return String  returns either TRUE or FALSE as a String.
      */
     public String removeBusinessData(String id) {
         final String sql = "DELETE FROM business_data WHERE (id = ?)";
@@ -219,6 +274,5 @@ public class DatabaseRepository {
             return Boolean.FALSE.toString();
         }
     }
-
 
 }

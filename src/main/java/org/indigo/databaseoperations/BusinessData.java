@@ -3,8 +3,11 @@ package org.indigo.databaseoperations;
 /*
  * Class for holding the details for BusinessData.
  */
-public class    BusinessData {
+public class BusinessData {
 
+    /*
+     * These fields match respective entries in a separate AWS RDS Database instance.
+     */
     private String id;
     private boolean sponsored;
     private int numReviews;

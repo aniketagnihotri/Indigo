@@ -16,8 +16,10 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 public class WebApplicationConfig extends WebMvcConfigurerAdapter {
 
     /*
-     * addViewControllers forwards any pages that redirect to "/notFound" to index.html, which
+     * addViewControllers() forwards any pages that redirect to "/notFound" to index.html, which
      * manages the routing for React.
+     *
+     * @param registry  assists with the automation of controllers.
      */
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
@@ -25,7 +27,9 @@ public class WebApplicationConfig extends WebMvcConfigurerAdapter {
     }
 
     /*
-     * containerCustomizer defines "/notFound" as an error page, which is redirected to.
+     * containerCustomizer() defines "/notFound" as an error page, which is redirected to.
+     *
+     * @return EmbeddedServletContainerCustomizer   customizes the servlet container.
      */
     @Bean
     public EmbeddedServletContainerCustomizer containerCustomizer() {

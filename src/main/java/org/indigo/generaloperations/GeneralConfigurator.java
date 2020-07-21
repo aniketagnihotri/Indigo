@@ -1,8 +1,6 @@
 package org.indigo.generaloperations;
 
 import okhttp3.Response;
-import org.indigo.yelpoperations.YelpBusiness;
-import org.indigo.yelpoperations.YelpBusinessListing;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -18,6 +16,10 @@ public class GeneralConfigurator {
 
     /*
      * Configures Business ListingData and returns them in an array.
+     *
+     * @param response  the given response from a GET request sent by GeneralService.
+     * @param limit     the size of the list of GeneralBusinessListings to return.
+     * @return List     containing all BusinessListings in the given response.
      */
     public List configureYelpBusinessListing(Response response, int limit) throws IOException {
         String jsonData = response.body().string();
@@ -58,7 +60,11 @@ public class GeneralConfigurator {
     }
 
     /*
-     * Configures Business ListingData and returns them in an array.
+     * Configures a GeneralBusinessListing with matching database data and returns it.
+     *
+     * @param response  the given response from a GET request sent by GeneralService.
+     * @param business  the business on which to add information to.
+     * @return GeneralBusinessListing   an updates business with all fields filled.
      */
     public GeneralBusinessListing configureDBBusinessListing(Response response, GeneralBusinessListing business) throws IOException {
         String jsonData = response.body().string();
@@ -79,6 +85,5 @@ public class GeneralConfigurator {
         return business;
 
     }
-
 
 }

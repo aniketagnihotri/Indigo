@@ -12,11 +12,17 @@ import java.util.List;
 @RequestMapping("/api/yelp")
 public class YelpController {
 
+    /*
+     * Autowired YelpService object, which gives this Controller access to those methods.
+     */
     @Autowired
     YelpService service;
 
     /*
-     * Searches for a random list of Businesses ListingData in Indianapolis.
+     * Searches for a random list of BusinessListing data in Indianapolis.
+     *
+     * @param limit    the limit of businesses that can be returned from the search.
+     * @return      the list of businesses with all data filled from Yelp and the database.
      */
     @GetMapping("/searchBusinessListingRandom/{limit}")
     public List searchBusinessListingByRandom(@PathVariable int limit) {
@@ -24,7 +30,11 @@ public class YelpController {
     }
 
     /*
-     * Matches Business ListingData in Indianapolis given an entered name or category.
+     * Matches BusinessListing data in Indianapolis given an entered name or category.
+     *
+     * @param term  the search term to return results for.
+     * @param limit    the limit of businesses that can be returned from the search.
+     * @return List     the list of businesses with all data filled from Yelp and the database.
      */
     @GetMapping("/searchBusinessListingByTerm/{term}/{limit}")
     public List searchBusinessListingByTerm(@PathVariable String term, @PathVariable int limit) {
@@ -33,6 +43,10 @@ public class YelpController {
 
     /*
      * Matches a Business to a given Yelp Business ID.
+     *
+     * @param id    the id of a particular business.
+     * @param limit    the limit of businesses that can be returned from the search.
+     * @return YelpBusiness     the matching businesses with all data filled from Yelp and the database.
      */
     @GetMapping("/searchBusinessByID/{id}/{limit}")
     public YelpBusiness searchBusinessByID(@PathVariable String id, @PathVariable int limit) {

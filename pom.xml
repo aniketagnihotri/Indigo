@@ -4,6 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
+<!--    Project details-->
     <groupId>org.indigo</groupId>
     <artifactId>IndiGo</artifactId>
     <version>1.0-SNAPSHOT</version>
@@ -13,6 +14,7 @@
         <java.version>1.8</java.version>
     </properties>
 
+<!--    Spring Boot version-->
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
@@ -36,23 +38,21 @@
             <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
 
-<!--        <dependency>-->
-<!--            <groupId>org.springframework.boot</groupId>-->
-<!--            <artifactId>spring-boot-starter-security</artifactId>-->
-<!--        </dependency>-->
-
+<!--        MySQL dependency injection-->
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <scope>runtime</scope>
         </dependency>
 
+<!--        HTTP3 dependency for back-end GET, POST, PUT, and DELETE requests-->
         <dependency>
             <groupId>com.squareup.okhttp3</groupId>
             <artifactId>okhttp</artifactId>
             <version>4.2.2</version>
         </dependency>
 
+<!--        JSON dependency to manage JSON inputs and returns-->
         <dependency>
             <groupId>org.json</groupId>
             <artifactId>json</artifactId>
@@ -158,6 +158,8 @@
     </build>
 
     <profiles>
+<!--        Two profiles for execution dev (development) and prod (production) that I have configured.-->
+<!--        The profile is set to prod as default.-->
         <profile>
             <id>prod</id>
             <activation>

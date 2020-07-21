@@ -5,6 +5,9 @@ package org.indigo.databaseoperations;
  */
 public class BusinessReview {
 
+    /*
+     * These fields match respective entries in a separate AWS RDS Database instance.
+     */
     private String id;
     private String user;
     private double rating;

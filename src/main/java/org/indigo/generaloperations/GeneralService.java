@@ -11,14 +11,19 @@ import java.util.List;
 @Service
 public class GeneralService {
 
-    //class for configuring a business from a response
-    GeneralConfigurator configurator = new GeneralConfigurator();
     @Value("${app.yelp_controller_searchterm}")
     private String yelp_controller_searchterm;
+
     @Value("${app.yelp_controller_random}")
     private String yelp_controller_random;
+
     @Value("${app.db_controller_searchdata}")
     private String db_controller_searchdata;
+
+    /*
+     * GeneralConfigurator object, which gives this Service access to its methods.
+     */
+    GeneralConfigurator configurator = new GeneralConfigurator();
 
     public List searchYelpBusinessListingRandom(int limit, String term) {
         OkHttpClient client = new OkHttpClient().newBuilder()
@@ -40,6 +45,13 @@ public class GeneralService {
         }
     }
 
+    /*
+     * Sends a GET request to the YelpController and returns a List of BusinessListings.
+     *
+     * @param limit limit of businesses to retrieve from the Yelp API.
+     * @param term  searchTerm to send to the Yelp API.
+     * @return List containing business search results.
+     */
     public List searchYelpBusinessListingByTerm(int limit, String term) {
         OkHttpClient client = new OkHttpClient().newBuilder()
                 .build();
@@ -61,7 +73,10 @@ public class GeneralService {
     }
 
     /*
-     * Sends a request to the Yelp Fusion API and returns an array of BusinessListings.
+     * Sends a GET request to the DatabaseController and returns a List of BusinessListings with their BusinessData fields filled.
+     *
+     * @param businesses list of businesses to make database calls for.
+     * @return List containing businesses with all fields filled.
      */
     public List searchDBBusinessListing(List<GeneralBusinessListing> businesses) {
         for (int i = 0; i < businesses.size(); i++) {
@@ -86,7 +101,6 @@ public class GeneralService {
         return businesses;
 
     }
-
 
 }
 

@@ -10,6 +10,9 @@ import org.json.JSONObject;
  */
 public class YelpBusiness {
 
+    /*
+     * These fields match most respective entries in the JSON responses from the Yelp Fusion API.
+     */
     String id;
     String alias;
     String name;

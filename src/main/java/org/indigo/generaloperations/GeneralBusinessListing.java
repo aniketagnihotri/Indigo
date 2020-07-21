@@ -10,6 +10,10 @@ import org.json.JSONObject;
  */
 public class GeneralBusinessListing {
 
+    /*
+     * These fields match both respective entries in a separate AWS RDS Database instance
+     * and the JSON responses from the Yelp Fusion API.
+     */
     private String id;
     private String name;
     private boolean isClosed;
