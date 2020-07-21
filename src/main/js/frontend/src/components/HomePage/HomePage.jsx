@@ -18,7 +18,6 @@ class HomePage extends Component {
     }
 
     render() {
-        console.log(this.props.user)
         return (
             <div>
                 <Jumbotron className={"jumbotron-home"}>

@@ -8,6 +8,7 @@ import ClaimBusiness from "./components/BusinessPage/components/BusinessResponse
 import Login from "./components/Login/Login";
 import BusinessListingsPage from "./components/BusinessListingsPage/BusinessListingsPage";
 import BusinessPage from "./components/BusinessPage/BusinessPage"
+import YourInfo from "./components/YourInfoPage/YourInfo";
 
 class App extends Component {
 
@@ -24,13 +25,10 @@ class App extends Component {
 
     authListener() {
         fire.auth().onAuthStateChanged((user) => {
-            console.log(user);
             if (user) {
                 this.setState({ "user": user } );
-                // localStorage.setItem("user", user.uid);
             } else {
                 this.setState( { "user": null } );
-                // localStorage.removeItem("user");
             }
         });
     }
@@ -42,12 +40,12 @@ class App extends Component {
                 <Router onUpdate={() => window.scrollTo(0, 0)}>
                     <Switch>
                         <Route path="/AboutUs" render={() => <AboutUs user={this.state.user} />} />
+                        <Route path="/ClaimBusiness" render={() => <ClaimBusiness user={this.state.user} />} />
                         <Route path="/GetBusinesses/:searchTerm" render={props => <BusinessListingsPage user={this.state.user} {...props} />} />
                         <Route path="/GetBusiness/:id" render={props => <BusinessPage user={this.state.user} {...props} />} />
-                        <Route path="/ClaimBusiness" render={() => <ClaimBusiness user={this.state.user} />} />
                         <Route path="/Login" render={() => <Login user={this.state.user} />} />
+                        <Route path="/UserInfo" render={() => <YourInfo user={this.state.user} />} />
                         <Route path="/" render={() => <HomePage user={this.state.user} />} />
-
                     </Switch>
                 </Router>
             </div>

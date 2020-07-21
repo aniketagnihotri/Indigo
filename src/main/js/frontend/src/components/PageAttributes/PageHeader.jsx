@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import * as ReactBootStrap from "react-bootstrap"
+import * as ReactBootStrap from "react-bootstrap";
 import fire from "../../config/Fire";
+import UpdatesModal from "./UpdatesModal";
 import "./Navbar.css"
 import "./PageAttributes.css"
 
@@ -10,6 +11,7 @@ class PageHeader extends Component {
 
         this.state = {
             "user": this.props.user,
+            "open": false
         }
     }
 
@@ -38,8 +40,7 @@ class PageHeader extends Component {
                 <ReactBootStrap.Nav className="mr-auto" style={this.styleTabs}>
                     <ReactBootStrap.Nav.Link href="/">  Home  </ReactBootStrap.Nav.Link>
                     <ReactBootStrap.Nav.Link href="/AboutUs">  About  </ReactBootStrap.Nav.Link>
-                    <ReactBootStrap.Nav.Link href="/Updates">  Updates  </ReactBootStrap.Nav.Link>
-                    <ReactBootStrap.Nav.Link href="/Resources">Resources</ReactBootStrap.Nav.Link>
+                    <ReactBootStrap.Nav.Link>{<UpdatesModal />}  </ReactBootStrap.Nav.Link>
                     <ReactBootStrap.NavDropdown alignRight title={"User"} >
                         {this.props.user ? (
                                 <div>
@@ -48,8 +49,8 @@ class PageHeader extends Component {
                                             fontSize: 16
                                         }
                                     }>Welcome, {this.props.user.email}</ReactBootStrap.NavDropdown.Header>
-                                    <ReactBootStrap.NavDropdown.Item href="/UserInfo">Your Info</ReactBootStrap.NavDropdown.Item>
                                     <ReactBootStrap.NavDropdown.Divider />
+                                    <ReactBootStrap.NavDropdown.Item href="/UserInfo">Your Info</ReactBootStrap.NavDropdown.Item>
                                     <ReactBootStrap.NavDropdown.Item onClick={this.logout.bind(this)}>Sign Out</ReactBootStrap.NavDropdown.Item>
                                 </div>)
                             :

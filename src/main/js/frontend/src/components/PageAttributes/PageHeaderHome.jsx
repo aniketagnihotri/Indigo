@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import * as ReactBootStrap from "react-bootstrap"
 import "./Navbar.css"
 import fire from "../../config/Fire";
+import UpdatesModal from "./UpdatesModal";
 
 class PageHeader extends Component {
     constructor(props) {
@@ -29,7 +30,6 @@ class PageHeader extends Component {
     }
 
     render() {
-        console.log(this.props.user)
         return (
             <ReactBootStrap.Navbar className={"color-nav"} variant={"dark"}>
                 <ReactBootStrap.Navbar.Brand href="/" style={this.styleIcon}>indigo</ReactBootStrap.Navbar.Brand>
@@ -39,8 +39,7 @@ class PageHeader extends Component {
                 <ReactBootStrap.Nav className="mr-auto" style={this.styleTabs}>
                         <ReactBootStrap.Nav.Link href="/">  Home  </ReactBootStrap.Nav.Link>
                         <ReactBootStrap.Nav.Link href="/AboutUs">  About  </ReactBootStrap.Nav.Link>
-                        <ReactBootStrap.Nav.Link href="/Updates">  Updates  </ReactBootStrap.Nav.Link>
-                        <ReactBootStrap.Nav.Link href="/Resources">Resources</ReactBootStrap.Nav.Link>
+                        <ReactBootStrap.Nav.Link>{<UpdatesModal />}  </ReactBootStrap.Nav.Link>
                         <ReactBootStrap.NavDropdown alignRight title={"User"}>
                             {this.props.user ? (
                                     <div>

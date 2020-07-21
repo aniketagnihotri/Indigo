@@ -50,13 +50,13 @@ class BusinessData extends Component {
                             }
 
                             return (
-                                <div>
+                                <div key={index}>
                                     <p className="lead" style={
                                         { fontSize: 16, paddingTop: 30,
                                             textAlign: "left", lineHeight: -1 }
                                     }>
                                         COVID-19 Business Response:
-                                        <br /><h6>{response.businessResponse}</h6>
+                                        <br /><b>{response.businessResponse}</b>
                                         <br /><br/>{getClaimed(response.claimed)}
                                     </p>
                                 </div>

@@ -46,7 +46,7 @@ class ReviewData extends Component {
                 ) : (
                     this.state.reviews.map(function (review, index) {
                         return (
-                            <div style={
+                            <div key={index} style={
                                 {
                                     width: 830, height: 270,
                                     marginTop: 15, marginLeft: 50,

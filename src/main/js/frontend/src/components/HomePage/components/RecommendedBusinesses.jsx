@@ -68,7 +68,7 @@ class RecommendedBusinesses extends Component {
                             return (
                                 <Link to={{
                                     pathname: "/GetBusiness/" + business.id,
-                                }} className={"link"}>
+                                }} className={"link"} key={index}>
                                     <Box style={
                                         {
                                             marginLeft: 20, marginRight: 40,

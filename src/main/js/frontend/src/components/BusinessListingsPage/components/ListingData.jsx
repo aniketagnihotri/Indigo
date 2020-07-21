@@ -43,7 +43,7 @@ class ListingData extends Component {
         return (
             <div>
                 {this.sortBusinessesByNumReviews()}
-                <Box button style={
+                <Box style={
                     {
                         position: "absolute", left: 0, width: 350,
                         marginLeft: 40, backgroundColor: "#D3D3D3",
@@ -83,7 +83,7 @@ class ListingData extends Component {
                 ) : (
                     this.state.businesses.map(function (business, index) {
                         return (
-                            <Box style={
+                            <Box key={index} style={
                                 {
                                     boxShadow: 2, marginLeft: 400,
                                     marginRight: 50, marginBottom: 40,

@@ -54,7 +54,7 @@ class RecommendedBusinesses extends Component {
                         }
 
                         return (
-                            <div>
+                            <div key={index}>
                                 {getRatingAndReviews(rating)}
                             </div>
                         );

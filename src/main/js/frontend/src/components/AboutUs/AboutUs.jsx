@@ -22,14 +22,23 @@ class AboutUs extends Component {
 
                     <SearchFilter />
                 </Jumbotron>
-                <h1 style={ { marginLeft: 20, textAlign: "left"} }>About Us!</h1>
-                <p style={ { marginLeft: 40, marginRight: 40, textAlign: "left"} }>
-                    sample text about ussample text about ussample text about us
-                    sample text about ussample text about ussample text about ussample text about us
-                    sample text about ussample text about ussample text about ussample text about us
-                    sample text about ussample text about ussample text about ussample text about us
-                    sample text about ussample text about ussample text about ussample text about us
-                </p>
+
+                <div style={ { textAlign: "center", marginBottom: 30 } }>
+                    <h1 style={ { marginBottom: 30 } }>About Us</h1>
+                    <p style={ {
+                        display: "inline-block",
+                        maxWidth: "50%",
+                        overflowWrap: "break-word",
+                        wordWrap: "break-word",
+                    } }>
+                        <b>Mission Statement</b><br />
+                        Intended to incentivize safe tourism and travel to and in Indianapolis, Indigo is your go-to for all things COVID-19.
+                        Our goal is to make changes and other information more accessible to the public via crowdsourced business ratings
+                        and business-specific data. In a time of uncertainty, we feel that this is the best way to educate our users as
+                        Indiana slowly reopens.<br />
+                    </p>
+                </div>
+
                 <PageFooter />
             </div>
         );

@@ -65,9 +65,7 @@ class ListingLayout extends Component {
                             <div style={ { textAlign: "left" } }>
                                 <h2>{business.name}</h2>
                                 <div style={ { paddingTop: 10, paddingBottom: 30 } }>
-                                    <p>
-                                        {this.getRatingAndReviews(business)}
-                                    </p>
+                                    {this.getRatingAndReviews(business)}
                                     <p className="lead" style={
                                         { paddingTop: 10, fontSize: 14,
                                             textAlign: "left", lineHeight: -1 }

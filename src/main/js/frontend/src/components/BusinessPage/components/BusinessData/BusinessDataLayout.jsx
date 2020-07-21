@@ -51,9 +51,7 @@ class BusinessDataLayout extends Component {
                         <h1>{business.name}</h1>
                         {this.getOpen()}
                         <div style={ { paddingTop: 40 } }>
-                            <p>
-                                <IndigoRating id={business.id} />
-                            </p>
+                            <IndigoRating id={business.id} />
                             <p className="lead" style={
                                 { fontSize: 16,
                                     textAlign: "left", lineHeight: -1 }
