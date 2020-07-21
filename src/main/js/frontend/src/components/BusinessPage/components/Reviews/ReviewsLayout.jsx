@@ -36,7 +36,7 @@ class ReviewData extends Component {
                 }
             >
                 <h5 style={ { textAlign: "left" } }>
-                    Other reviews for this business
+                    Reviews for this business ({this.state.reviews.length} total)
                 </h5>
                 {this.state.reviews.length === 0 ? (
                     <h6 style={ { marginTop: 30, marginLeft: 30, width: 700 } }>

@@ -34,7 +34,7 @@ class ReviewsData extends Component {
                             marginRight: 100
                         }
                     }>
-                        <WriteReviewData  id={this.state.id} />
+                        <WriteReviewData  id={this.state.id} user={this.props.user} />
                     </div>
 
                     <div style={
@@ -45,8 +45,6 @@ class ReviewsData extends Component {
                         <ReviewLayout id={this.state.id} />
                     </div>
                 </Box>
-
-
             </Box>
         );
     }

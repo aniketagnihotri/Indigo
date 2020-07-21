@@ -36,7 +36,7 @@ class BusinessPage extends Component {
                 </Jumbotron>
                 <CasesData />
                 <BusinessData id={this.state.id} />
-                <ReviewsData id={this.state.id} />
+                <ReviewsData id={this.state.id} user={this.props.user} />
 
                 <div style={
                     {
