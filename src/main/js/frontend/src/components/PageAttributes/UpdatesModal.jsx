@@ -18,6 +18,9 @@ function getModalStyle() {
     };
 }
 
+/*
+ * Sets styles for the modal.
+ */
 const useStyles = makeStyles(theme => ({
     modal: {
         display: 'flex',
@@ -33,6 +36,10 @@ const useStyles = makeStyles(theme => ({
     },
 }));
 
+/*
+ * Main function of the modal, which manages the states and when it is open.
+ * It is open by default on the HomePage.
+ */
 export default function UpdatesModal(props) {
 
     const classes = useStyles();
@@ -64,8 +71,83 @@ export default function UpdatesModal(props) {
                     <h2>Indigo Weekly</h2>
                     <p>(7/24/2020)</p>
                     <p>
-                        Welcome to Indigo, your center for all things COVID-19 in Indianapolis, IN.<br /><br />
+                        Welcome to Indigo, your center for all things COVID-19 in Indianapolis, IN. Your safety is our top priority.<br /><br />
                     </p>
+
+                    <h5>
+                        Notice
+                    </h5>
+                    <p>
+                        Indigo supports the go-to tourism site for Indianapolis, Visit Indy, as well as The Hoosier Hospitality Promise.<br /><br />
+                    </p>
+
+                    <h5>
+                        Resources
+                    </h5>
+                    <div className={"inline-block"} style={
+                        {
+                            marginBottom: 10
+                        }
+                    }>
+                        <a href="https://www.indy.gov/topic/covid"
+                           rel="noopener noreferrer" target="_blank">
+                            <Button style={
+                                {
+                                    marginRight: 20
+                                }
+                            }>
+                                Indiana COVID-19 Guidelines
+                            </Button>
+                        </a>
+                        <a href={"https://www.indy.gov/activity/face-coverings-for-marion-county-residents"}
+                           rel="noopener noreferrer" target="_blank">
+                            <Button style={
+                                 {
+                                     marginRight: 20
+                                 }
+                             }>
+                                Free masks
+                            </Button>
+                        </a>
+                        <a href={"https://www.cdc.gov/coronavirus/2019-ncov/travelers/index.html"}
+                           rel="noopener noreferrer" target="_blank">
+                            <Button style={
+                                {
+                                    marginRight: 20
+                                }
+                            }>
+                                CDC Travel Recommendations
+                            </Button>
+                        </a>
+                    </div>
+                    <div className={"inline-block"} style={
+                        {
+                            marginBottom: 20
+                        }
+                    }>
+                        <a href={"https://www.visitindy.com/indianapolis-indy-welcomes-you-back-safely#reopening"}
+                           rel="noopener noreferrer" target="_blank">
+                            <Button style={
+                                {
+                                    marginRight: 20
+                                }
+                            }>
+                                Visit Indy Reopening Guidelines
+                            </Button>
+                        </a>
+                        <a href={"https://www.coronavirus.in.gov/"}
+                           rel="noopener noreferrer" target="_blank">
+                            <Button style={
+                            {
+                                marginRight: 20
+                            }
+                            }>
+                                Indiana COVID-19 Website
+                            </Button>
+                        </a>
+                        <br />
+                        <br />
+                    </div>
 
                     <h5>
                         COVID-19 City Updates
@@ -82,7 +164,7 @@ export default function UpdatesModal(props) {
                     </h5>
                     <ul>
                         <li>Descriptions of changes made to combat COVID-19 should be as descriptive as possible.
-                            Make sure to include pictures where possible.</li>
+                            Make sure to include pictures when possible.</li>
                         <li>To be considered for a sponsorship, contact help.indigo04@gmail.com.</li>
                     </ul>
 

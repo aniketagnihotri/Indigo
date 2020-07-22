@@ -87,7 +87,7 @@ class BusinessDataLayout extends Component {
                             bottom: 0, paddingRight: 60,
                             paddingBottom: 60, textAlign: "right", display: "column" }
                     }>
-                        <a href={business.url}>
+                        <a href={business.url} rel="noopener noreferrer" target="_blank">
                             <Button type="submit">
                                 View Yelp Listing
                             </Button>

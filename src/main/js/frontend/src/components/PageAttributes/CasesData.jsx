@@ -10,8 +10,8 @@ class CasesData extends Component {
     render() {
         const casesUrl = "https://iu.maps.arcgis.com/apps/opsdashboard/index.html#/eae8ead25ed84f8ba2d16ed28222f34c"
         return (
-            <a href={casesUrl}>
-                <Button  style = {
+            <a href={casesUrl} rel="noopener noreferrer" target="_blank">
+                <Button style = {
                     {
                         margin: 20,
                         height: 40,
