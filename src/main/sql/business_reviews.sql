@@ -16,6 +16,6 @@ INSERT INTO business_reviews (id, user, rating, review, dateTime) VALUES ("test 
 SELECT * FROM business_reviews;
 SELECT COUNT(*) FROM business_reviews;
 
-DELETE FROM business_reviews WHERE (id = "ReV4Q3rEJ8neicQPc6pC0w" AND rating = 0.0);
+DELETE FROM business_reviews WHERE (id = "Ih6_y2nnbg2Jw9Qdc876GA");
 
 DROP TABLE business_reviews;

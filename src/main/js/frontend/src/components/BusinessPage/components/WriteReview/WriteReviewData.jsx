@@ -111,7 +111,6 @@ class WriteReviewData extends Component {
                                                     marginBottom: 30
                                                 }
                                             } placeholder={"1.0"}>
-                                                <option value="0.0">0.0</option>
                                                 <option value="1.0">1.0</option>
                                                 <option value="1.5">1.5</option>
                                                 <option value="2.0">2.0</option>
