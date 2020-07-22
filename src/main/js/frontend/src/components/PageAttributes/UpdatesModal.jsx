@@ -29,8 +29,10 @@ const useStyles = makeStyles(theme => ({
     },
     paper: {
         position: 'absolute',
+        overflow: "auto",
+        height: 500,
         backgroundColor: theme.palette.background.paper,
-        borderRadius: 15,
+        borderRadius: 5,
         outline: 0,
         padding: theme.spacing(4, 4, 4),
     },
