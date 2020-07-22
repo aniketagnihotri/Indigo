@@ -27,7 +27,7 @@ class AboutUs extends Component {
                     <SearchFilter />
                 </Jumbotron>
 
-                <div style={ { textAlign: "center", marginBottom: 30 } }>
+                <div style={ { textAlign: "center", marginBottom: 270 } }>
                     <h1 style={ { marginBottom: 30 } }>About Us</h1>
                     <p style={ {
                         display: "inline-block",

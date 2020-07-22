@@ -91,7 +91,7 @@ class ListingData extends Component {
                 </Box>
                 {this.state.businesses.length === 0 ? (
                     <h2>
-                        No results found.
+                        Businesses are being fetched...
                     </h2>
 
                 ) : (
