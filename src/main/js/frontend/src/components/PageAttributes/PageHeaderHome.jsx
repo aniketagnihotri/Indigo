@@ -4,7 +4,11 @@ import "./Navbar.css"
 import fire from "../../config/Fire";
 import UpdatesModal from "./UpdatesModal";
 
-class PageHeader extends Component {
+/*
+ * PageHeaderHome is the header for only the HomePage, due to image colors.
+ * PageHeaderHome uses a BootStrap NavBar.
+ */
+class PageHeaderHome extends Component {
     constructor(props) {
         super(props);
 
@@ -25,6 +29,9 @@ class PageHeader extends Component {
         fontSize: 50,
     };
 
+    /*
+     * Manages the logout event of a user.
+     */
     logout(event) {
         fire.auth().signOut();
     }
@@ -65,4 +72,4 @@ class PageHeader extends Component {
 
 }
 
-export default PageHeader;
+export default PageHeaderHome;

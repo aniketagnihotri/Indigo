@@ -6,6 +6,10 @@ import "./BusinessData.css"
 import IndigoRating from "./IndigoRating";
 import BusinessResponse from "../BusinessResponse/BusinessResponse";
 
+
+/*
+ * Layout of a Yelp business's data.
+ */
 class BusinessDataLayout extends Component {
 
     constructor(props) {
@@ -16,11 +20,18 @@ class BusinessDataLayout extends Component {
         }
     }
 
+    /*
+     * Function that forces an update upon a change of the business information stored
+     * in this class's state.
+     */
     async componentWillReceiveProps(newProps) {
         await this.setState({ business : newProps.business } )
         this.forceUpdate();
     }
 
+    /*
+     * Returns whether a business is open based on the business's data.
+     */
     getOpen() {
         if (this.state.business.isClosed === true) {
             return <h3 style={ { color: "red" } }>Closed</h3>;

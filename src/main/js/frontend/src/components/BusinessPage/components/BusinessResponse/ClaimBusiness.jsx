@@ -6,7 +6,11 @@ import Searchbar from "../../../PageAttributes/Searchbar";
 import SearchFilter from "../../../PageAttributes/SearchFilter";
 import PageFooter from "../../../PageAttributes/PageFooter";
 
-class AboutUs extends Component {
+/*
+ * Class that displays the ClaimBusiness page for business owners that are interested
+ * in claiming a business listing on Indigo.
+ */
+class ClaimBusiness extends Component {
 
     render() {
         return (
@@ -34,4 +38,4 @@ class AboutUs extends Component {
 
 }
 
-export default AboutUs;
+export default ClaimBusiness;

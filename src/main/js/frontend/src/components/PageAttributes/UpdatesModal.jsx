@@ -3,6 +3,10 @@ import { Button } from "react-bootstrap"
 import { makeStyles } from '@material-ui/core/styles';
 import Modal from '@material-ui/core/Modal';
 
+/*
+ * UpdatesModal is a modal that is present in the website-wide header in the Updates tab.
+ * UpdatesModal encompasses the "Indigo Weekly."
+ */
 function getModalStyle() {
     const top = 50;
     const left = 50;

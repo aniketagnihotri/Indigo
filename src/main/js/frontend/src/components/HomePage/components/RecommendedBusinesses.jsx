@@ -5,6 +5,10 @@ import { Box, ListItem } from "@material-ui/core";
 import "./RecommendedBusinesses.css"
 import CheckCircleIcon from "@material-ui/icons/CheckCircle";
 
+/*
+ * RecommendedBusinesses gets the businesses that are displayed on the
+ * HomePage.
+ */
 class RecommendedBusinesses extends Component {
 
     constructor(props) {
@@ -15,6 +19,10 @@ class RecommendedBusinesses extends Component {
         }
     }
 
+    /*
+     * Makes the API GET request for the businesses to display on the home page. This function is
+     * performed before the component is rendered.
+     */
     componentDidMount() {
         fetch(`api/general/searchBusinessListingRandom/12`, {
             method: 'GET',
@@ -27,6 +35,9 @@ class RecommendedBusinesses extends Component {
             .then(results => this.setState({ "businesses" : results }))
     }
 
+    /*
+     * Sorts the businesses from most reviews to least reviews.
+     */
     sortBusinessesByNumReviews() {
         this.state.businesses.sort((a, b) => a.numReviews < b.numReviews ? 1:-1).map(
             (business, i) => <div key={i}> {business.rating} </div>

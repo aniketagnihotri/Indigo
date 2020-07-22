@@ -8,6 +8,9 @@ import SearchFilter from "../PageAttributes/SearchFilter";
 import PageFooter from "../PageAttributes/PageFooter";
 import CasesData from "../PageAttributes/CasesData";
 
+/*
+ * Login page for Firebase user authentication.
+ */
 class Login extends Component {
 
     constructor(props) {
@@ -19,11 +22,17 @@ class Login extends Component {
         }
     }
 
-
+    /*
+     * Listens for a change of the username or password fields then updates
+     * the state accordingly.
+     */
     changeField(event) {
         this.setState({ [event.target.name]: event.target.value })
     }
 
+    /*
+     * Sends a request to Firebase to authenticate a user.
+     */
     login(event) {
         event.preventDefault();
         fire.auth().signInWithEmailAndPassword(this.state.username, this.state.password).then((u)=> {
@@ -34,6 +43,9 @@ class Login extends Component {
         });
     }
 
+    /*
+     * Sends a request to Firebase to sign up a user.
+     */
     signup(event) {
         event.preventDefault();
         this.setState({ "error": "" } )

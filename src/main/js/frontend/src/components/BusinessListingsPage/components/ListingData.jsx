@@ -4,6 +4,10 @@ import './Listings.css';
 import ListingLayout from "./ListingLayout"
 import CheckCircleIcon from "@material-ui/icons/CheckCircle";
 
+/*
+ * Handles data fetching and passing to child components. Fetches
+ * all data for resulting BusinessListings from a search.
+ */
 class ListingData extends Component {
 
     constructor(props) {
@@ -15,11 +19,17 @@ class ListingData extends Component {
         }
     }
 
+    /*
+     * async function that re-renders child components on a change of search term (new search).
+     */
     async componentWillReceiveProps(newProps) {
         await this.setState({ searchTerm : newProps.searchTerm } )
         this.forceUpdate(this.componentDidMount());
     }
 
+    /*
+     * Function that is called before every call of render().
+     */
     componentDidMount() {
         const params = this.props.searchTerm + "/10";
         fetch(`/api/general/searchBusinessListingByTerm/` + params, {
@@ -33,6 +43,10 @@ class ListingData extends Component {
             .then(response => this.setState( { "businesses": response } ))
     }
 
+    /*
+     * Sorts BusinessListings by the number of reviews they have before rendering them
+     * for the client.
+     */
     sortBusinessesByNumReviews() {
         this.state.businesses.sort((a, b) => a.numReviews < b.numReviews ? 1:-1).map(
             (business, i) => <div key={i}> {business.rating} </div>

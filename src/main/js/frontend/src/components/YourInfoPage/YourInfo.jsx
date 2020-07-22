@@ -6,6 +6,9 @@ import Searchbar from "../PageAttributes/Searchbar";
 import SearchFilter from "../PageAttributes/SearchFilter";
 import PageFooter from "../PageAttributes/PageFooter";
 
+/*
+ * YourInfo manages a user's YourInfo page with basic user details.
+ */
 class YourInfo extends Component {
 
     render() {

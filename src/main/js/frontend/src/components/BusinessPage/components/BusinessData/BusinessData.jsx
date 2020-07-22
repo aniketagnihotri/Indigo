@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import { Box } from "@material-ui/core";
 import BusinessDataLayout from "./BusinessDataLayout";
 
+/*
+ * Class that fetches and sends Yelp Business information to child components.
+ */
 class BusinessData extends Component {
 
     constructor(props) {
@@ -13,6 +16,9 @@ class BusinessData extends Component {
         }
     }
 
+    /*
+     * API call for Yelp business data that is made prior to rendering the components.
+     */
     componentDidMount() {
         const params = this.state.id + "/2";
         fetch(`/api/yelp/searchBusinessByID/` + params, {

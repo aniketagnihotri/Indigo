@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import { Divider, List, ListItem } from "@material-ui/core";
 
-class ReviewData extends Component {
+/*
+ * ReviewLayout displays already written reviews for a particular business.
+ */
+class ReviewsLayout extends Component {
 
     constructor(props) {
         super(props);
@@ -12,6 +15,10 @@ class ReviewData extends Component {
         }
     }
 
+    /*
+     * API call to the Indigo database for all of the reviews for a particular business.
+     * This call is made before the component itself renders.
+     */
     componentDidMount() {
         const params = this.state.id;
         fetch(`/api/db/getBusinessReviews/` + params, {
@@ -84,4 +91,4 @@ class ReviewData extends Component {
 
 }
 
-export default ReviewData;
+export default ReviewsLayout;

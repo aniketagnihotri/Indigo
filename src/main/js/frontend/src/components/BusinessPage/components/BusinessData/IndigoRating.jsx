@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
 import CheckCircleIcon from '@material-ui/icons/CheckCircle';
 
-class RecommendedBusinesses extends Component {
+/*
+ * Gets the rating, numReviews, and isSponsored fields from the business_data table
+ * from the Indigo database.
+ */
+class IndigoRating extends Component {
 
     constructor(props) {
         super(props);
@@ -11,6 +15,9 @@ class RecommendedBusinesses extends Component {
         }
     }
 
+    /*
+     * API call to the database that is made before the component itself is rendered.
+     */
     componentDidMount() {
         fetch(`/api/db/getIndigoBusinessStats/` + this.props.id, {
             method: 'GET',
@@ -65,4 +72,4 @@ class RecommendedBusinesses extends Component {
 
 }
 
-export default RecommendedBusinesses;
+export default IndigoRating;

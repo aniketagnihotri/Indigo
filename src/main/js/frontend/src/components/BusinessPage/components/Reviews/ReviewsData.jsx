@@ -3,6 +3,10 @@ import { Box } from "@material-ui/core";
 import ReviewLayout from "./ReviewsLayout";
 import WriteReviewData from "../WriteReview/WriteReviewData";
 
+/*
+ * ReviewsData is the manager for the review system of Indigo. It sends
+ * crucial ID and user data to its child components.
+ */
 class ReviewsData extends Component {
 
     constructor(props) {

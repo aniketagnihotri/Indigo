@@ -9,6 +9,9 @@ import BusinessData from "./components/BusinessData/BusinessData";
 import ReviewsData from "./components/Reviews/ReviewsData";
 import CasesData from "../PageAttributes/CasesData";
 
+/*
+ * BusinessPage manager. Manages structure of components.
+ */
 class BusinessPage extends Component {
 
     constructor(props) {

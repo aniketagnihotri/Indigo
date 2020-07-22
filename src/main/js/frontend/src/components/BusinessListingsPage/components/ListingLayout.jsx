@@ -5,6 +5,9 @@ import { Box, Divider, ListItem } from "@material-ui/core";
 import CheckCircleIcon from "@material-ui/icons/CheckCircle";
 import "./Listings.css"
 
+/*
+ * Manages the layout of specific BusinessListings.
+ */
 class ListingLayout extends Component {
 
     constructor(props) {
@@ -16,11 +19,17 @@ class ListingLayout extends Component {
         }
     }
 
+    /*
+     * Forces a re-render upon a change of the business information stored in this class's state.
+     */
     async componentWillReceiveProps(newProps) {
         await this.setState({ business : newProps.business } )
         this.forceUpdate();
     }
 
+    /*
+     * Gets whether a business is open from its data.
+     */
     getOpen() {
         if (this.state.business.isClosed === true) {
             return <h3 style={ { color: "red" } }>Closed</h3>;
@@ -28,12 +37,18 @@ class ListingLayout extends Component {
         return <h3 style={ { color: "green" } }>Open</h3>
     }
 
+    /*
+     * Gets whether a business is sponsored from its data.
+     */
     getSponsored(sponsored) {
         if (sponsored === true) {
             return <CheckCircleIcon />
         }
     }
 
+    /*
+     * Gets business's rating and numReviews from its data.
+     */
     getRatingAndReviews(business) {
         if (business.numReviews === 0) {
             return (<p className="lead" style={ { marginBottom: 0, fontSize: 18, textAlign: "left", lineHeight: -1 } }>

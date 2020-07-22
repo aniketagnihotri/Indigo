@@ -5,6 +5,10 @@ import UpdatesModal from "./UpdatesModal";
 import "./Navbar.css"
 import "./PageAttributes.css"
 
+/*
+ * PageHeader is the header for all pages except the HomePage, due to image colors.
+ * PageHeader uses a BootStrap NavBar.
+ */
 class PageHeader extends Component {
     constructor(props) {
         super(props);
@@ -26,6 +30,9 @@ class PageHeader extends Component {
         fontSize: 50,
     };
 
+    /*
+     * Manages the logout event of a user.
+     */
     logout(event) {
         fire.auth().signOut();
     }

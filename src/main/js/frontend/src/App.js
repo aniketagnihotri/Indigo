@@ -10,6 +10,9 @@ import BusinessListingsPage from "./components/BusinessListingsPage/BusinessList
 import BusinessPage from "./components/BusinessPage/BusinessPage"
 import YourInfo from "./components/YourInfoPage/YourInfo";
 
+/*
+ * Main front-end class. Routes paths and renders based on user input.
+ */
 class App extends Component {
 
     constructor(props) {
@@ -23,6 +26,9 @@ class App extends Component {
         this.authListener();
     }
 
+    /*
+     * Listens for user login/logout changes and applies them site-wide.
+     */
     authListener() {
         fire.auth().onAuthStateChanged((user) => {
             if (user) {
@@ -34,7 +40,6 @@ class App extends Component {
     }
 
     render() {
-        // const user = this.state.user;
         return (
             <div className={"App"}>
                 <Router onUpdate={() => window.scrollTo(0, 0)}>

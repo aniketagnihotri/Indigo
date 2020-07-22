@@ -8,6 +8,9 @@ import SearchFilter from "../PageAttributes/SearchFilter";
 import RecommendedBusinesses from "./components/RecommendedBusinesses";
 import CasesData from "../PageAttributes/CasesData";
 
+/*
+ * HomePage holds the layout for the Indigo splash page.
+ */
 class HomePage extends Component {
 
     constructor(props) {

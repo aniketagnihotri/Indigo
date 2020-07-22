@@ -3,7 +3,11 @@ import  { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import './PageAttributes.css'
 
-class Searchbar extends Component {
+/*
+ * SearchFilter is the component beneath the Searchbar website-wide, which provides three shortcuts
+ * for quick searches.
+ */
+class SearchFilter extends Component {
 
     constructor(props) {
         super(props);
@@ -31,4 +35,4 @@ class Searchbar extends Component {
 
 }
 
-export default Searchbar;
+export default SearchFilter;

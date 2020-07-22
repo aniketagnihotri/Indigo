@@ -2,7 +2,11 @@ import React, {Component} from 'react';
 import { Button } from "react-bootstrap";
 import { List, ListItem, Select } from "@material-ui/core";
 
-class ReviewData extends Component {
+/*
+ * WriteReviewData is the editor that Indigo users can use to write a review for a
+ * particular business.
+ */
+class WriteReviewData extends Component {
 
     constructor(props) {
         super(props);
@@ -15,19 +19,32 @@ class ReviewData extends Component {
         }
     }
 
+    /*
+     * Gets the date of a review for the POST request.
+     */
     getDate() {
         let currentDate = new Date();
         return (currentDate.getMonth() + 1) + '/' + currentDate.getDate() + '/' + currentDate.getFullYear();
     }
 
+    /*
+     *  Gets the rating and updates the class's state accordingly upon change.
+     */
     changeRating(event) {
         this.setState({ "rating": event.target.value })
     }
 
+    /*
+     * Gets the review and updates the class's state accordingly upon change.
+     */
     changeReview(event) {
         this.setState({ "review": event.target.value })
     }
 
+    /*
+     * Pushes the review to the back-end and then to the database using a POST
+     * request.
+     */
     pushReview() {
         const myHeaders = new Headers();
         myHeaders.append("Content-Type", "application/json");
@@ -148,4 +165,4 @@ class ReviewData extends Component {
 
 }
 
-export default ReviewData;
+export default WriteReviewData;

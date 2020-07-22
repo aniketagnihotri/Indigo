@@ -7,8 +7,14 @@ import PageFooter from "../PageAttributes/PageFooter";
 import ListingData from "./components/ListingData";
 import CasesData from "../PageAttributes/CasesData";
 
+/*
+ * BusinessListingsPage manager. Manages structure of components.
+ */
 class BusinessListingsPage extends Component {
 
+    /*
+     * Updates search term that is passed from App.js.
+     */
     constructor(props) {
         super(props);
         this.state = {

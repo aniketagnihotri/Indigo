@@ -2,7 +2,10 @@ import React, { Component } from 'react';
 import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
-class BusinessData extends Component {
+/*
+ *  Class that retrieves a business's data within the Indigo database.
+ */
+class BusinessResponse extends Component {
 
     constructor(props) {
         super(props);
@@ -13,6 +16,10 @@ class BusinessData extends Component {
         }
     }
 
+    /*
+     * API call that is made for a business's data prior to rendering the component
+     * itself.
+     */
     componentDidMount() {
         const params = this.state.id;
         fetch(`/api/db/getBusinessData/` + params, {
@@ -68,4 +75,4 @@ class BusinessData extends Component {
 
 }
 
-export default BusinessData;
+export default BusinessResponse;

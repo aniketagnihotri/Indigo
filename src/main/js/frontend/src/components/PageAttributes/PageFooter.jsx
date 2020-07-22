@@ -4,7 +4,11 @@ import {
     Link
 } from "react-router-dom";
 
-class PageHeader extends Component {
+/*
+ * PageFooter is the website-wide footer that details contact information
+ * and a statement on data retrieval.
+ */
+class PageFooter extends Component {
 
     styleText = {
         margin: 1,
@@ -38,4 +42,4 @@ class PageHeader extends Component {
 
 }
 
-export default PageHeader;
+export default PageFooter;

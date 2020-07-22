@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import { Button } from "react-bootstrap";
 
+/*
+ * CasesData updates a banner website-wide that displays the change in the number of
+ * cases in the last seven days in Indianapolis.
+ */
 class CasesData extends Component {
 
     render() {

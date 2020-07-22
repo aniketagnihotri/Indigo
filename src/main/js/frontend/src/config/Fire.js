@@ -1,5 +1,8 @@
 import firebase from 'firebase'
 
+/*
+ * Config file for Firebase using keys provided in the Firebase console.
+ */
 const firebaseConfig = {
     apiKey: "AIzaSyBJcBF3OdXqUAbCafuUK4_q8Qfhwy5YnkU",
     authDomain: "indigoauthentication.firebaseapp.com",

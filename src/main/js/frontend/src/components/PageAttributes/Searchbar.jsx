@@ -3,6 +3,9 @@ import Button from "react-bootstrap/Button";
 import SearchIcon from "@material-ui/icons/Search";
 import { Link } from "react-router-dom";
 
+/*
+ * Searchbar is the website-wide Searchbar that is used to make searches for businesses.
+ */
 class Searchbar extends Component {
 
     constructor(props) {
@@ -18,6 +21,10 @@ class Searchbar extends Component {
         width: 600
     };
 
+    /*
+     * Listens for changes in the search text and updates the searchTerm in the state
+     * accordingly.
+     */
     changeText(receivedSearchTerm) {
         this.setState({searchTerm:receivedSearchTerm })
     }

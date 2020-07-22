@@ -6,6 +6,10 @@ import PageFooter from "../PageAttributes/PageFooter";
 import Searchbar from "../PageAttributes/Searchbar";
 import SearchFilter from "../PageAttributes/SearchFilter";
 
+/*
+ * About Us page with simple text and mission statement information pulled from
+ * project abstract.
+ */
 class AboutUs extends Component {
 
     render() {
