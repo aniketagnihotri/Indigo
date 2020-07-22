@@ -20,7 +20,7 @@ SELECT * FROM business_data;
 SELECT COUNT(*) FROM business_data;
 
 
-DELETE FROM business_data WHERE id = "ReV4Q3rEJ8neicQPc6pC0w";
+UPDATE business_data SET indigoRating = "5.0" WHERE id = "en9sRChY9wYY9DoRioodNg";
 
 DELETE FROM business_reviews WHERE (id = "UFCN0bYdHroPKu6KV5CJqg");
 

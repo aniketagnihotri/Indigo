@@ -18,4 +18,6 @@ SELECT COUNT(*) FROM business_reviews;
 
 DELETE FROM business_reviews WHERE (id = "Ih6_y2nnbg2Jw9Qdc876GA");
 
+UPDATE business_reviews SET rating = "5.0" WHERE review = "Baby's offers outdoor dining and safe distance dining.";
+
 DROP TABLE business_reviews;

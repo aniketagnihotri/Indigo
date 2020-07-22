@@ -90,7 +90,12 @@ class ListingData extends Component {
                     </p>
                 </Box>
                 {this.state.businesses.length === 0 ? (
-                    <h2>
+                    <h2 style={
+                        {
+                            paddingTop: 60,
+                            paddingBottom: 440
+                        }
+                    }>
                         Businesses are being fetched...
                     </h2>
 

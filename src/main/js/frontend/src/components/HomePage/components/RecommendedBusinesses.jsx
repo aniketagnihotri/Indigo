@@ -53,7 +53,15 @@ class RecommendedBusinesses extends Component {
                     <h4 style={ { textAlign: "left", paddingLeft: 40 } }>Featured businesses of the week...</h4>
                     <h6 style={ { textAlign: "left", paddingLeft: 40 } }> <CheckCircleIcon /> dictates a sponsored business.</h6>
                     {this.state.businesses.length === 0 ? (
-                            <h6 className={"flexbox-container-img"}>Businesses are being fetched...</h6>
+                            <Box style={
+                                {
+                                    marginLeft: 20, marginRight: 40,
+                                    marginBottom: 30, display: "inline-block",
+                                    width: 1820
+                                }
+                            }>
+                                <h6 className={"flexbox-container-img"}>Businesses are being fetched...</h6>
+                            </Box>
                         ) : (
                         this.state.businesses.map(function (business, index) {
 
