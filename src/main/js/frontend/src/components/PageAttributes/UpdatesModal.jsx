@@ -5,7 +5,8 @@ import Modal from '@material-ui/core/Modal';
 
 /*
  * UpdatesModal is a modal that is present in the website-wide header in the Updates tab.
- * UpdatesModal encompasses the "Indigo Weekly."
+ * UpdatesModal encompasses the "Indigo Weekly" and is present when first launching
+ * Indigo.
  */
 function getModalStyle() {
     const top = 50;
@@ -32,10 +33,12 @@ const useStyles = makeStyles(theme => ({
     },
 }));
 
-export default function UpdatesModal() {
+export default function UpdatesModal(props) {
+
     const classes = useStyles();
     const [modalStyle] = React.useState(getModalStyle);
-    const [open, setOpen] = React.useState(false);
+    let [open, setOpen] = React.useState(props.homePage);
+
 
     const handleOpen = () => {
         setOpen(true);

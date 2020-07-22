@@ -46,7 +46,7 @@ class PageHeaderHome extends Component {
                 <ReactBootStrap.Nav className="mr-auto" style={this.styleTabs}>
                         <ReactBootStrap.Nav.Link href="/">  Home  </ReactBootStrap.Nav.Link>
                         <ReactBootStrap.Nav.Link href="/AboutUs">  About  </ReactBootStrap.Nav.Link>
-                        <ReactBootStrap.Nav.Link>{<UpdatesModal />}  </ReactBootStrap.Nav.Link>
+                        <ReactBootStrap.Nav.Link>{<UpdatesModal homePage={true}/>}  </ReactBootStrap.Nav.Link>
                         <ReactBootStrap.NavDropdown alignRight title={"User"}>
                             {this.props.user ? (
                                     <div>
