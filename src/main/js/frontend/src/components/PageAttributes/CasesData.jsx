@@ -22,7 +22,7 @@ class CasesData extends Component {
                         width: "auto",
                     }
                 }>
-                    A total of 288 new COVID-19 cases have been reported in
+                    A total of 630 new COVID-19 cases have been reported in
                     Marion County, IN over the last seven days.
                 </Button>
             </a>

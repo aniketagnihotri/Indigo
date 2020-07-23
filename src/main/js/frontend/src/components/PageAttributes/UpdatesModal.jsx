@@ -8,7 +8,11 @@ import Modal from '@material-ui/core/Modal';
  * UpdatesModal encompasses the "Indigo Weekly" and is present when first launching
  * Indigo.
  */
-function getModalStyle() {
+
+/*
+ * Centers the modal on the page that it is rendered on.
+ */
+function getCenteredModalStyle() {
     const top = 50;
     const left = 50;
     return {
@@ -21,7 +25,7 @@ function getModalStyle() {
 /*
  * Sets styles for the modal.
  */
-const useStyles = makeStyles(theme => ({
+const styles = makeStyles(theme => ({
     modal: {
         display: 'flex',
         alignItems: 'center',
@@ -44,8 +48,8 @@ const useStyles = makeStyles(theme => ({
  */
 export default function UpdatesModal(props) {
 
-    const classes = useStyles();
-    const [modalStyle] = React.useState(getModalStyle);
+    const classes = styles();
+    const [modalStyle] = React.useState(getCenteredModalStyle);
     let [open, setOpen] = React.useState(props.homePage);
 
 
