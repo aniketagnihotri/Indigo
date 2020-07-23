@@ -64,7 +64,8 @@ class BusinessResponse extends Component {
                                     }>
                                         COVID-19 Business Response:
                                         <br /><b>{response.businessResponse}</b>
-                                        <br /><br/>{getClaimed(response.claimed)}
+                                        <br /><br/><br /><br />
+                                        {getClaimed(response.claimed)}
                                     </p>
                                 </div>
                             );
