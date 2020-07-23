@@ -39,14 +39,15 @@ class AboutUs extends Component {
                         Intended to incentivize safe tourism and travel to and in Indianapolis, Indigo is your go-to for all things COVID-19.
                         Our goal is to make changes and other information more accessible to the public via crowdsourced business ratings
                         and business-specific data. In a time of uncertainty, we feel that this is the best way to educate our users as
-                        Indiana slowly reopens.<br /><br />
+                        Indiana slowly reopens.
+                        <br /><br />
 
                         <b>Why Indigo?</b><br />
                         At the core, Indigo is an application that has taken a Yelp-like approach to crowdsourcing business data via ratings and reviews;
-                        Indigo adds various other features to the mix as well to ensure that our users are informed and safe in Indianapolis.<br /><br />
+                        Indigo adds various other features to the mix as well to ensure that our users are well-informed and safe in Indianapolis.<br /><br />
                         Indigo allows users to look into different restaurants, hotels, airlines, tours, and other attractions and the safety protocols
                         that they have each implemented to combat COVID-19. Indigo’s reviews system allows users to receive an understanding of others'
-                        firsthand experiences at these locations before making a decision on traveling there.
+                        first-hand experiences at these locations before committing to traveling there.
                         <br /><br />
 
                         <b>Our Customer Base</b><br />
@@ -57,7 +58,6 @@ class AboutUs extends Component {
                 </div>
 
                 <PageFooter />
-
             </div>
         );
     }
