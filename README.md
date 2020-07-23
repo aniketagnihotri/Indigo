@@ -12,4 +12,4 @@ Given the limitations of the free Heroku dyno that Indigo is currently hosted on
 
 ### Frameworks and Resources
 
-#### Created by Aniket Agnihotri,
+##### Created by Aniket Agnihotri, Jack Deputy, Halley Martin, Cage Thompson, and Angela Yang.
