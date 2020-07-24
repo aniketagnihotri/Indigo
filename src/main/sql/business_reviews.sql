@@ -16,7 +16,7 @@ INSERT INTO business_reviews (id, user, rating, review, dateTime) VALUES ("test 
 SELECT * FROM business_reviews;
 SELECT COUNT(*) FROM business_reviews;
 
-DELETE FROM business_reviews WHERE (id = "Ih6_y2nnbg2Jw9Qdc876GA");
+DELETE FROM business_reviews WHERE (review = "sample review");
 
 UPDATE business_reviews SET rating = "5.0" WHERE review = "Baby's offers outdoor dining and safe distance dining.";
 

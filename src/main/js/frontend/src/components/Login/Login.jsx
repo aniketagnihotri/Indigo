@@ -77,7 +77,7 @@ class Login extends Component {
                         width: 600,
                         display: "inline-block",
                         marginTop: 20,
-                        marginBottom: 23
+                        marginBottom: 45
                     }
                 }>
                     {this.props.user ? (
@@ -85,7 +85,7 @@ class Login extends Component {
                                 {
                                     textAlign: "center",
                                     paddingTop: 70,
-                                    paddingBottom: 175
+                                    paddingBottom: 136
                                 }
                             }>Welcome, <b>{this.props.user.email}</b>. You are logged in.
                             <br />You can now leave reviews on local Indianapolis businesses!</p>
