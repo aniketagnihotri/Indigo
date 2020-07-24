@@ -24,11 +24,11 @@ Note: IntelliJ's Maven Plugin will perform these functions via the Maven tab.
 
 ### Frameworks and Resources
 The frameworks and tools we used in our solution were Spring Boot, ReactJS, SQL, AWS RDS, Google’s Firebase, Maven, Yelp’s Fusion API, and Heroku. 
-######Database
+###### Database
 We created an AWS RDS Database instance to store the reviews and business-specific data that users input. We used SQL for the creation of the tables in our database and to specify data search requests.
-######Back-end
+###### Back-end
 We used Spring Boot to create a REST API to query, receive, and push data from our database and Yelp’s Fusions API to our front-end. Another helpful tool that we used for the back-end was Apache Maven, which allowed us to specify dependencies for our project, making it as simple as a click of a button to export, compile, and deploy our code to our deployment service, Heroku. 
-######Front-end
+###### Front-end
 We used ReactJS, which serves the UI to the client by fetching data from our REST API and displaying it. We also used Google’s Firebase along with ReactJS in order to set up a user authentication system for Indigo. 
 
 ##### Created by Aniket Agnihotri, Jack Deputy, Halley Martin, Cage Thompson, and Angela Yang.
