@@ -1,5 +1,5 @@
 ```diff
-@@Indigo@@
+@Indigo@
 ```
 # Indigo
 
