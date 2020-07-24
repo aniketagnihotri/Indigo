@@ -10,13 +10,12 @@ To compile Indigo and run it locally, Java must be installed on your machine. Ru
 ```java
 mvn clean verify
 ```
-to compile your code and 
+to compile your code. Then navigate to your 'target' folder and run 
 ```java
 java -jar Indigo-1.0-SNAPSHOT.jar
 ```
-to run it. IntelliJ's Maven Plugin will perform these functions via the Maven tab.
-In addition, you will need a Yelp Fusion API Bearer Token (place in src/main/java/org.indigo.yelpoperations/YelpService.java).
-
+to execute it on port 8080. Finally, query localhost:8080 to connect.
+IntelliJ's Maven Plugin will perform these functions via the Maven tab.
 
 ### Note on Heroku
 Given the limitations of the free Heroku dyno that Indigo is currently hosted on, you may encounter a white page after several searches. Please note that this white page is temporary, as it is due to a shortage of RAM on the dyno; the shortage is resolved automatically via Garbage Collection and other memory-saving processes within five minutes.
