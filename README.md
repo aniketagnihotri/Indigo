@@ -1,6 +1,3 @@
-```diff
-@Indigo@
-```
 # Indigo
 
 ### Purpose
