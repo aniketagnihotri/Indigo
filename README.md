@@ -3,9 +3,10 @@
 ### Purpose
 Indigo is a go-to for all things COVID-19, intended to incentivize safe tourism and travel to and in Indianapolis. The goal of Indigo is to make changes and other information more accessible to the public via crowdsourced business ratings and business-specific data. In a time of uncertainty, we feel that this is the best way to educate our users as Indiana slowly reopens.
 
-### Deployment and Compilation
+### Deployment
 Visit the deployment of indigo at https://indigo04.herokuapp.com. The process will re-compile and execute if the dyno is asleep, which takes approx. three minutes.
 
+### Compilation
 To compile Indigo and run it locally, Java must be installed on your machine. Run 
 ```java
 mvn clean verify
