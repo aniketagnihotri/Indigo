@@ -6,10 +6,15 @@ Indigo is a go-to for all things COVID-19, intended to incentivize safe tourism 
 ### Deployment and Compilation
 Visit the deployment of indigo at https://indigo04.herokuapp.com. The process will re-compile and execute if the dyno is asleep, which takes approx. three minutes.
 
-To compile Indigo and run it on your device, Java must be installed on your machine. Running 
+To compile Indigo and run it locally, Java must be installed on your machine. Run 
 ```java
 mvn clean verify
 ```
+to compile your code and 
+```java
+java -jar Indigo-1.0-SNAPSHOT.jar
+```
+to run it. IntelliJ's Maven Plugin will perform these functions via the Maven tab.
 In addition, you will need a Yelp Fusion API Bearer Token (place in src/main/java/org.indigo.yelpoperations/YelpService.java).
 
 
