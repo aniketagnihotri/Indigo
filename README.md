@@ -19,7 +19,8 @@ to compile your code. Then, navigate to your 'target' folder and run
 java -jar Indigo-1.0-SNAPSHOT.jar
 ```
 to execute it on port 8080. Finally, query localhost:8080 to connect.
-IntelliJ's Maven Plugin will perform these functions via the Maven tab.
+
+Note: IntelliJ's Maven Plugin will perform these functions via the Maven tab.
 
 ### Frameworks and Resources
 Inidgo is built primarily with Spring Boot, serving as the back-end REST API, and ReactJS, serving as the front-end. Indigo also uses an AWS RDS Database instance, managed in SQL, and Google's Firebase to authenticate users. Lastly, Indigo communicates with Yelp's Fusion API. 
