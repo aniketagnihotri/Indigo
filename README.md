@@ -6,6 +6,12 @@ Indigo is a go-to for all things COVID-19, intended to incentivize safe tourism 
 ### Deployment and Compilation
 Visit the deployment of indigo at https://indigo04.herokuapp.com. The process will re-compile and execute if the dyno is asleep, which takes approx. three minutes.
 
+To compile Indigo and run it on your device, Java must be installed on your machine. Running 
+```java
+mvn clean verify
+```
+In addition, you will need a Yelp Fusion API Bearer Token (place in src/main/java/org.indigo.yelpoperations/YelpService.java).
+
 
 ### Note on Heroku
 Given the limitations of the free Heroku dyno that Indigo is currently hosted on, you may encounter a white page after several searches. Please note that this white page is temporary, as it is due to a shortage of RAM on the dyno; the shortage is resolved automatically via Garbage Collection and other memory-saving processes within five minutes.
