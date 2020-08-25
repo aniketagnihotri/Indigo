@@ -18,7 +18,7 @@ public class YelpService {
     private final String SEARCH_ID_URL = "https://api.yelp.com/v3/businesses/";
 
     //personal API Bearer Token
-    private final String BEARER_TOKEN = "cwzzLM8QtCjZ8LgGT0AU_CbX3NPFtoXWeaFAYLhXeAeVIRcizK0Ie699l6hr2Kt4j9nt5BvlgsoPrrR6g7qA4kGv-jaDdQuOWNBCCQ-4TuHaqDNtixhSkiU7Pzf5XnYx";
+    private final String BEARER_TOKEN = "[Enter your Yelp Fusion API key here.]";
 
     //class for configuring a business from a response
     BusinessConfigurator businessConfigurator = new BusinessConfigurator();
