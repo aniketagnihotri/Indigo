@@ -24,6 +24,7 @@ Note: IntelliJ's Maven Plugin is capable of performing these functions via the M
 
 ### Frameworks and Resources
 Our stack:  ReactJS, Maven, Spring Boot, SQL.
+
 Additional resources: AWS RDS, Google Firebase, Yelp’s Fusion API, and Heroku. 
 ##### Database
 An AWS RDS Database instance stores the reviews and business-specific data that users input. We used SQL for the creation of the tables in our database and to specify data search requests.
